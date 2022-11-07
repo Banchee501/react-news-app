@@ -1,4 +1,4 @@
-import Container from 'react-bootstrap/Container';
+import { Container } from 'react-bootstrap';
 
 import soldierIcon from "../../resources/icons/navbarIcons/soldier.png";
 import tanksIcon from "../../resources/icons/navbarIcons/tanks.png";
