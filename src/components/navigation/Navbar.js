@@ -1,7 +1,6 @@
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
+import { Container, Row, Col } from 'react-bootstrap';
 import './navbar.scss'
+import fire from "../../resources/icons/navbarIcons/fireNav.svg";
 
 const Navbar = () => {
     return (
@@ -9,34 +8,41 @@ const Navbar = () => {
             <nav className='navbar'>
                 <Row>
                     <div className='navbar__top'>
-                        <button>Меню</button>
-                        <ul>
-                            <li><a href="#"></a>Київ</li>
-                            <li><a href="#"></a>Одеса</li>
-                            <li><a href="#"></a>Харків</li>
+                        <button className='menu'>
+                            <div className="menu_icon"></div>Меню</button>
+                        <ul className='cities'>
+                            <li><a href="#">Київ</a></li>
+                            <li><a href="#">Одеса</a></li>
+                            <li><a href="#">Харків</a></li>
                         </ul>
-                        <i class="fa-solid fa-magnifying-glass"></i>
-                        <input type="text" placeholder='пошук новин' />
-                        <i class="fa-brands fa-telegram"></i>
-                        <i class="fa-brands fa-facebook"></i>
-                        <i class="fa-brands fa-square-instagram"></i>
-                        <i class="fa-brands fa-youtube"></i>
-                        <a href="#">RU</a>
-                        <a href="#">UA</a>
+                        <div className='nav_block'>
+                            <input type="text" class="placeicon" placeholder='&#xf002;    пошук новин' />
+                            <div className='social_logo'>
+                                <a href="#"><i class="fa-brands fa-telegram"></i></a>
+                                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                                <a href="#"><i class="fa-brands fa-square-instagram"></i></a>
+                                <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                            </div>
+                            <div className='languages'>
+                                <a href="#">RU</a>
+                                <a className="languages_active" href="#">UA</a>
+                            </div>
+                        </div>
                     </div>
                 </Row>
                 <Row>
                     <div className='navbar__bottom'>
-                        <ul>
-                            <li><a href="#">ВІЙНА</a></li>
+                        <ul className="navbar__bottom__list">
+                            <li><img src={fire} alt="active" /><a href="#">ВІЙНА</a></li>
                             <li><a href="#">НОВИНИ</a></li>
                             <li><a href="#">ПОЛІТИКА</a></li>
                             <li><a href="#">ЕКОНОМІКА</a></li>
                             <li><a href="#">СУСПІЛЬСТВО</a></li>
                             <li><a href="#">ПОГЛЯДИ</a></li>
                             <li><a href="#">СВІТ</a></li>
-                            <li><a href="#">LIVE</a></li>
                         </ul>
+                        <div className='circle'></div>
+                        <a className="live" href="#">LIVE</a>
                     </div>
                 </Row>
             </nav>
