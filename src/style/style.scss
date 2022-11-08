@@ -10,4 +10,7 @@
 
 .container {
     --bs-gutter-x: 0;
+    &-fluid {
+        --bs-gutter-x: 0;
+    }
 }

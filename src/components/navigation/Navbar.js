@@ -6,7 +6,7 @@ import fire from "../../resources/icons/navbarIcons/fireNav.svg";
 
 const Navbar = () => {
     return (
-        <Container>
+        <Container fluid>
             <div className='navbar__top'>
                 <button className='menu'>
                     <div className="menu_icon"></div>Меню</button>
@@ -43,7 +43,8 @@ const Navbar = () => {
             </div>
             <div className='navbar__bottom'>
                 <ul className="navbar__bottom__list">
-                    <li><a href="/war"> <img src={fire} alt="active" />ВІЙНА</a></li>
+                    <img src={fire} alt="active" />
+                    <li><a href="/war">ВІЙНА</a></li>
                     <li><a href="/news">НОВИНИ</a></li>
                     <li><a href="/politic">ПОЛІТИКА</a></li>
                     <li><a href="/economic">ЕКОНОМІКА</a></li>

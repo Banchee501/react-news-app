@@ -1,7 +1,6 @@
 @import '../../style/style.scss';
 
 .navbar__top {
-    width: 100%;
     margin: 24px 64px;
     display: flex;
     align-items:baseline;
@@ -120,13 +119,12 @@
     display: flex;
     margin: 12px 64px 16px;
     font-family: Severs-DemiBold;
+    font-size: 14px;
     align-items: baseline;
-    overflow: scroll;
     &__list {
         display: inline-flex;
-        align-items:baseline;
         img {
-            vertical-align: middle;
+            display: flex;
             height: 17.27px;
             padding: 0px 10.81px 0px 3.81px;
         }    
@@ -138,7 +136,6 @@
     }
     .circle{
         display: flex;
-        justify-content: flex-end;
         margin-left: auto;
         background:#E04646;
         border: 3.5px solid #ff8e8e;

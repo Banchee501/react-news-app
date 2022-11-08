@@ -25,9 +25,11 @@
     background-color: rgb(18, 27, 48);
     color: white;
     align-items: center;
+    margin-bottom: 0;
+    padding: 6px 0;
     li {
         font-family: Severs-Regular;
-        padding: 40px;
+        padding: 0 40px;
         display: inline-block;
         img {
             padding-right: 16px;

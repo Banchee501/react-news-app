@@ -22,7 +22,7 @@ const Statistics = () => {
     const afv = 0;
 
     return (
-        <Container>
+        <Container fluid>
             <div className='statistics_day'>
                 {day} день війни:</div>
             <Container fluid >
