@@ -1,4 +1,4 @@
-import { Container, Row } from 'react-bootstrap';
+import { Container, Row, Dropdown } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import './navbar.scss'
 import fire from "../../resources/icons/navbarIcons/fireNav.svg";
@@ -24,8 +24,8 @@ const Navbar = () => {
                             <a href="https://www.youtube.com/" target="_blank" rel="noreferrer"><i class="fa-brands fa-youtube"></i></a>
                         </div>
                         <div className='languages'>
-                            <a href="/ru">RU</a>
                             <a className="languages_active" href="/ua">UA</a>
+                            <a href="/ru">RU</a>
                         </div>
                     </div>
                 </div>

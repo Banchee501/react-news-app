@@ -1,4 +1,5 @@
 import { Container } from 'react-bootstrap';
+import Marquee from "react-fast-marquee";
 
 import soldierIcon from "../../resources/icons/navbarIcons/soldier.png";
 import tanksIcon from "../../resources/icons/navbarIcons/tanks.png";
@@ -22,9 +23,9 @@ const Statistics = () => {
 
     return (
         <Container>
-            <div className='statistics'>
-                <div className='statistics_day'>
-                    {day} день війни:</div>
+            <div className='statistics_day'>
+                {day} день війни:</div>
+            <Marquee gradient={false}>
                 <ul className='statistics_list'>
                     <li><img src={soldierIcon} alt="soldier" />особовий склад <span>~{soldier}</span></li>
                     <li><img src={tanksIcon} alt="tanks" />танки <span>{tanks}</span></li>
@@ -34,7 +35,7 @@ const Statistics = () => {
                     <li><img src={helicopterIcon} alt="helicopter" />гелікоптери <span>{helicopter}</span></li>
                     <li><img src={afvIcon} alt="afv" />ББМ <span>{afv}</span></li>
                 </ul>
-            </div>
+            </Marquee>
         </Container>
     )
 }
