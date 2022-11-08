@@ -3,14 +3,13 @@
 .statistics {
     display: flex;
     position: relative;
-    
 }
 
 .statistics_day {
     position: absolute;
     z-index:  100;
     display: flex;
-    width: 105px;
+    width: 233px;
     height: 32px;
     background: linear-gradient(90deg, #121B30 84.29%, rgba(18, 27, 48, 0) 100%);
     color: white;
@@ -28,12 +27,11 @@
     align-items: center;
     li {
         font-family: Severs-Regular;
-        padding: 121px;
+        padding: 40px;
         display: inline-block;
         img {
             padding-right: 16px;
             display: inline-block;
-            vertical-align: middle;
         }
     }
 }

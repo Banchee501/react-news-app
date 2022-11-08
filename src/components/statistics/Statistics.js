@@ -25,17 +25,19 @@ const Statistics = () => {
         <Container>
             <div className='statistics_day'>
                 {day} день війни:</div>
-            <Marquee gradient={false}>
-                <ul className='statistics_list'>
-                    <li><img src={soldierIcon} alt="soldier" />особовий склад <span>~{soldier}</span></li>
-                    <li><img src={tanksIcon} alt="tanks" />танки <span>{tanks}</span></li>
-                    <li><img src={artileryIcon} alt="artilery" />артсистеми <span>{artilery}</span></li>
-                    <li><img src={aircraftIcon} alt="aircraft" />літаки <span>{aircraft}</span></li>
-                    <li><img src={mlrsIcon} alt="mlrs" />РСЗВ <span>{mlrs}</span></li>
-                    <li><img src={helicopterIcon} alt="helicopter" />гелікоптери <span>{helicopter}</span></li>
-                    <li><img src={afvIcon} alt="afv" />ББМ <span>{afv}</span></li>
-                </ul>
-            </Marquee>
+            <Container fluid >
+                <Marquee gradient={false}>
+                    <ul className='statistics_list'>
+                        <li><img src={soldierIcon} alt="soldier" />особовий склад <span>~{soldier}</span></li>
+                        <li><img src={tanksIcon} alt="tanks" />танки <span>{tanks}</span></li>
+                        <li><img src={artileryIcon} alt="artilery" />артсистеми <span>{artilery}</span></li>
+                        <li><img src={aircraftIcon} alt="aircraft" />літаки <span>{aircraft}</span></li>
+                        <li><img src={mlrsIcon} alt="mlrs" />РСЗВ <span>{mlrs}</span></li>
+                        <li><img src={helicopterIcon} alt="helicopter" />гелікоптери <span>{helicopter}</span></li>
+                        <li><img src={afvIcon} alt="afv" />ББМ <span>{afv}</span></li>
+                    </ul>
+                </Marquee>
+            </Container>
         </Container>
     )
 }

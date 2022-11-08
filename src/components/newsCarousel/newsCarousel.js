@@ -1,8 +1,6 @@
 import React from 'react';
 import { Container, Carousel } from 'react-bootstrap';
 
-import 'bootstrap/dist/css/bootstrap.min.css';
-
 import firstSlide from "../../resources/img/firstSlide.jpg";
 // import secondSlide from "../../resources/img/secondSlide.png";
 // import thirdSlide from "../../resources/img/thirdSlide.png";
@@ -10,7 +8,7 @@ import firstSlide from "../../resources/img/firstSlide.jpg";
 
 const newsCarousel = () => {
     return (
-        <>
+        <Container fluid>
             <Carousel>
                 <Carousel.Item>
                     <img
@@ -23,7 +21,7 @@ const newsCarousel = () => {
                     </Carousel.Caption>
                 </Carousel.Item>
             </Carousel>
-        </>
+        </Container>
     );
 }
 
