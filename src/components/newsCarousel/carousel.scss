@@ -3,3 +3,63 @@
 .slide_item {
     width: 100%;
 }
+
+.carousel-indicators {
+    width: 1312px;
+    overflow: hidden;
+    margin-left: 0;
+    left: 64px;
+}
+
+.carousel-indicators [data-bs-target] {
+    width: 304px;
+    height: 80px;
+    border-radius: 12px;
+    padding: 0;
+    background-color: rgba(255, 255, 255, 0.16);
+    margin-right: 32px;
+    margin-left: 0;
+    .active {
+        opacity: 0.32;
+    }
+}
+
+.carousel-caption {
+    width: 752px;
+    height: 192px;
+    bottom: 224px;
+    left: 64px;
+    right: auto;
+    font-family: Severs-Bold;
+    font-weight: 700;
+    font-size: 40px;
+    text-align: left;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.carousel-control-prev-icon {
+    background-image: url(../../resources/icons/slider-left-arrows.svg);
+}
+
+.carousel-control-prev {
+    width: 40px;
+    height: 40px;
+    top: 454px;
+    left: 64px;
+    z-index: 1;
+    color:white;
+}
+
+.carousel-control-next-icon {
+    background-image: url(../../resources/icons/slider-right-arrows.svg);
+}
+
+.carousel-control-next {
+    width: 40px;
+    height: 40px;
+    top: 454px;
+    z-index: 1;
+    color:white;
+    left: 187px;
+}
