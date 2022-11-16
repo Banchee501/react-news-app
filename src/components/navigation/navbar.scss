@@ -110,8 +110,9 @@
     display: flex;
     margin: 12px 64px 16px;
     font-family: Severs-DemiBold;
-    align-items: stretch;
+    align-items: baseline;
     &-list {
+        align-items: baseline;
         .active_link {
             img {
                 display: flex;
@@ -121,14 +122,16 @@
         }
         &-live {
             display: flex;
-            margin-right: 0px;
+            color: $blue;
         }  
     }
-
-    a {
-        color: $blue;
-        margin-right: 40px;
+    &-link {
+        a {
+            color: $blue;
+            margin-right: 40px;
+        }
     }
+
     .circle{
         display: flex;
         margin-left: auto;
@@ -138,6 +141,7 @@
         height: 12px;
         width: 12px;
         margin-right: 12px;
+        padding-left: 5px;
     }
 }
 

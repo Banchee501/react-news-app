@@ -7,7 +7,7 @@ import fire from "../../resources/icons/navbarIcons/fireNav.svg";
 const Navbar = () => {
     return (
         <Container>
-            <nav>
+            <navigation>
                 <div className='nav'>
                     <button className='nav__hamburger'>
                         <div className="nav__hamburger-icon"></div>Меню</button>
@@ -45,18 +45,18 @@ const Navbar = () => {
                 <div className='fz14 nav__bottom'>
                     <ul className="nav__bottom-list">
                         <div className='active_link'><img src={fire} alt="active" /></div>
-                        <li><a href="/war">ВІЙНА</a></li>
-                        <li><a href="/news">НОВИНИ</a></li>
-                        <li><a href="/politic">ПОЛІТИКА</a></li>
-                        <li><a href="/economic">ЕКОНОМІКА</a></li>
-                        <li><a href="/society">СУСПІЛЬСТВО</a></li>
-                        <li><a href="/views">ПОГЛЯДИ</a></li>
-                        <li><a href="/world">СВІТ</a></li>
+                        <li className="nav__bottom-link"><a href="/war">ВІЙНА</a></li>
+                        <li className="nav__bottom-link"><a href="/news">НОВИНИ</a></li>
+                        <li className="nav__bottom-link"><a href="/politic">ПОЛІТИКА</a></li>
+                        <li className="nav__bottom-link"><a href="/economic">ЕКОНОМІКА</a></li>
+                        <li className="nav__bottom-link"><a href="/society">СУСПІЛЬСТВО</a></li>
+                        <li className="nav__bottom-link"><a href="/views">ПОГЛЯДИ</a></li>
+                        <li className="nav__bottom-link"><a href="/world">СВІТ</a></li>
                     </ul>
                     <div className='circle'></div>
                     <a className="nav__bottom-list-live" href="/live">LIVE</a>
                 </div>
-            </nav>
+            </navigation>
         </Container>
     )
 }

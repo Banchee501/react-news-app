@@ -18,21 +18,46 @@
             align-items:baseline;
             margin-left: auto;
         }
-    }
-    .nav__bottom {
-    overflow-y: scroll;
+        &__bottom {
+            overflow-y: scroll;
         }
     }
+}
+
 @media (max-width: 767px) {
     .nav {
         margin: 24px 24px;
+        &__bottom {
+            overflow-y: scroll;
+            margin: 12px 24px 16px;
+            }
+        }
+    .statistics {
+        &__day {
+            padding: 0 24px;
+            width: 138px;
+        }
+        .fz14 {
+            font-size: 12px;
+        }
     }
+}
 
-    .nav__bottom {
-    overflow-y: scroll;
-    margin: 12px 24px 16px;
-    }
-    .statistics_day {
-    padding: 0 24px;
+@media (max-width: 374px) {
+    .nav {
+        margin: 16px 24px;
+        &__hamburger {
+            font-size: 14px;
+            width: 93px;
+            height: 32px;
+            &-icon {
+                &::before {
+                    width: 15px;
+                }
+                &::after {
+                    width: 11px;
+                }
+            }
+        }
     }
 }
