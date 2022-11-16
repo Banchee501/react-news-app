@@ -1,5 +1,12 @@
 @import '../../style/style.scss';
 
+.container {
+    width: 100%;
+    &__fluid {
+         width: 100%;
+    }
+}
+
 .statistics {
     display: flex;
     position: relative;

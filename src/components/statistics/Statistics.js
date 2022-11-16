@@ -1,4 +1,3 @@
-import { Container } from 'react-bootstrap';
 import Marquee from "react-fast-marquee";
 
 import soldierIcon from "../../resources/icons/navbarIcons/soldier.png";
@@ -22,11 +21,11 @@ const Statistics = () => {
     const afv = 0;
 
     return (
-        <Container>
+        <div className="container">
             <div className='statistics'>
                 <div className='fz14 statistics__day'>
                     {day} день війни:</div>
-                <Container fluid>
+                <div className="container__fluid">
                     <Marquee gradient={false}>
                         <ul className='fz14 statistics__list'>
                             <li><img src={soldierIcon} alt="soldier" />особовий склад <span>~{soldier}</span></li>
@@ -38,9 +37,9 @@ const Statistics = () => {
                             <li><img src={afvIcon} alt="afv" />ББМ <span>{afv}</span></li>
                         </ul>
                     </Marquee>
-                </Container>
+                </div>
             </div>
-        </Container>
+        </div>
     )
 }
 

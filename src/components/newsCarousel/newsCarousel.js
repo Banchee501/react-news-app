@@ -14,7 +14,7 @@ const newsCarousel = () => {
             <Carousel>
                 <Carousel.Item>
                     <img
-                        className=""
+                        id='1'
                         src={firstSlide}
                         alt="First slide"
                     />
