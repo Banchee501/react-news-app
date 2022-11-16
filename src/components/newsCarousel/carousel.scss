@@ -5,10 +5,12 @@
 }
 
 .carousel-indicators {
-    width: 1312px;
+    width: 100%;
     overflow: hidden;
     margin-left: 0;
+    margin-right: 0;
     left: 64px;
+    display: block;
 }
 
 .carousel-indicators [data-bs-target] {
@@ -62,4 +64,10 @@
     z-index: 1;
     color:white;
     left: 187px;
+}
+
+.Block {
+    width: 100px;
+    height: 100px;
+    background-color: black;
 }

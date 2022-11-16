@@ -1,20 +1,19 @@
 @import '../../style/style.scss';
 
-.navbar__top {
+.nav {
     margin: 24px 64px;
-    display: flex;
-    align-items:baseline;
+    align-items: baseline;
     height: 35px;
-    .menu {
+    &__hamburger {
         justify-content: flex-start;
         font-family: Severs-Medium;
-        font-size: medium;
+        font-size: 16px;
         width: 106px;
         height: 35px;
         background: #F7F7F7;
         border-radius: 4px;
         border: 0px;
-        &_icon {
+        &-icon {
             display: inline-block;
             margin: auto;
             &::before {
@@ -33,64 +32,57 @@
                 background-color: $dark_blue;
             }
         }
-        &_cities {
+    }
+    &__cities {
             display: flex;
             font-family: Severs-DemiBold;
             a {
-                text-decoration: none;
                 margin: 0 32px;
                 color: $dark_blue;
             }
         }
-    }
-
-    
-    .nav_block {
-        display: flex;
-        justify-content: flex-end;
-        align-items: center;
-        margin-left: auto;
-    }
-
-    .social_logo {
-        display: flex;
-        margin-left: 22px;
-        border-right: 1px solid black;
-        padding-right: 16px;
-        a {
-            padding: 0 16px;
-            color: $grey;
+        &__panel {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            margin-left: auto;
+            input {
+                display: flex;
+                width: 266px;
+                height: 37px;
+                border-radius: 68px;
+                border-color: #F7F7F7;
+                background-color: #F7F7F7;
+                border: 0px;
+                margin: 0 auto;
+                padding-left: 16px;
+            }
+            .placeicon {
+                font-family: fontawesome;
+            }
+            &-logo {
+                display: flex;
+                margin-left: 22px;
+                border-right: 1px solid black;
+                padding-right: 16px;
+                a {
+                    padding: 0 16px;
+                    color: $grey;
+                }
+            }
+            &-languages {
+                display: flex;
+                justify-content: flex-end;
+                margin-left: 22px;
+                font-family: Severs-Medium;
+                a {
+                    padding-left: 16px;
+                    color: $grey;
+                }
+            }
         }
-    }
-    
-    input {
-        display: flex;
-        width: 266px;
-        height: 37px;
-        border-radius: 68px;
-        border-color: #F7F7F7;
-        background-color: #F7F7F7;
-        border: 0px;
-        margin: 0 auto;
-        padding-left: 16px;
-    }
-    .placeicon {
-        font-family: fontawesome;
-    }
-    
-    .languages {
-        display: flex;
-        justify-content: flex-end;
-        margin-left: 22px;
-        font-family: Severs-Medium;
-        a {
-            padding-left: 16px;
-            text-decoration: none;
-            color: $grey;
-        }
-    }
 
-    .hide_show {
+    .active {
         display: none;
     }
 
@@ -113,23 +105,27 @@
     }
 }
 
-.navbar__bottom {
+.nav__bottom {
     height: 21px;
     display: flex;
     margin: 12px 64px 16px;
     font-family: Severs-DemiBold;
-    font-size: 14px;
-    align-items: baseline;
-    &__list {
-        display: inline-flex;
-        img {
+    align-items: stretch;
+    &-list {
+        .active_link {
+            img {
+                display: flex;
+                height: 17.27px;
+                padding: 0px 10.81px 0px 3.81px;
+            }
+        }
+        &-live {
             display: flex;
-            height: 17.27px;
-            padding: 0px 10.81px 0px 3.81px;
-        }    
+            margin-right: 0px;
+        }  
     }
+
     a {
-        text-decoration: none;
         color: $blue;
         margin-right: 40px;
     }
@@ -142,12 +138,6 @@
         height: 12px;
         width: 12px;
         margin-right: 12px;
-    }
-    .live {
-        display: flex;
-        justify-content: flex-end;
-        margin-left: 0px;
-        margin-right: 0px;
     }
 }
 

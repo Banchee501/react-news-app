@@ -10,38 +10,8 @@ import firstSlide from "../../resources/img/firstSlide.jpg";
 
 const newsCarousel = () => {
     return (
-        <Container fluid>
+        <Container>
             <Carousel>
-                <Carousel.Item>
-                    <img
-                        className=""
-                        src={firstSlide}
-                        alt="First slide"
-                    />
-                    <Carousel.Caption>
-                        Андрій Єрмак: «В нас інші прізвища, ніж у творців Мінських угод. Людей, які б таке допускали, в нашій команді немає»
-                    </Carousel.Caption>
-                </Carousel.Item>
-                <Carousel.Item>
-                    <img
-                        className=""
-                        src={firstSlide}
-                        alt="First slide"
-                    />
-                    <Carousel.Caption>
-                        Андрій Єрмак: «В нас інші прізвища, ніж у творців Мінських угод. Людей, які б таке допускали, в нашій команді немає»
-                    </Carousel.Caption>
-                </Carousel.Item>
-                <Carousel.Item>
-                    <img
-                        className=""
-                        src={firstSlide}
-                        alt="First slide"
-                    />
-                    <Carousel.Caption>
-                        Андрій Єрмак: «В нас інші прізвища, ніж у творців Мінських угод. Людей, які б таке допускали, в нашій команді немає»
-                    </Carousel.Caption>
-                </Carousel.Item>
                 <Carousel.Item>
                     <img
                         className=""

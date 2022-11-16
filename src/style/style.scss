@@ -1,6 +1,7 @@
 @import './variables.scss';
 @import './media.scss';
 @import './fonts.scss';
+@import './fontsSize.scss';
 @import 'bootstrap/dist/css/bootstrap.min.css';
 
 * {
@@ -17,4 +18,8 @@
 
 body {
     line-height:normal;
+}
+
+ a {
+    text-decoration: none;
 }

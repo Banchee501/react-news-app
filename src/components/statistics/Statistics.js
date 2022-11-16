@@ -22,13 +22,13 @@ const Statistics = () => {
     const afv = 0;
 
     return (
-        <Container fluid>
+        <Container>
             <div className='statistics_day'>
                 {day} день війни:</div>
             <Container fluid >
                 <Marquee gradient={false}>
                     <ul className='statistics_list'>
-                        <li><img src={soldierIcon} alt="soldier" />особовий склад <span>~{soldier}</span></li>
+                        <li><img src={soldierIcon} alt="soldier"/>особовий склад <span>~{soldier}</span></li>
                         <li><img src={tanksIcon} alt="tanks" />танки <span>{tanks}</span></li>
                         <li><img src={artileryIcon} alt="artilery" />артсистеми <span>{artilery}</span></li>
                         <li><img src={aircraftIcon} alt="aircraft" />літаки <span>{aircraft}</span></li>

@@ -1,6 +1,7 @@
 import Navbar from '../navigation/Navbar';
 import Statistics from '../statistics/Statistics';
 import SimpleSlider from '../newsCarousel/newsCarousel';
+import NewsFeed from '../editorialChoice/editorialChoice';
 
 const App = () => {
   return (
@@ -8,6 +9,7 @@ const App = () => {
       <Navbar />
       <Statistics />
       <SimpleSlider />
+      <NewsFeed />
     </div>
   );
 }

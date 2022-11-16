@@ -1,24 +1,38 @@
-@media (max-width: 1400px) {
-    .navbar__top {
-        margin: 24px 24px;
-        .menu_cities {
+@media (max-width: 2560px) {
+    .container {
+        max-width: 1440px;
+    }
+}
+
+@media (max-width: 1170px) {
+    .nav {
+        &__cities {
             display:none;
         }
-        .nav_block {
+        &__panel {
             display: none;
         }
-        .hide_show {
+        .active {
             display: flex;
             justify-content: flex-end;
             align-items:baseline;
             margin-left: auto;
         }
     }
-    .navbar__bottom {
+    .nav__bottom {
+    overflow-y: scroll;
+        }
+    }
+@media (max-width: 767px) {
+    .nav {
+        margin: 24px 24px;
+    }
+
+    .nav__bottom {
     overflow-y: scroll;
     margin: 12px 24px 16px;
     }
     .statistics_day {
     padding: 0 24px;
-}
+    }
 }
