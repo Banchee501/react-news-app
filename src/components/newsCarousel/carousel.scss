@@ -9,14 +9,17 @@
         object-fit: cover;
         width: 100%;
         height: 100%;
+        img {
+            object-fit:cover;
+        }
     }
     &-indicators {
         width: 100%;
         overflow: hidden;
         margin-left: 0;
         margin-right: 0;
-        left: 64px;
         display: block;
+        left: 64px;
     }
     &-indicators [data-bs-target] {
         width: 304px;
@@ -26,6 +29,7 @@
         background-color: rgba(255, 255, 255, 0.16);
         margin-right: 32px;
         margin-left: 0;
+        background-clip: border-box;
             .active {
                 opacity: 0.32;
             }

@@ -1,10 +1,14 @@
 @media (max-width: 2560px) {
     .container {
         max-width: 1440px;
+        margin-left: auto;
     }
 }
 
 @media (max-width: 1170px) {
+    .container {
+        width: 100%;
+    }
     .nav {
         &__cities {
             display:none;
@@ -19,17 +23,47 @@
             margin-left: auto;
         }
         &__bottom {
+            height: auto;
             overflow-y: scroll;
+        }
+    }
+    .carousel {
+        &-control {
+            &-next {
+                display: none;
+            }
+            &-prev {
+                display: none;
+            }
+        }
+        .fz40 {
+                font-size: 30px;
+            }
+        &-caption {
+            top: 242px;
+            left: 64px;
+            height: 130px;
+            text-align: left;
+            width: 75%;
+        }
+        &-indicators {
+            margin-top: 24px;
+        }
+        &-inner {
+            img {
+                height: 500px;
+                width: 100%;
+            }
         }
     }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 769px) {
     .nav {
         margin: 24px 24px;
         &__bottom {
             overflow-y: scroll;
-            margin: 12px 24px 16px;
+            margin: 12px 24px 0px 24px;
             }
         }
     .statistics {
@@ -41,9 +75,21 @@
             font-size: 12px;
         }
     }
+    .carousel {
+        .fz40 {
+            font-size: 28px;
+        }
+        &-caption {
+            width: 90%;
+            left: 24px;
+        }
+        &-indicators {
+            left: 24px;
+        }
+    }
 }
 
-@media (max-width: 374px) {
+@media (max-width: 376px) {
     .nav {
         margin: 16px 24px;
         &__hamburger {
@@ -57,6 +103,29 @@
                 &::after {
                     width: 11px;
                 }
+            }
+        }
+    }
+    .carousel {
+        height: 489px;
+        .fz40 {
+            font-size: 24px;
+        }
+        &-caption {
+            top: 242px;
+            left: 24px;
+            width: 328px;
+            height: 118px;
+            font-size: 24px;
+            text-align: left;
+        }
+        &-indicators {
+            left: 24px;
+            margin-top: 24px;
+        }
+        &-inner {
+            img {
+                height: 489px;
             }
         }
     }

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Carousel } from 'react-bootstrap';
+import { Carousel } from 'react-bootstrap';
 
 import './carousel.scss';
 
@@ -10,7 +10,7 @@ import firstSlide from "../../resources/img/firstSlide.jpg";
 
 const newsCarousel = () => {
     return (
-        <Container>
+        <div className='container'>
             <Carousel>
                 <Carousel.Item>
                     <img
@@ -18,12 +18,12 @@ const newsCarousel = () => {
                         src={firstSlide}
                         alt="First slide"
                     />
-                    <Carousel.Caption>
+                    <Carousel.Caption className="fz40">
                         Андрій Єрмак: «В нас інші прізвища, ніж у творців Мінських угод. Людей, які б таке допускали, в нашій команді немає»
                     </Carousel.Caption>
                 </Carousel.Item>
             </Carousel>
-        </Container>
+        </div>
     );
 }
 
