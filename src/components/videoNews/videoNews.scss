@@ -1,0 +1,38 @@
+
+.video {
+    height: 787px;
+    background: url('../../resources/img/videomain.jpg') no-repeat 50%/cover;
+    color: white;
+    .title {
+        display: flex;
+        justify-content: space-between;
+        padding: 56px 64px 25px 64px;
+        color: white;
+        .more_news {
+            text-align: left;
+            border: none;
+            color: inherit;
+            background-color: transparent;
+            cursor: pointer;
+            align-items: end;
+            svg {
+                margin-left: 16px;
+            }
+        }
+    }
+    &__news {
+        display: grid;
+        grid-template-columns: 640px repeat(2, 304px);
+        gap: 32px;
+        &-data {
+            font-family: Severs-Regular;
+        }
+        &-main {
+            display: grid;
+            grid-template-rows: 360px 125px;
+            &-content {
+
+            }
+        }
+    }
+}

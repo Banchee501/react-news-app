@@ -21,3 +21,19 @@
 .fz12 {
     font-size: 12px;
 }
+
+.title {
+    color: $dark_blue;
+    &_fz32 {
+        font-family: Severs-Bold;
+        font-size: 32px;
+        font-weight: 700;
+        line-height: 42px;
+    }
+    &_fz24 {
+        font-family: Severs-DemiBold;
+        font-size: 24px;
+        font-weight: 600;
+        line-height: 34px;
+    }
+}
