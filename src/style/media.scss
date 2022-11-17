@@ -5,7 +5,20 @@
     }
 }
 
-@media (max-width: 1170px) {
+@media (max-width: 1439px) {
+    .news {
+        &__choice {
+            &-items {
+                grid-template-columns: repeat(auto-fit, 329px);
+            }
+        }
+        &__cities {
+            overflow-y: hidden;
+        }
+    }
+}
+
+@media (max-width: 1200px) {
     .container {
         width: 100%;
     }
@@ -41,13 +54,13 @@
             }
         &-caption {
             top: 242px;
-            left: 64px;
             height: 130px;
             text-align: left;
             width: 75%;
         }
         &-indicators {
             margin-top: 24px;
+            bottom: 25px;
         }
         &-inner {
             img {
@@ -78,13 +91,42 @@
     .carousel {
         .fz40 {
             font-size: 28px;
+            line-height: 28px;
         }
         &-caption {
             width: 90%;
             left: 24px;
+            bottom: 128px;
         }
         &-indicators {
-            left: 24px;
+            margin: 0 24px;
+        }
+    }
+    .news {
+        background-color: white;
+        grid-template-columns: repeat(auto-fit, 328px);
+        padding-top: 40px;
+        justify-content: center;
+        &__all {
+            margin-left: 0;
+            padding: 0;
+            height: auto;
+        }
+        &__block {
+            background: #F6F6F6;
+            margin-top: 40px;
+        }
+        &__choice-item {
+            .fz16 {
+                font-size: 22px;
+            }
+            img {
+                width: 328px;
+                height: 184px;
+            }
+        }
+        &__city {
+            
         }
     }
 }
@@ -112,15 +154,13 @@
             font-size: 24px;
         }
         &-caption {
-            top: 242px;
             left: 24px;
             width: 328px;
             height: 118px;
-            font-size: 24px;
             text-align: left;
         }
         &-indicators {
-            left: 24px;
+            margin: 0 24px;
             margin-top: 24px;
         }
         &-inner {

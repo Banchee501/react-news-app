@@ -14,19 +14,23 @@
         }
     }
     &-indicators {
-        width: 100%;
-        overflow: hidden;
+        overflow-y: hidden;
         margin-left: 0;
         margin-right: 0;
-        display: block;
-        left: 64px;
+        display: grid;
+        grid-template-columns: repeat(4, 304px);
+        column-gap: 32px;
+        justify-content: flex-start;
+        margin: 0 64px;
+        bottom: 56px;
     }
     &-indicators [data-bs-target] {
         width: 304px;
         height: 80px;
         border-radius: 12px;
         padding: 0;
-        background-color: rgba(255, 255, 255, 0.16);
+        background-color: rgba(255, 255, 255, 0.33);
+        box-shadow: 0px 6px 16px rgba(0, 0, 0, 0.16);
         margin-right: 32px;
         margin-left: 0;
         background-clip: border-box;
@@ -37,12 +41,11 @@
     &-caption {
         width: 752px;
         height: 192px;
-        bottom: 224px;
+        top: 224px;
         left: 64px;
         right: auto;
         font-family: Severs-Bold;
         font-weight: 700;
-        font-size: 40px;
         text-align: left;
         padding-top: 0;
         padding-bottom: 0;
@@ -51,7 +54,7 @@
         &-prev {
             width: 40px;
             height: 40px;
-            top: 454px;
+            top: 424px;
             left: 64px;
             z-index: 1;
             color:white;
@@ -62,7 +65,7 @@
         &-next {
             width: 40px;
             height: 40px;
-            top: 454px;
+            top: 424px;
             z-index: 1;
             color:white;
             left: 187px;
@@ -71,10 +74,4 @@
             }    
         }
     }
-}
-
-.Block {
-    width: 100px;
-    height: 100px;
-    background-color: black;
 }
