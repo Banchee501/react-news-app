@@ -9,7 +9,7 @@ const Navbar = () => {
         <nav>
             <div className='container'>
                 <div className='nav'>
-                    <button className='nav__hamburger'>
+                    <button className='fz16 nav__hamburger'>
                         <div className="nav__hamburger-icon"></div>Меню</button>
                     <ul className='fz14 nav__cities'>
                         <li><Link to="/kiev">Київ</Link></li>

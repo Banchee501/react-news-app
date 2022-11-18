@@ -1,8 +1,18 @@
 
 .video {
     height: 787px;
-    background: url('../../resources/img/videomain.jpg') no-repeat 50%/cover;
+    background: linear-gradient(to top, rgba(24, 40, 64, 0.95), rgba(21, 35, 56, 0.5)), url(
+ '../../resources/img/videomain.jpg') no-repeat 50%/cover;
     color: white;
+    button {
+        border: none;
+        color: inherit;
+        background-color: transparent;
+        cursor: pointer;
+    }
+    // img {
+        // background: linear-gradient(to top, rgba(24, 40, 64, 0.95), rgba(21, 35, 56, 0.5));
+    // }
     .title {
         display: flex;
         justify-content: space-between;
@@ -10,10 +20,6 @@
         color: white;
         .more_news {
             text-align: left;
-            border: none;
-            color: inherit;
-            background-color: transparent;
-            cursor: pointer;
             align-items: end;
             svg {
                 margin-left: 16px;
@@ -22,16 +28,55 @@
     }
     &__news {
         display: grid;
-        grid-template-columns: 640px repeat(2, 304px);
+        grid-template-columns: 1fr 1fr;
         gap: 32px;
+        margin: 25px 64px 112px 64px;
+        &-items {
+            display: grid;
+            grid-template: repeat(2, 260px) / repeat(2, 304px);
+            gap: 32px;
+        }
+        &-item {
+                img {
+                    width: 308px;
+                    padding-bottom: 8px;
+                }
+                button {
+                    svg {
+                        height: 20px;
+                        width: 20px;
+                        opacity: .6;
+                    }   
+                    position: absolute;
+                    padding-left: 8px;
+                    padding-top: 143px;
+                }
+            }
         &-data {
             font-family: Severs-Regular;
         }
+        &-content {
+            padding-top: 8px;
+            font-family: Severs-DemiBold;
+        }
         &-main {
-            display: grid;
-            grid-template-rows: 360px 125px;
-            &-content {
-
+            img {
+                padding-bottom: 32px;
+                width: 100%;
+            }
+            .video__news {
+                &-content {
+                padding: 24px 0 35px 0;
+            }
+        }
+            button {
+                position: absolute;
+                padding-left: 16px;
+                padding-top: 298px;
+                        svg {
+                        height: 40px;
+                        width: 40px;
+                    }   
             }
         }
     }
