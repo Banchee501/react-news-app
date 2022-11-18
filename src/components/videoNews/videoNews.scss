@@ -1,3 +1,4 @@
+@import '../../style/style.scss';
 
 .video {
     height: 787px;
@@ -31,6 +32,7 @@
         grid-template-columns: 1fr 1fr;
         gap: 32px;
         margin: 25px 64px 112px 64px;
+        justify-content: center;
         &-items {
             display: grid;
             grid-template: repeat(2, 260px) / repeat(2, 304px);

@@ -32,15 +32,20 @@
                     padding-top: 8px;
                     }
                     &-item {
+                         button {
+                        padding-left: 8px;
+                        padding-top: 143px;
+                            svg {
+                            height: 20px;
+                            width: 20px;
+                            opacity: .6;
+                        }
+                }
                         img {
                             padding-bottom: 8px;
                             width: 326px;
                         }
                     }
-                }
-                button {
-                    padding-left: 8px;
-                    padding-top: 143px;
                 }
             }
             &-items {
