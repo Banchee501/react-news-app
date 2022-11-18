@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 
-import './editorialChoice.scss'
+import './editorialChoice.scss';
 
 import newsImage from "../../resources/img/image.jpg";
 

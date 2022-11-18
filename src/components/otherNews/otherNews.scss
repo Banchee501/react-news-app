@@ -1,0 +1,61 @@
+@import '../../style/style.scss';
+
+.news {
+    background-color: #F6F6F6;
+    display: grid;
+    grid-template-columns: minmax(auto, 368px) minmax(auto, 976px);
+    column-gap: 32px;
+    justify-content: start;
+    padding-top: 64px;
+    padding-bottom: 32px;
+    &__col {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        border-radius: 12px;
+        background-color: white;
+        margin-left: 64px;
+        padding: 16px 16px 24px 16px;
+        &-list {
+            .news__all{
+                &-head {
+                    display: grid;
+                    grid-template-columns: repeat(2, auto);
+                    justify-content: space-between;
+                    align-items: center;
+                    a {
+                        color: $dark_blue;
+                        font-family: Severs-DemiBold;
+                        border-bottom: 1px solid $dark_blue;
+                    }
+                }
+                &-item {
+                    }
+                }
+            }
+        }
+        .load__more {
+            width: 272px;
+            height: 38px;
+            border: 1px solid #979EA9;
+            border-radius: 4px;
+            background-color: white;
+            svg {
+                margin-right: 8px;
+            }
+        }
+    &__politics {
+        display: grid;
+        row-gap: 32px;
+        border-radius: 12px;
+        background-color: white;
+        &-head {
+            display: flex;
+            justify-content: space-between;
+            a {
+                    color: $orange;
+                    font-weight: 600;
+            }
+        }
+    }
+}
