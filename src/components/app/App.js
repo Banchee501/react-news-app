@@ -4,6 +4,7 @@ import SimpleSlider from '../newsCarousel/NewsCarousel';
 import NewsFeed from '../editorialChoice/EditorialChoice';
 import VideoNews from '../videoNews/VideoNews';
 import Politics from '../otherNews/OtherNews';
+import Footer from '../footer/Footer';
 
 const App = () => {
   return (
@@ -14,6 +15,7 @@ const App = () => {
       <NewsFeed />
       <VideoNews />
       <Politics />
+      <Footer />
     </div>
   );
 }
