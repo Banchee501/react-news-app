@@ -53,42 +53,42 @@ const NewsFeed = () => {
                         <div className='news__choice-items'>
                             <div className="news__choice-item">
                                 <img src={newsImage} alt="news" />
-                                <div className='fz12 date'>05 серпня 11:00</div>
+                                <div className='fz12 date'>05 СЕРПНЯ 11:00</div>
                                 <div className="fz16 content">
                                     Селезньов розповів, навіщо росіяни спустошують склади боєприпасів у Білорусі.
                                 </div>
                             </div>
                             <div className="news__choice-item">
                                 <img src={newsImage} alt="news" />
-                                <div className='fz12 date'>05 серпня 11:00</div>
+                                <div className='fz12 date'>05 СЕРПНЯ 11:00</div>
                                 <div className="fz16 content">
                                     Генерал Романенко оцінив бойовий потенціал і спроможності ворога на півдні України.
                                 </div>
                             </div>
                             <div className="news__choice-item">
                                 <img src={newsImage} alt="news" />
-                                <div className='fz12 date'>05 серпня 11:00</div>
+                                <div className='fz12 date'>05 СЕРПНЯ 11:00</div>
                                 <div className="fz16 content">
                                     Генерал Романенко оцінив бойовий потенціал і спроможності ворога на півдні України.
                                 </div>
                             </div>
                             <div className="news__choice-item">
                                 <img src={newsImage} alt="news" />
-                                <div className='fz12 date'>05 серпня 11:00</div>
+                                <div className='fz12 date'>05 СЕРПНЯ 11:00</div>
                                 <div className="fz16 content">
                                     У "Слузі" пояснили, чому в росії знову заговорили про переговори з Україною.
                                 </div>
                             </div>
                             <div className="news__choice-item">
                                 <img src={newsImage} alt="news" />
-                                <div className='fz12 date'>05 серпня 11:00</div>
+                                <div className='fz12 date'>05 СЕРПНЯ 11:00</div>
                                 <div className="fz16 content">
                                     ТРЦ Ocean Plaza після чуток про закриття оголосив про відновлення роботи.
                                 </div>
                             </div>
                             <div className="news__choice-item">
                                 <img src={newsImage} alt="news" />
-                                <div className='fz12 date'>05 серпня 11:00</div>
+                                <div className='fz12 date'>05 СЕРПНЯ 11:00</div>
                                 <div className="fz16 content">
                                     Білорусь несподівано вирішила провести військові навчання з Казахстаном: що відомо.
                                 </div>
@@ -105,14 +105,14 @@ const NewsFeed = () => {
                                 <div className="news__city_col">
                                     <div className="title title_fz24 news__city-name">Київ</div>
                                     <div className="news__city-data">
-                                        <div className="fz12 data">05 серпня</div>
+                                        <div className="fz12 data">05 СЕРПНЯ</div>
                                         <div className="news__city-grid">
                                             <div className="fz16 news__city-data-content"> <span>14:59 </span>ТРЦ Ocean Plaza після чуток про закриття оголосив про відновлення роботи</div>
                                             <div className="fz16 news__city-data-content"> <span>14:59 </span>На Київщині загиблого під час окупації чоловіка знайшли у колодязі: його прикмети</div>
                                         </div>
                                     </div>
                                     <div className="news__city-data">
-                                        <div className="fz12 data">04 серпня</div>
+                                        <div className="fz12 data">04 СЕРПНЯ</div>
                                         <div className="news__city-grid">
                                             <div className="fz16 news__city-data-content"> <span>14:59 </span>КМДА контролюватиме якість підготовки до опалювального сезону</div>
                                             <div className="fz16 news__city-data-content"> <span>14:59 </span>Дружина Зеленського чесно зізналася, чи боїться смерті</div>
@@ -132,7 +132,7 @@ const NewsFeed = () => {
                                 <div className="news__city_col">
                                     <div className="title title_fz24 news__city-name">Одеса</div>
                                     <div className="news__city-data">
-                                        <div className="fz12 data">05 серпня</div>
+                                        <div className="fz12 data">05 СЕРПНЯ</div>
                                         <div className="news__city-grid">
                                             <div className="fz16 news__city-data-content"> <span>14:59 </span>Ремонт зруйнованого російськими ракетами будинку у Сергіївці коштуватиме понад 40 млн гривень</div>
                                             <div className="fz16 news__city-data-content"> <span>14:59 </span>На Одещині рибалки незаконно наловили раків на 8 млн гривень</div>
@@ -154,7 +154,7 @@ const NewsFeed = () => {
                                 <div className="news__city_col">
                                     <div className="title title_fz24 news__city-name">Харків</div>
                                     <div className="news__city-data">
-                                        <div className="fz12 data">05 серпня</div>
+                                        <div className="fz12 data">05 СЕРПНЯ</div>
                                         <div className="news__city-grid">
                                             <div className="fz16 news__city-data-content"> <span>14:59 </span>Обстріл Павлова Поля у Харкові: уламки прилетіли до квартир, троє людей поранено</div>
                                             <div className="fz16 news__city-data-content"> <span>14:59 </span>Дружина Зеленського чесно зізналася, чи боїться смерті</div>
