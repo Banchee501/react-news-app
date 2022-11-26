@@ -31,7 +31,6 @@
                     }
                 }
                 &-sort {
-                    font-weight: 500;
                     margin: 32px 0;
                     align-items: center;
                     .active {
@@ -47,7 +46,6 @@
                     }
                 }
                 &-item {
-                    font-weight: 500;
                     height: auto;
                     margin-bottom: 48px;
                     span {
@@ -88,7 +86,6 @@
                 font-weight: 400;
             }
             .content {
-                font-weight: 500;
                 color: $dark_blue;
             }
         }

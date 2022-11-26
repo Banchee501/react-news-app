@@ -1,5 +1,11 @@
 import { Link } from 'react-router-dom';
 
+import profilePhotoFirst from '../../resources/img/Avatar.png';
+import profilePhotoSecond from '../../resources/img/Avatar-1.png';
+import profilePhotoThird from '../../resources/img/Avatar-2.png';
+import profilePhotoFourth from '../../resources/img/Avatar-3.png';
+import imageNews from "../../resources/img/image.jpg";
+
 import './otherNews.scss';
 
 const Politics = () => {
@@ -14,32 +20,56 @@ const Politics = () => {
                         </div>
                         <div className="news__col-items">
                             <div className="news__col-item">
-                                <img src="../../resources/img/Avatar.png" alt="avatar" />
-                                <div className="news__col-name">Юлія Стахівська</div>
-                                <div className="news__col-employment">письменниця</div>
-                                <div className="news__col-title">Жінок в часи небезпеки приваблюють сильні чоловіки</div>
-                                <div className="date">04 СЕРПНЯ 15:15</div>
+                                <div className="news__col-item-info">
+                                    <img src={profilePhotoFirst} alt="avatar" />
+                                    <div className="news__col-item-profile">
+                                        <div className="fz16 name">Юлія Стахівська</div>
+                                        <div className="fz12 employment">ПИСЬМЕННИЦЯ</div>
+                                    </div>
+                                </div>
+                                <div className="news__col-item-body">
+                                    <div className="title">Жінок в часи небезпеки приваблюють сильні чоловіки</div>
+                                    <div className="date">04 СЕРПНЯ 15:15</div>
+                                </div>
                             </div>
                             <div className="news__col-item">
-                                <img src="../../resources/img/Avatar-1.png" alt="avatar" />
-                                <div className="news__col-name">Юрій Андрухович</div>
-                                <div className="news__col-employment">письменник</div>
-                                <div className="news__col-title">Штайнмаєр - людина-формула</div>
-                                <div className="date">04 СЕРПНЯ 15:15</div>
+                                <div className="news__col-item-info">
+                                    <img src={profilePhotoSecond} alt="avatar" />
+                                    <div className="news__col-item-profile">
+                                        <div className="fz16 name">Юрій Андрухович</div>
+                                        <div className="fz12 employment">ПИСЬМЕННИК</div>
+                                    </div>
+                                </div>
+                                <div className="news__col-item-body">
+                                    <div className="title">Штайнмаєр - людина-формула</div>
+                                    <div className="date">04 СЕРПНЯ 15:15</div>
+                                </div>
                             </div>
                             <div className="news__col-item">
-                                <img src="../../resources/img/Avatar-2.png" alt="avatar" />
-                                <div className="news__col-name">Анна Прокопенко</div>
-                                <div className="news__col-employment">журналістка</div>
-                                <div className="news__col-title">Щоденник війни. П'ятий тиждень довгого лютого</div>
-                                <div className="date">04 СЕРПНЯ 15:15</div>
+                                <div className="news__col-item-info">
+                                    <img src={profilePhotoThird} alt="avatar" />
+                                    <div className="news__col-item-profile">
+                                        <div className="fz16 name">Анна Прокопенко</div>
+                                        <div className="fz12 employment">ЖУРНАЛІСТКА</div>
+                                    </div>
+                                </div>
+                                <div className="news__col-item-body">
+                                    <div className="title">Щоденник війни. П'ятий тиждень довгого лютого</div>
+                                    <div className="date">04 СЕРПНЯ 15:15</div>
+                                </div>
                             </div>
                             <div className="news__col-item">
-                                <img src="../../resources/img/Avatar-3.png" alt="avatar" />
-                                <div className="news__col-name">Ірена Карпа</div>
-                                <div className="news__col-employment">журналістка</div>
-                                <div className="news__col-title">Не пощастило з географією. Небезпечний сусід</div>
-                                <div className="date">04 СЕРПНЯ 15:15</div>
+                                <div className="news__col-item-info">
+                                    <img src={profilePhotoFourth} alt="avatar" />
+                                    <div className="news__col-item-profile">
+                                        <div className="fz16 name">Ірена Карпа</div>
+                                        <div className="fz12 employment">ЖУРНАЛІСТКА</div>
+                                    </div>
+                                </div>
+                                <div className="news__col-item-body">
+                                    <div className="title">Не пощастило з географією. Небезпечний сусід</div>
+                                    <div className="date">04 СЕРПНЯ 15:15</div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -52,41 +82,43 @@ const Politics = () => {
                         <div className="title title_fz32">Політика</div>
                         <Link to="/" className='fz14'>Всі новини розділу</Link>
                     </div>
-                    <div className="news__politics-blocks">
-                        <div className="news__politics-block">
-                            <img src="../../resources/img/image.jpg" alt="image-news" />
-                            <div className="date">05 СЕРПНЯ 11:00</div>
-                            <div className="news__politics-text">У "Слузі" пояснили, чому в росії знову заговорили про переговори з Україною.</div>
+                    <div className="news__politics-body">
+                        <div className="news__politics-blocks">
+                            <div className="news__politics-block main">
+                                <img src={imageNews} alt="image-news" />
+                                <div className="date">05 СЕРПНЯ 11:00</div>
+                                <div className="news__politics-text">У "Слузі" пояснили, чому в росії знову заговорили про переговори з Україною.</div>
+                            </div>
+                            <div className="news__politics-block">
+                                <img src={imageNews} alt="image-news" />
+                                <div className="date">05 СЕРПНЯ 11:00</div>
+                                <div className="news__politics-text">У "Слузі" пояснили, чому в росії знову заговорили про переговори з Україною.</div>
+                            </div>
+                            <div className="news__politics-block">
+                                <img src={imageNews} alt="image-news" />
+                                <div className="date">05 СЕРПНЯ 11:00</div>
+                                <div className="news__politics-text">ТРЦ Ocean Plaza після чуток про закриття оголосив про відновлення роботи</div>
+                            </div>
                         </div>
-                        <div className="news__politics-block">
-                            <img src="../../resources/img/image.jpg" alt="image-news" />
-                            <div className="date">05 СЕРПНЯ 11:00</div>
-                            <div className="news__politics-text">У "Слузі" пояснили, чому в росії знову заговорили про переговори з Україною.</div>
+                        <div className="news__politics-items">
+                            <div className="fz16 news__politics-item label"> <span>14:59 </span>До Європи за захистом. Що означає позов Ахметова до Європейського суду з прав людини
+                            </div>
+                            <div className="fz16 news__politics-item label"> <span>14:59 </span>Стало відомо, коли ЄС може узгодити сьомий пакет санкцій проти рф
+                            </div>
+                            <div className="fz16 news__politics-item label"> <span>14:59 </span>До Європи за захистом. Що означає позов Ахметова до Європейського суду з прав людини
+                            </div>
+                            <div className="fz16 news__politics-item label"> <span>14:59 </span>"Відбудова України — завдання усього світу": промова Зеленського на конференції в Лугано
+                            </div>
+                            <div className="fz16 news__politics-item label"> <span>14:59 </span>"Бийся на світлій стороні": як спортсмени, меценати й волонетри рятують життя українців
+                            </div>
+                            <button className="fz16 more_news">Більше
+                                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M10.0833 15.9999C10.0833 15.7698 10.2699 15.5833 10.5 15.5833H21.5C21.7301 15.5833 21.9167 15.7698 21.9167 15.9999C21.9167 16.23 21.7301 16.4166 21.5 16.4166H10.5C10.2699 16.4166 10.0833 16.23 10.0833 15.9999Z" fill="#182840" />
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M16.7054 11.2053C16.8681 11.0426 17.1319 11.0426 17.2946 11.2053L21.7946 15.7053C21.9573 15.868 21.9573 16.1318 21.7946 16.2945L17.2946 20.7945C17.1319 20.9573 16.8681 20.9573 16.7054 20.7945C16.5426 20.6318 16.5426 20.368 16.7054 20.2053L20.9107 15.9999L16.7054 11.7945C16.5426 11.6318 16.5426 11.368 16.7054 11.2053Z" fill="#182840" />
+                                    <rect x="0.5" y="0.5" width="31" height="31" rx="15.5" stroke="#979EA9" />
+                                </svg>
+                            </button>
                         </div>
-                        <div className="news__politics-block">
-                            <img src="../../resources/img/image.jpg" alt="image-news" />
-                            <div className="date">05 СЕРПНЯ 11:00</div>
-                            <div className="news__politics-text">ТРЦ Ocean Plaza після чуток про закриття оголосив про відновлення роботи</div>
-                        </div>
-                    </div>
-                    <div className="news__politics-items">
-                        <div className="fz16 news__politics-item label"> <span>14:59 </span>До Європи за захистом. Що означає позов Ахметова до Європейського суду з прав людини
-                        </div>
-                        <div className="fz16 news__politics-item label"> <span>14:59 </span>Стало відомо, коли ЄС може узгодити сьомий пакет санкцій проти рф
-                        </div>
-                        <div className="fz16 news__politics-item label"> <span>14:59 </span>До Європи за захистом. Що означає позов Ахметова до Європейського суду з прав людини
-                        </div>
-                        <div className="fz16 news__politics-item label"> <span>14:59 </span>"Відбудова України — завдання усього світу": промова Зеленського на конференції в Лугано
-                        </div>
-                        <div className="fz16 news__politics-item label"> <span>14:59 </span>"Бийся на світлій стороні": як спортсмени, меценати й волонетри рятують життя українців
-                        </div>
-                        <button className="fz16 more_news">Більше
-                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" clip-rule="evenodd" d="M10.0833 15.9999C10.0833 15.7698 10.2699 15.5833 10.5 15.5833H21.5C21.7301 15.5833 21.9167 15.7698 21.9167 15.9999C21.9167 16.23 21.7301 16.4166 21.5 16.4166H10.5C10.2699 16.4166 10.0833 16.23 10.0833 15.9999Z" fill="#182840" />
-                                <path fill-rule="evenodd" clip-rule="evenodd" d="M16.7054 11.2053C16.8681 11.0426 17.1319 11.0426 17.2946 11.2053L21.7946 15.7053C21.9573 15.868 21.9573 16.1318 21.7946 16.2945L17.2946 20.7945C17.1319 20.9573 16.8681 20.9573 16.7054 20.7945C16.5426 20.6318 16.5426 20.368 16.7054 20.2053L20.9107 15.9999L16.7054 11.7945C16.5426 11.6318 16.5426 11.368 16.7054 11.2053Z" fill="#182840" />
-                                <rect x="0.5" y="0.5" width="31" height="31" rx="15.5" stroke="#979EA9" />
-                            </svg>
-                        </button>
                     </div>
                 </div>
                 <div className="news__promo">

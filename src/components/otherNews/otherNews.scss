@@ -16,23 +16,31 @@
         background-color: white;
         margin-left: 64px;
         padding: 16px 16px 24px 16px;
-        &-list {
-            .news__all{
-                &-head {
-                    display: grid;
-                    grid-template-columns: repeat(2, auto);
-                    justify-content: space-between;
-                    align-items: center;
-                    a {
-                        color: $dark_blue;
-                        font-family: Severs-DemiBold;
-                        border-bottom: 1px solid $dark_blue;
-                    }
-                }
-                &-item {
-                    }
+        &-item {
+            &-info {
+                display: flex;
+                align-items: center;
+            }
+            &-body {
+                .title {
+                    margin: 16px 0 12px 0;
+                    font-family: Severs-DemiBold;
                 }
             }
+            img {
+                padding-right: 16px;
+            }
+            &-profile {
+                display: flex;
+                flex-direction: column;
+                .employment {
+                    padding-top: 4px;
+                    color: $grey;
+                }
+            }
+        }
+        &-title {
+            
         }
         .load__more {
             width: 272px;
@@ -44,9 +52,8 @@
                 margin-right: 8px;
             }
         }
+    }
     &__politics {
-        display: grid;
-        row-gap: 32px;
         border-radius: 12px;
         background-color: white;
         &-head {
@@ -56,6 +63,17 @@
                     color: $orange;
                     font-weight: 600;
             }
+        }
+        &-body {
+            display: grid;
+            grid-template-columns: minmax(auto, 640px) minmax(auto, 240px);
+            row-gap: 32px;
+        }
+        &-blocks {
+            display: grid;
+            grid-template-rows: 474px 280px;
+        }
+        &-items {
         }
     }
 }
