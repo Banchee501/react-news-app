@@ -190,4 +190,76 @@
             font-weight: 500;
         }
     }
+    &__economics {
+        grid-column-start: 2;
+        border-radius: 12px;
+        background-color: white;
+        padding: 24px 32px 32px;
+        margin-top: 24px;
+        &-head {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 32px;
+            a {
+                    color: $orange;
+                    font-weight: 600;
+            }
+        }
+        &-body {
+            display: grid;
+            grid-template-columns: minmax(auto, 640px) minmax(auto, 240px);
+            column-gap: 32px;
+        }
+        &-blocks {
+            display: grid;
+            grid-template-rows: 474px 280px;
+            row-gap: 40px;
+                .date {
+                    padding: 16px 0 10px 0;
+                }
+        }
+        &-block {
+            &-else {
+            display: grid;
+            grid-template-columns: repeat(2, 304px);
+            column-gap: 32px;
+            .fz16 {
+                font-weight: 600;
+            }
+            }
+            img {
+                width: 100%;
+            }
+            &-main {
+                .fz24 {
+                    font-weight: 600;
+                    font-family: Severs-DemiBold;
+                }
+            }
+        }
+        &-items {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            .title {
+                margin-bottom: 32px;
+            }
+        }
+        &-item {
+            span {
+                color: $grey;
+            }
+        }
+        .more_news {
+            text-align: left;
+            border: none;
+            color: inherit;
+            background-color: transparent;
+            cursor: pointer;
+            align-items: end;
+            svg {
+                margin-left: 16px;
+            }
+        }
+    }
 }

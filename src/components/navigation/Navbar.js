@@ -7,7 +7,7 @@ import fire from "../../resources/icons/navbarIcons/fireNav.svg";
 const Navbar = () => {
     return (
         <nav>
-            <div className='container'>
+            <div className='container navigation'>
                 <div className='nav'>
                     <button className='fz16 nav__hamburger'>
                         <div className="nav__hamburger-icon"></div>Меню</button>
