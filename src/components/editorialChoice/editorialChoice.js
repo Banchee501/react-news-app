@@ -41,6 +41,7 @@ const NewsFeed = () => {
                             <div className="fz16 news__all-item label"><span>14:59 </span>"Бийся на світлій стороні": як спортсмени, меценати й волонетри рятують життя українців</div>
                         </div>
                     </div>
+                    <div className="gradient"></div>
                     <button className='fz16 load__more'>
                         <svg width="21" height="23" viewBox="0 0 21 23" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <g clip-path="url(#clip0_5734_287)">
