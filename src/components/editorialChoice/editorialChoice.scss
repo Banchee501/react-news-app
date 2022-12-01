@@ -47,7 +47,6 @@
                 }
                 &-item {
                     height: auto;
-                    margin-bottom: 48px;
                     span {
                         font-weight: 400;
                         color: $grey;
@@ -91,6 +90,9 @@
         }
     }
     &__regions {
+        hr {
+            margin: 16px 0;
+        }
         display: grid;
         row-gap: 32px;
         &-head {
@@ -145,11 +147,6 @@
                     font-weight: 400;
                 }
             }
-        }
-        &-grid {
-            display: grid;
-            grid-template-rows: repeat(auto);
-            row-gap: 32px;
         }
     }
 }

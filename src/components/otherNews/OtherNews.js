@@ -32,6 +32,7 @@ const Politics = () => {
                                     <div className="date">04 СЕРПНЯ 15:15</div>
                                 </div>
                             </div>
+                            <hr />
                             <div className="news__col-item">
                                 <div className="news__col-item-info">
                                     <img src={profilePhotoSecond} alt="avatar" />
@@ -45,6 +46,7 @@ const Politics = () => {
                                     <div className="date">04 СЕРПНЯ 15:15</div>
                                 </div>
                             </div>
+                            <hr />
                             <div className="news__col-item">
                                 <div className="news__col-item-info">
                                     <img src={profilePhotoThird} alt="avatar" />
@@ -58,6 +60,7 @@ const Politics = () => {
                                     <div className="date">04 СЕРПНЯ 15:15</div>
                                 </div>
                             </div>
+                            <hr />
                             <div className="news__col-item">
                                 <div className="news__col-item-info">
                                     <img src={profilePhotoFourth} alt="avatar" />
@@ -84,32 +87,42 @@ const Politics = () => {
                     </div>
                     <div className="news__politics-body">
                         <div className="news__politics-blocks">
-                            <div className="news__politics-block main">
+                            <div className="news__politics-block-main">
                                 <img src={imageNews} alt="image-news" />
                                 <div className="date">05 СЕРПНЯ 11:00</div>
-                                <div className="news__politics-text">У "Слузі" пояснили, чому в росії знову заговорили про переговори з Україною.</div>
+                                <div className="news__politics-text fz24">У "Слузі" пояснили, чому в росії знову заговорили про переговори з Україною.</div>
                             </div>
-                            <div className="news__politics-block">
-                                <img src={imageNews} alt="image-news" />
-                                <div className="date">05 СЕРПНЯ 11:00</div>
-                                <div className="news__politics-text">У "Слузі" пояснили, чому в росії знову заговорили про переговори з Україною.</div>
-                            </div>
-                            <div className="news__politics-block">
-                                <img src={imageNews} alt="image-news" />
-                                <div className="date">05 СЕРПНЯ 11:00</div>
-                                <div className="news__politics-text">ТРЦ Ocean Plaza після чуток про закриття оголосив про відновлення роботи</div>
+                            <div className="news__politics-block-else">
+                                <div className="news__politics-block">
+                                    <img src={imageNews} alt="image-news" />
+                                    <div className="date">05 СЕРПНЯ 11:00</div>
+                                    <div className="fz16 news__politics-text">У "Слузі" пояснили, чому в росії знову заговорили про переговори з Україною.</div>
+                                </div>
+                                <div className="news__politics-block">
+                                    <img src={imageNews} alt="image-news" />
+                                    <div className="date">05 СЕРПНЯ 11:00</div>
+                                    <div className="fz16 news__politics-text">ТРЦ Ocean Plaza після чуток про закриття оголосив про відновлення роботи</div>
+                                </div>
                             </div>
                         </div>
                         <div className="news__politics-items">
-                            <div className="fz16 news__politics-item label"> <span>14:59 </span>До Європи за захистом. Що означає позов Ахметова до Європейського суду з прав людини
-                            </div>
-                            <div className="fz16 news__politics-item label"> <span>14:59 </span>Стало відомо, коли ЄС може узгодити сьомий пакет санкцій проти рф
-                            </div>
-                            <div className="fz16 news__politics-item label"> <span>14:59 </span>До Європи за захистом. Що означає позов Ахметова до Європейського суду з прав людини
-                            </div>
-                            <div className="fz16 news__politics-item label"> <span>14:59 </span>"Відбудова України — завдання усього світу": промова Зеленського на конференції в Лугано
-                            </div>
-                            <div className="fz16 news__politics-item label"> <span>14:59 </span>"Бийся на світлій стороні": як спортсмени, меценати й волонетри рятують життя українців
+                            <div className="news__politics-items-col">
+                                <div className="fz16 title">НОВИНИ РОЗДІЛУ</div>
+                                <div className="fz16 news__politics-item label"> <span>14:59 </span>До Європи за захистом. Що означає позов Ахметова до Європейського суду з прав людини
+                                </div>
+                                <hr />
+                                <div className="fz16 news__politics-item label"> <span>14:59 </span>Стало відомо, коли ЄС може узгодити сьомий пакет санкцій проти рф
+                                </div>
+                                <hr />
+                                <div className="fz16 news__politics-item label"> <span>14:59 </span>До Європи за захистом. Що означає позов Ахметова до Європейського суду з прав людини
+                                </div>
+                                <hr />
+                                <div className="fz16 news__politics-item label"> <span>14:59 </span>"Відбудова України — завдання усього світу": промова Зеленського на конференції в Лугано
+                                </div>
+                                <hr />
+                                <div className="fz16 news__politics-item label"> <span>14:59 </span>"Бийся на світлій стороні": як спортсмени, меценати й волонетри рятують життя українців
+                                </div>
+                                <hr />
                             </div>
                             <button className="fz16 more_news">Більше
                                 <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">

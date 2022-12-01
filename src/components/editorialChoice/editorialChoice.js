@@ -22,14 +22,22 @@ const NewsFeed = () => {
                         <div className="news__all-items">
                             <div className="fz16 news__all-item label"> <span>14:59 </span>"Відбудова України — завдання усього світу": промова Зеленського на конференції в Лугано
                             </div>
+                            <hr />
                             <div className="fz16 news__all-item label label__photo"><span>14:59 </span>До Європи за захистом. Що означає позов Ахметова до Європейського суду з прав людини</div>
+                            <hr />
                             <div className="fz16 news__all-item label"><span>14:59 </span>Прем'єрка Швеції відвідала потрощені росіянами Бучу й Бородянку: реакція на побачене</div>
+                            <hr />
                             <div className="fz16 news__all-item label label__quickly"><span>14:59 </span>До Європи за захистом. Що означає позов Ахметова до Європейського суду з прав людини</div>
+                            <hr />
                             <div className="fz16 news__all-item label"><span>14:59 </span>Стало відомо, коли ЄС може узгодити сьомий пакет санкцій проти рф
                                 14:59</div>
+                            <hr />
                             <div className="fz16 news__all-item label"><span>14:59 </span>До Європи за захистом. Що означає позов Ахметова до Європейського суду з прав людини</div>
+                            <hr />
                             <div className="fz16 news__all-item label"><span>14:59 </span>"Відбудова України — завдання усього світу": промова Зеленського на конференції в Лугано</div>
+                            <hr />
                             <div className="fz16 news__all-item label"><span>14:59 </span>Дружина Зеленського чесно зізналася, чи боїться смерті</div>
+                            <hr />
                             <div className="fz16 news__all-item label"><span>14:59 </span>"Бийся на світлій стороні": як спортсмени, меценати й волонетри рятують життя українців</div>
                         </div>
                     </div>
@@ -108,6 +116,7 @@ const NewsFeed = () => {
                                         <div className="fz12 data">05 СЕРПНЯ</div>
                                         <div className="news__city-grid">
                                             <div className="fz16 news__city-data-content"> <span>14:59 </span>ТРЦ Ocean Plaza після чуток про закриття оголосив про відновлення роботи</div>
+                                            <hr />
                                             <div className="fz16 news__city-data-content"> <span>14:59 </span>На Київщині загиблого під час окупації чоловіка знайшли у колодязі: його прикмети</div>
                                         </div>
                                     </div>
@@ -115,7 +124,9 @@ const NewsFeed = () => {
                                         <div className="fz12 data">04 СЕРПНЯ</div>
                                         <div className="news__city-grid">
                                             <div className="fz16 news__city-data-content"> <span>14:59 </span>КМДА контролюватиме якість підготовки до опалювального сезону</div>
+                                            <hr />
                                             <div className="fz16 news__city-data-content"> <span>14:59 </span>Дружина Зеленського чесно зізналася, чи боїться смерті</div>
+                                            <hr />
                                             <div className="fz16 news__city-data-content"> <span>14:59 </span>ТРЦ Ocean Plaza після чуток про закриття оголосив про відновлення роботи</div>
                                         </div>
                                     </div>
@@ -135,9 +146,13 @@ const NewsFeed = () => {
                                         <div className="fz12 data">05 СЕРПНЯ</div>
                                         <div className="news__city-grid">
                                             <div className="fz16 news__city-data-content"> <span>14:59 </span>Ремонт зруйнованого російськими ракетами будинку у Сергіївці коштуватиме понад 40 млн гривень</div>
+                                            <hr />
                                             <div className="fz16 news__city-data-content"> <span>14:59 </span>На Одещині рибалки незаконно наловили раків на 8 млн гривень</div>
+                                            <hr />
                                             <div className="fz16 news__city-data-content"> <span>14:59 </span>Екіпаж турецького судна вперше з початку війни повернувся з Одеси додому</div>
+                                            <hr />
                                             <div className="fz16 news__city-data-content"> <span>14:59 </span>Дружина Зеленського чесно зізналася, чи боїться смерті</div>
+                                            <hr />
                                             <div className="fz16 news__city-data-content"> <span>14:59 </span>Ремонт зруйнованого російськими ракетами будинку у Сергіївці коштуватиме понад 40 млн гривень</div>
                                         </div>
                                     </div>
@@ -157,9 +172,13 @@ const NewsFeed = () => {
                                         <div className="fz12 data">05 СЕРПНЯ</div>
                                         <div className="news__city-grid">
                                             <div className="fz16 news__city-data-content"> <span>14:59 </span>Обстріл Павлова Поля у Харкові: уламки прилетіли до квартир, троє людей поранено</div>
+                                            <hr />
                                             <div className="fz16 news__city-data-content"> <span>14:59 </span>Дружина Зеленського чесно зізналася, чи боїться смерті</div>
+                                            <hr />
                                             <div className="fz16 news__city-data-content"> <span>14:59 </span>Обстріл Павлова Поля у Харкові: уламки прилетіли до квартир, троє людей поранено</div>
+                                            <hr />
                                             <div className="fz16 news__city-data-content"> <span>14:59 </span>ЗСУ пересунули лінію фронту на Харківщині: окупанти тікали, кидаючи техніку</div>
+                                            <hr />
                                             <div className="fz16 news__city-data-content"> <span>14:59 </span>На Харківщині, попри щоденні обстріли, тривають жнива: скільки врожаю зібрали</div>
                                         </div>
                                     </div>
