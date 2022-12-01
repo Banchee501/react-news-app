@@ -7,6 +7,16 @@
 
 @media (max-width: 1439px) {
     .news {
+        grid-template-columns: repeat(auto-fit, 326px);
+        &__all {
+            .gradient  {
+                display: none;
+            }
+            .load__more {
+                width: auto;
+                margin-top: 32px;
+            }
+        }
         &__choice {
             &-items {
                 grid-template-columns: repeat(auto-fit, 326px);
@@ -14,6 +24,62 @@
         }
         &__cities {
             overflow-y: hidden;
+        }
+        &__col {
+            display: block;
+            border-radius: 0;
+            background-color: #F6F6F6;
+            button {
+                display: none;
+            }
+            &-items {
+                display: flex;
+                overflow-y: hidden;
+            }
+            &-item {
+                border-radius: 8px;
+                background-color: white;
+                padding: 16px;
+                margin-right: 24px;
+                width: 304px;
+                height: 250px;
+            }
+        }
+        &__politics {
+            &-blocks {
+                display: none;
+            }
+        }
+        &__promo {
+            &-body {
+                grid-template-columns: auto;
+
+            }
+            &-list {
+                overflow-y: hidden;
+                .gradient {
+                    display: none;
+                }
+                svg {
+                    display: none;
+                }
+            }
+            &-block {
+                width: 304px;
+                height: 105px;
+                padding: 16px;
+                justify-content: flex-start;
+            }
+        }
+        &__economics {
+            &-blocks {
+                display: none;
+            }
+        }
+        &__lifestyle {
+            &-blocks {
+                display: none;
+            }
         }
     }
     .video {

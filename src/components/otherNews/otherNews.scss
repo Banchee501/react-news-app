@@ -160,10 +160,13 @@
             }
         }
         &-list {
-            display: flex;
-            margin-top: 24px;
+            display: grid;
+            grid-template-columns: repeat(3, 304px);
+            grid-template-rows: 105px;  
+            column-gap: 24px;
             position: relative;
             align-items: center;
+            margin-top: 24px;
             .gradient {
                 position: absolute;
                 z-index: 1;
@@ -187,6 +190,9 @@
             background: #F7F7F7;
             border-radius: 8px;
             font-weight: 500;
+            .date {
+                margin-bottom: 10px;
+            }
         }
     }
     &__economics {

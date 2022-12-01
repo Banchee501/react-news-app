@@ -209,7 +209,7 @@ const Footer = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className="footer__news-col">
+                        <div className="footer__news-col about">
                             <div className="footer__news-group">
                                 <div className="footer__news-group-title">
                                     <a href="">ПРО НАС</a>
