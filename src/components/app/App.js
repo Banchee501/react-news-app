@@ -14,7 +14,7 @@ const App = () => {
       <SimpleSlider />
       <NewsFeed />
       <VideoNews />
-      <Politics />
+      {/* <Politics /> */}
       <Footer />
     </div>
   );

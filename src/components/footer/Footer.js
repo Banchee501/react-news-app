@@ -1,6 +1,7 @@
 
 
 import './footer.scss';
+import arrow from '../../resources/icons/footer/dropdownArrow.svg';
 
 const Footer = () => {
     return (
@@ -14,6 +15,7 @@ const Footer = () => {
                                     <a href="">Всі новини</a>
                                 </div>
                             </div>
+                            <hr />
                             <div className="footer__news-group">
                                 <div className="footer__news-group-title">
                                     <a href="" className="">
@@ -21,194 +23,217 @@ const Footer = () => {
                                     </a>
                                 </div>
                             </div>
+                            <hr />
                             <div className="footer__news-group">
-                                <div className="footer__news-group-title">
-                                    <a href="" className="">
-                                        Війна
-                                    </a>
+                                <div className="footer__news-group-title dropdown">
+                                    Війна
+                                    <img src={arrow} alt="arrow" />
+                                </div>
+                                <div className="dropdown-content">
+
                                 </div>
                             </div>
+                            <hr />
                             <div className="footer__news-group">
-                                <div className="footer__news-group-title">
-                                    <a href="" className="">
-                                        Політика
-                                    </a>
+                                <div className="footer__news-group-title dropdown">
+                                    Політика
+                                    <img src={arrow} alt="arrow" />
                                 </div>
-                                <ul className="footer__news-sub hidden-lg">
-                                    <li className="footer__news-sub-item">
-                                        <a href="">Україна</a>
-                                    </li>
-                                    <li className="footer__news-sub-item">
-                                        <a href="">Світ</a>
-                                    </li>
-                                </ul>
+                                <div className="dropdown-content">
+                                    <ul className="footer__news-sub">
+                                        <li className="footer__news-sub-item">
+                                            <a href="">Україна</a>
+                                        </li>
+                                        <li className="footer__news-sub-item">
+                                            <a href="">Світ</a>
+                                        </li>
+                                    </ul>
+                                </div>
                             </div>
+                            <hr />
                         </div>
                         <div className="footer__news-col">
                             <div className="footer__news-group">
-                                <div className="footer__news-group-title">
-                                    <a href="" className="">
-                                        Здоров'я
-                                    </a>
+                                <div className="footer__news-group-title dropdown">
+                                    Здоров'я
+                                    <img src={arrow} alt="arrow" />
                                 </div>
-                                <ul className="footer__news-sub hidden-lg">
-                                    <li className="footer__news-sub-item">
-                                        <a href="">Дієта</a>
-                                    </li>
-                                    <li className="footer__news-sub-item">
-                                        <a href="">Краса</a>
-                                    </li>
-                                    <li className="footer__news-sub-item">
-                                        <a href="">Секс</a>
-                                    </li>
-                                    <li className="footer__news-sub-item">
-                                        <a href="">Психологія</a>
-                                    </li>
-                                    <li className="footer__news-sub-item">
-                                        <a href="">Медицина</a>
-                                    </li>
-                                </ul>
+                                <div className="dropdown-content">
+                                    <ul className="footer__news-sub">
+                                        <li className="footer__news-sub-item">
+                                            <a href="">Дієта</a>
+                                        </li>
+                                        <li className="footer__news-sub-item">
+                                            <a href="">Краса</a>
+                                        </li>
+                                        <li className="footer__news-sub-item">
+                                            <a href="">Секс</a>
+                                        </li>
+                                        <li className="footer__news-sub-item">
+                                            <a href="">Психологія</a>
+                                        </li>
+                                        <li className="footer__news-sub-item">
+                                            <a href="">Медицина</a>
+                                        </li>
+                                    </ul>
+                                </div>
                             </div>
+                            <hr />
                             <div className="footer__news-group">
-                                <div className="footer__news-group-title">
-                                    <a href="" className="">
-                                        Події
-                                    </a>
+                                <div className="footer__news-group-title dropdown">
+                                    Події
+                                    <img src={arrow} alt="arrow" />
                                 </div>
-                                <ul className="footer__news-sub hidden-lg">
-                                    <li className="footer__news-sub-item">
-                                        <a href="">ДТП</a>
-                                    </li>
-                                    <li className="footer__news-sub-item">
-                                        <a href="">Катастрофи</a>
-                                    </li>
-                                    <li className="footer__news-sub-item">
-                                        <a href="">Кримінал</a>
-                                    </li>
-                                </ul>
+                                <div className="dropdown-content">
+                                    <ul className="footer__news-sub">
+                                        <li className="footer__news-sub-item">
+                                            <a href="">ДТП</a>
+                                        </li>
+                                        <li className="footer__news-sub-item">
+                                            <a href="">Катастрофи</a>
+                                        </li>
+                                        <li className="footer__news-sub-item">
+                                            <a href="">Кримінал</a>
+                                        </li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
+                        <hr />
                         <div className="footer__news-col">
                             <div className="footer__news-group">
-                                <div className="footer__news-group-title">
-                                    <a href="" className="">
-                                        Лайфстайл
-                                    </a>
+                                <div className="footer__news-group-title dropdown">
+                                    Лайфстайл
+                                    <img src={arrow} alt="arrow" />
                                 </div>
-                                <ul className="footer__news-sub hidden-lg">
-                                    <li className="footer__news-sub-item">
-                                        <a href="">Історії з життя</a>
-                                    </li>
-                                    <li className="footer__news-sub-item">
-                                        <a href="">Подорожі</a>
-                                    </li>
-                                    <li className="footer__news-sub-item">
-                                        <a href="">Кухня</a>
-                                    </li>
-                                    <li className="footer__news-sub-item">
-                                        <a href="">Шоубізнес</a>
-                                    </li>
-                                    <li className="footer__news-sub-item">
-                                        <a href="">Мода та стиль</a>
-                                    </li>
-                                    <li className="footer__news-sub-item">
-                                        <a href="">Зірковий гороскоп</a>
-                                    </li>
-                                </ul>
+                                <div className="dropdown-content">
+                                    <ul className="footer__news-sub">
+                                        <li className="footer__news-sub-item">
+                                            <a href="">Історії з життя</a>
+                                        </li>
+                                        <li className="footer__news-sub-item">
+                                            <a href="">Подорожі</a>
+                                        </li>
+                                        <li className="footer__news-sub-item">
+                                            <a href="">Кухня</a>
+                                        </li>
+                                        <li className="footer__news-sub-item">
+                                            <a href="">Шоубізнес</a>
+                                        </li>
+                                        <li className="footer__news-sub-item">
+                                            <a href="">Мода та стиль</a>
+                                        </li>
+                                        <li className="footer__news-sub-item">
+                                            <a href="">Зірковий гороскоп</a>
+                                        </li>
+                                    </ul>
+                                </div>
                             </div>
+                            <hr />
                             <div className="footer__news-group">
-                                <div className="footer__news-group-title">
-                                    <a href="" className="">
-                                        Суспільство
-                                    </a>
+                                <div className="footer__news-group-title dropdown">
+                                    Суспільство
+                                    <img src={arrow} alt="arrow" />
                                 </div>
-                                <ul className="footer__news-sub hidden-lg">
-                                    <li className="footer__news-sub-item">
-                                        <a href="">Охорона здоров'я</a>
-                                    </li>
-                                    <li className="footer__news-sub-item">
-                                        <a href="">Безпека</a>
-                                    </li>
-                                    <li className="footer__news-sub-item">
-                                        <a href="">Екологія</a>
-                                    </li>
-                                    <li className="footer__news-sub-item">
-                                        <a href="">Релігія</a>
-                                    </li>
-                                </ul>
+                                <div className="dropdown-content">
+                                    <ul className="footer__news-sub">
+                                        <li className="footer__news-sub-item">
+                                            <a href="">Охорона здоров'я</a>
+                                        </li>
+                                        <li className="footer__news-sub-item">
+                                            <a href="">Безпека</a>
+                                        </li>
+                                        <li className="footer__news-sub-item">
+                                            <a href="">Екологія</a>
+                                        </li>
+                                        <li className="footer__news-sub-item">
+                                            <a href="">Релігія</a>
+                                        </li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
+                        <hr />
                         <div className="footer__news-col">
                             <div className="footer__news-group">
-                                <div className="footer__news-group-title">
-                                    <a href="" className="">
-                                        Регіони
-                                    </a>
+                                <div className="footer__news-group-title dropdown">
+                                    Регіони
+                                    <img src={arrow} alt="arrow" />
                                 </div>
-                                <ul className="footer__news-sub hidden-lg">
-                                    <li className="footer__news-sub-item">
-                                        <a href="">Київ</a>
-                                    </li>
-                                    <li className="footer__news-sub-item">
-                                        <a href="">Одеса</a>
-                                    </li>
-                                    <li className="footer__news-sub-item">
-                                        <a href="">Харків</a>
-                                    </li>
-                                    <li className="footer__news-sub-item">
-                                        <a href="">Львів</a>
-                                    </li>
-                                </ul>
+                                <div className="dropdown-content">
+                                    <ul className="footer__news-sub">
+                                        <li className="footer__news-sub-item">
+                                            <a href="">Київ</a>
+                                        </li>
+                                        <li className="footer__news-sub-item">
+                                            <a href="">Одеса</a>
+                                        </li>
+                                        <li className="footer__news-sub-item">
+                                            <a href="">Харків</a>
+                                        </li>
+                                        <li className="footer__news-sub-item">
+                                            <a href="">Львів</a>
+                                        </li>
+                                    </ul>
+                                </div>
                             </div>
+                            <hr />
                             <div className="footer__news-group">
-                                <div className="footer__news-group-title">
-                                    <a href="" className="">
-                                        Техно
-                                    </a>
+                                <div className="footer__news-group-title dropdown">
+                                    Техно
+                                    <img src={arrow} alt="arrow" />
                                 </div>
-                                <ul className="footer__news-sub hidden-lg">
-                                    <li className="footer__news-sub-item">
-                                        <a href="">Наука</a>
-                                    </li>
-                                    <li className="footer__news-sub-item">
-                                        <a href="">Гаджети</a>
-                                    </li>
-                                    <li className="footer__news-sub-item">
-                                        <a href="">ІТ</a>
-                                    </li>
-                                    <li className="footer__news-sub-item">
-                                        <a href="">Космос</a>
-                                    </li>
-                                </ul>
+                                <div className="dropdown-content">
+                                    <ul className="footer__news-sub">
+                                        <li className="footer__news-sub-item">
+                                            <a href="">Наука</a>
+                                        </li>
+                                        <li className="footer__news-sub-item">
+                                            <a href="">Гаджети</a>
+                                        </li>
+                                        <li className="footer__news-sub-item">
+                                            <a href="">ІТ</a>
+                                        </li>
+                                        <li className="footer__news-sub-item">
+                                            <a href="">Космос</a>
+                                        </li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
+                        <hr />
                         <div className="footer__news-col">
                             <div className="footer__news-group">
-                                <div className="footer__news-group-title">
-                                    <a href="" className="">
-                                        Економіка
-                                    </a>
+                                <div className="footer__news-group-title dropdown">
+                                    Економіка
+                                    <img src={arrow} alt="arrow" />
                                 </div>
-                                <ul className="footer__news-sub hidden-lg">
-                                    <li className="footer__news-sub-item">
-                                        <a href="">Фінанси</a>
-                                    </li>
-                                    <li className="footer__news-sub-item">
-                                        <a href="">Комунальні послуги</a>
-                                    </li>
-                                    <li className="footer__news-sub-item">
-                                        <a href="">Бізнес</a>
-                                    </li>
-                                </ul>
+                                <div className="dropdown-content">
+                                    <ul className="footer__news-sub">
+                                        <li className="footer__news-sub-item">
+                                            <a href="">Фінанси</a>
+                                        </li>
+                                        <li className="footer__news-sub-item">
+                                            <a href="">Комунальні послуги</a>
+                                        </li>
+                                        <li className="footer__news-sub-item">
+                                            <a href="">Бізнес</a>
+                                        </li>
+                                    </ul>
+                                </div>
                             </div>
+                            <hr />
                             <div className="footer__news-group">
-                                <div className="footer__news-group-title">
-                                    <a href="" className="">
-                                        Спорт
-                                    </a>
+                                <div className="footer__news-group-title dropdown">
+                                    Спорт
+                                    <img src={arrow} alt="arrow" />
+                                </div>
+                                <div className="dropdown-content">
+
                                 </div>
                             </div>
                         </div>
+                        <hr />
                         <div className="footer__news-col about">
                             <div className="footer__news-group">
                                 <div className="footer__news-group-title">
@@ -238,6 +263,7 @@ const Footer = () => {
                         </div>
                     </div>
                 </div>
+                <hr />
                 <div className="footer__social">
                     <div className="footer__social-title">Новини у зручному форматі</div>
                     <div className="footer__social-wrapper">

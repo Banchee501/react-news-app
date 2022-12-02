@@ -196,6 +196,27 @@
                 }
             }
         }
+            &__col {
+                border-radius: 0;
+                background-color: #F6F6F6;
+                display: block;
+                button {
+                    display: none;
+                }
+            &-items {
+                display: flex;
+                flex-direction: row;
+                overflow-y: hidden;
+            }
+            &-item {
+                border-radius: 8px;
+                background-color: white;
+                padding: 16px;
+                margin-right: 24px;
+                width: 304px;
+                height: 250px;
+            }
+        }
     }
 }
 
@@ -267,6 +288,11 @@
             }
         }
         &__economics {
+            &-head {
+                .title_fz32 {
+                    font-size: 30px;
+                }
+            }
             .sort {
                 display: flex;
                 margin: 0;
@@ -300,31 +326,58 @@
     }
     .footer {
         &__main {
-                align-items: center
+                align-items: center;
+                padding: 23px 24px 40px;
         }
         &__news {
-            display: block;
+            display: flex;
+            flex-direction: column;
+            hr {
+                display: block;
+            }
+            img {
+                display: block;
+            }
+            .dropdown-content {
+                display: none;
+            }
+            &-col {
+                margin-bottom: 0;
+            }
+            &-group:hover .dropdown-content {
+                display: block;
+            }
         }
         &__social {
-            display: grid;
-            grid-template-rows: 32px 114px;
+            &-title {
+                font-size: 22px;
+            }
+            margin: 40px 23px;
             &-col {
                 flex-wrap: wrap;
                 &-first {
                     width: 50%;
                     a {
                         display: flex;
+                        margin-bottom: 24px;
                     }
                 }
                 &-second {
                     width: 50%;
                     a {
                         display: flex;
+                        margin-bottom: 24px;
                     }
                 }
             }
+            &-wrapper {
+                margin-top: 24px;
+            }
         }
         &__policy {
+            hr{
+                margin-top: 40px;
+            }
             &-wrapper {
                 display: flex;
                 flex-direction: column;
@@ -371,29 +424,6 @@
         &-inner {
             img {
                 height: 489px;
-            }
-        }
-    }
-    .news {
-            &__col {
-                border-radius: 0;
-                background-color: #F6F6F6;
-                display: block;
-                button {
-                    display: none;
-                }
-            &-items {
-                display: flex;
-                flex-direction: row;
-                overflow-y: hidden;
-            }
-            &-item {
-                border-radius: 8px;
-                background-color: white;
-                padding: 16px;
-                margin-right: 24px;
-                width: 304px;
-                height: 250px;
             }
         }
     }

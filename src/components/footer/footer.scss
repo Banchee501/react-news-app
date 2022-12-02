@@ -12,19 +12,32 @@
     &__news {
         display: flex;
         justify-content: space-between;
+        hr {
+            margin: 0;
+            padding: 0;
+            display: none;
+        }
         &-col {
             margin-bottom: 20px;
         }
         &-group {
             margin-top: 0;
-            padding-bottom: 24px;
+            padding: 16px 0;
             &-title {
+                display: flex;
+                justify-content: space-between;
                 font-size: 1em;
                 line-height: 24px;
                 font-weight: 600;
                 font-family: Severs-DemiBold;
+                align-items: center;
                 a {
                     color: $dark-blue;
+                }
+                img {
+                    position: relative;
+                    right: 0;
+                    display: none;
                 }
             }
         }
