@@ -49,9 +49,6 @@
                 }
             }
         }
-        &-title {
-            
-        }
         .load__more {
             width: auto;
             height: 38px;
@@ -68,6 +65,7 @@
         border-radius: 12px;
         background-color: white;
         padding: 24px 32px 32px;
+        grid-column-start: 2;
         &-head {
             display: flex;
             justify-content: space-between;
