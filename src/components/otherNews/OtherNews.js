@@ -13,7 +13,7 @@ import './otherNews.scss';
 const Politics = () => {
     return (
         <div className="container">
-            <div className="news">
+            <div id="other" className="news">
                 <div className="news__col">
                     <div className="news__col-head">
                         <div className='title title_fz24'>Колонки</div>
@@ -85,21 +85,25 @@ const Politics = () => {
                         <div className="title title_fz32">Політика</div>
                         <Link to="/" className='fz14'>Всі новини розділу</Link>
                     </div>
+                    <ul className='fz16 sort'>
+                        <li className='active'>Новини</li>
+                        <li>Статті</li>
+                    </ul>
                     <div className="news__politics-body">
                         <div className="news__politics-blocks">
                             <div className="news__politics-block-main">
-                                <img src={imageNews} alt="image-news" />
+                                <img src={imageNews} alt="news" />
                                 <div className="date">05 СЕРПНЯ 11:00</div>
                                 <div className="news__politics-text fz24">У "Слузі" пояснили, чому в росії знову заговорили про переговори з Україною.</div>
                             </div>
                             <div className="news__politics-block-else">
                                 <div className="news__politics-block">
-                                    <img src={imageNews} alt="image-news" />
+                                    <img src={imageNews} alt="news" />
                                     <div className="date">05 СЕРПНЯ 11:00</div>
                                     <div className="fz16 news__politics-text">У "Слузі" пояснили, чому в росії знову заговорили про переговори з Україною.</div>
                                 </div>
                                 <div className="news__politics-block">
-                                    <img src={imageNews} alt="image-news" />
+                                    <img src={imageNews} alt="news" />
                                     <div className="date">05 СЕРПНЯ 11:00</div>
                                     <div className="fz16 news__politics-text">ТРЦ Ocean Plaza після чуток про закриття оголосив про відновлення роботи</div>
                                 </div>
@@ -141,7 +145,7 @@ const Politics = () => {
                     </div>
                     <div className="news__promo-body">
                         <div className="img">
-                            <img src={promoImg} alt="image-promo" />
+                            <img src={promoImg} alt="promo" />
                         </div>
                         <div className="body">
                             <div className="date label">05 СЕРПНЯ 11:00</div>
@@ -192,21 +196,25 @@ const Politics = () => {
                         <div className="title title_fz32">Економіка</div>
                         <Link to="/" className='fz14'>Всі новини розділу</Link>
                     </div>
+                    <ul className='fz16 sort'>
+                        <li className='active'>Новини</li>
+                        <li>Статті</li>
+                    </ul>
                     <div className="news__economics-body">
                         <div className="news__economics-blocks">
                             <div className="news__economics-block-main">
-                                <img src={imageNews} alt="image-news" />
+                                <img src={imageNews} alt="news" />
                                 <div className="date">05 СЕРПНЯ 11:00</div>
                                 <div className="fz24 news__economics-text">У "Слузі" пояснили, чому в росії знову заговорили про переговори з Україною.</div>
                             </div>
                             <div className="news__economics-block-else">
                                 <div className="news__economics-block">
-                                    <img src={imageNews} alt="image-news" />
+                                    <img src={imageNews} alt="news" />
                                     <div className="date">05 СЕРПНЯ 11:00</div>
                                     <div className="fz16 news__economics-text">У "Слузі" пояснили, чому в росії знову заговорили про переговори з Україною.</div>
                                 </div>
                                 <div className="news__economics-block">
-                                    <img src={imageNews} alt="image-news" />
+                                    <img src={imageNews} alt="news" />
                                     <div className="date">05 СЕРПНЯ 11:00</div>
                                     <div className="fz16 news__economics-text">ТРЦ Ocean Plaza після чуток про закриття оголосив про відновлення роботи</div>
                                 </div>
@@ -246,21 +254,25 @@ const Politics = () => {
                         <div className="title title_fz32">Лайфстайл</div>
                         <Link to="/" className='fz14'>Всі новини розділу</Link>
                     </div>
+                    <ul className='fz16 sort'>
+                        <li className='active'>Новини</li>
+                        <li>Статті</li>
+                    </ul>
                     <div className="news__lifestyle-body">
                         <div className="news__lifestyle-blocks">
                             <div className="news__lifestyle-block-main">
-                                <img src={imageLifestyle} alt="image-news" />
+                                <img src={imageLifestyle} alt="news" />
                                 <div className="date">05 СЕРПНЯ 11:00</div>
                                 <div className="fz24 news__lifestyle-text">Селезньов розповів, навіщо росіяни спустошують склади боєприпасів у Білорусі</div>
                             </div>
                             <div className="news__lifestyle-block-else">
                                 <div className="news__lifestyle-block">
-                                    <img src={imageNews} alt="image-news" />
+                                    <img src={imageNews} alt="news" />
                                     <div className="date">05 СЕРПНЯ 11:00</div>
                                     <div className="fz16 news__lifestyle-text">У "Слузі" пояснили, чому в росії знову заговорили про переговори з Україною.</div>
                                 </div>
                                 <div className="news__lifestyle-block">
-                                    <img src={imageNews} alt="image-news" />
+                                    <img src={imageNews} alt="news" />
                                     <div className="date">05 СЕРПНЯ 11:00</div>
                                     <div className="fz16 news__lifestyle-text">ТРЦ Ocean Plaza після чуток про закриття оголосив про відновлення роботи</div>
                                 </div>

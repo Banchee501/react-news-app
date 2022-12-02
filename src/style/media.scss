@@ -25,35 +25,27 @@
         &__cities {
             overflow-y: hidden;
         }
-        &__col {
-            display: block;
-            border-radius: 0;
-            background-color: #F6F6F6;
-            button {
-                display: none;
-            }
-            &-items {
-                display: flex;
-                overflow-y: hidden;
-            }
-            &-item {
-                border-radius: 8px;
-                background-color: white;
-                padding: 16px;
-                margin-right: 24px;
-                width: 304px;
-                height: 250px;
-            }
-        }
         &__politics {
             &-blocks {
                 display: none;
             }
+            &-items {
+                &-col {
+                    .title {
+                        display: none;
+                    }
+                }
+            }
         }
         &__promo {
+            .date {
+                margin-top: 16px;
+            }
             &-body {
                 grid-template-columns: auto;
-
+                .fz32 {
+                    font-size: 22px;
+                }
             }
             &-list {
                 overflow-y: hidden;
@@ -75,10 +67,24 @@
             &-blocks {
                 display: none;
             }
+            &-items {
+                &-col {
+                    .title {
+                        display: none;
+                    }
+                }
+            }
         }
         &__lifestyle {
             &-blocks {
                 display: none;
+            }
+            &-items {
+                &-col {
+                    .title {
+                        display: none;
+                    }
+                }
             }
         }
     }
@@ -181,6 +187,16 @@
             }
         }
     }
+    .news {
+        &__city {
+            &-data {
+                .data {
+                    font-family: Severs-Medium;
+                    font-weight: 500;
+                }
+            }
+        }
+    }
 }
 
 @media (max-width: 769px) {
@@ -237,6 +253,33 @@
                 height: 184px;
             }
         }
+        &__regions {
+            .sort {
+                display: flex;
+                margin: 0;
+            }
+        }
+        &__politics {
+            .sort {
+                display: flex;
+                margin: 0;
+                margin-bottom: 32px;
+            }
+        }
+        &__economics {
+            .sort {
+                display: flex;
+                margin: 0;
+                margin-bottom: 32px;
+            }
+        }
+        &__lifestyle {
+            .sort {
+                display: flex;
+                margin: 0;
+                margin-bottom: 32px;
+            }
+        }
     }
     .video {
         .title {
@@ -254,6 +297,42 @@
         }
         .fz16 {
             font-size: 14px;
+    }
+    .footer {
+        &__main {
+                align-items: center
+        }
+        &__news {
+            display: block;
+        }
+        &__social {
+            display: grid;
+            grid-template-rows: 32px 114px;
+            &-col {
+                flex-wrap: wrap;
+                &-first {
+                    width: 50%;
+                    a {
+                        display: flex;
+                    }
+                }
+                &-second {
+                    width: 50%;
+                    a {
+                        display: flex;
+                    }
+                }
+            }
+        }
+        &__policy {
+            &-wrapper {
+                display: flex;
+                flex-direction: column;
+                a {
+                    margin-bottom: 24px;
+                }
+            }
+        }
     }
 }
 
@@ -292,6 +371,29 @@
         &-inner {
             img {
                 height: 489px;
+            }
+        }
+    }
+    .news {
+            &__col {
+                border-radius: 0;
+                background-color: #F6F6F6;
+                display: block;
+                button {
+                    display: none;
+                }
+            &-items {
+                display: flex;
+                flex-direction: row;
+                overflow-y: hidden;
+            }
+            &-item {
+                border-radius: 8px;
+                background-color: white;
+                padding: 16px;
+                margin-right: 24px;
+                width: 304px;
+                height: 250px;
             }
         }
     }

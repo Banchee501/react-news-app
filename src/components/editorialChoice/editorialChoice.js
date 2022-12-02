@@ -14,7 +14,7 @@ const NewsFeed = () => {
                             <div className='title title_fz24'>Всі новини</div>
                             <Link to="/" className='fz14'>Архів</Link>
                         </div>
-                        <ul className='fz16 news__all-sort'>
+                        <ul className='fz16 sort'>
                             <li className='active'>Всі</li>
                             <li>Новини</li>
                             <li>Статті</li>
@@ -109,6 +109,11 @@ const NewsFeed = () => {
                             <div className="title title_fz32">Регіони</div>
                             <Link to="/" className='fz14'>Всі новини розділу</Link>
                         </div>
+                        <ul className='fz16 sort'>
+                            <li className='active'>Київ</li>
+                            <li>Одеса</li>
+                            <li>Харків</li>
+                        </ul>
                         <div className="news__cities">
                             <div className="news__city">
                                 <div className="news__city_col">
