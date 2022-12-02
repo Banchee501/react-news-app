@@ -13,7 +13,7 @@ import './otherNews.scss';
 const Politics = () => {
     return (
         <div className="container">
-            <div id="other" className="news">
+            <div className="news">
                 <div className="news__col">
                     <div className="news__col-head">
                         <div className='title title_fz24'>Колонки</div>

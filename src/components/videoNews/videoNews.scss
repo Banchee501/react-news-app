@@ -31,7 +31,7 @@
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 32px;
-        margin: 25px 64px 112px 64px;
+        padding: 25px 64px 112px 64px;
         justify-content: center;
         &-items {
             display: grid;

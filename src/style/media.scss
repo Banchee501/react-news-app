@@ -7,6 +7,7 @@
 
 @media (max-width: 1439px) {
     .news {
+        justify-content: center;
         grid-template-columns: repeat(auto-fit, 326px);
         &__all {
             .gradient  {
@@ -92,6 +93,7 @@
         background: #182840;
         height: 100%;
         &__news {
+            padding: 56px 24px;
             grid-template-columns: repeat(auto-fit, 326px);
             &-main {
                 .title_fz32 {
@@ -196,28 +198,6 @@
                 }
             }
         }
-            &__col {
-                border-radius: 0;
-                background-color: #F6F6F6;
-                display: block;
-                grid-column-start: 2;
-                button {
-                    display: none;
-                }
-            &-items {
-                display: flex;
-                flex-direction: row;
-                overflow-y: hidden;
-            }
-            &-item {
-                border-radius: 8px;
-                background-color: white;
-                padding: 16px;
-                margin-right: 24px;
-                width: 304px;
-                height: 250px;
-            }
-        }
     }
 }
 
@@ -254,7 +234,7 @@
     }
     .news {
         background-color: white;
-        grid-template-columns: repeat(auto-fit, 328px);
+        grid-template-columns: repeat(auto-fit, 375px);
         padding-top: 40px;
         justify-content: center;
         &__all {
@@ -265,30 +245,77 @@
         &__block {
             background: #F6F6F6;
             margin-top: 40px;
+            padding-left: 24px;
         }
-        &__choice-item {
-            .fz16 {
-                font-size: 22px;
-            }
-            img {
-                width: 328px;
-                height: 184px;
+        &__choice {
+            &-item {
+                .fz16 {
+                    font-size: 22px;
+                }
+                img {
+                    width: 328px;
+                    height: 184px;
+                }
             }
         }
         &__regions {
+            &-head {
+                padding-right: 24px;
+            }
             .sort {
                 display: flex;
                 margin: 0;
             }
         }
+            &__col {
+                border-radius: 0;
+                background-color: #F6F6F6;
+                display: flex;
+                grid-column-start: 1;
+                grid-column-end: 2;
+                margin-left: 0;
+                button {
+                    display: none;
+                }
+            &-items {
+                display: flex;
+                flex-direction: row;
+                overflow-y: hidden;
+            }
+            &-item {
+                border-radius: 8px;
+                background-color: white;
+                padding: 16px;
+                margin-right: 24px;
+                width: 304px;
+                height: 250px;
+            }
+        }
         &__politics {
+            padding: 56px 24px;
+            grid-column-start: 1;
+            .title {
+                font-size: 30px;
+            }
             .sort {
                 display: flex;
                 margin: 0;
                 margin-bottom: 32px;
             }
         }
+        &__promo {
+            padding: 40px 24px;
+            grid-column-start: 1;
+            .title {
+                font-size: 30px;
+            }
+        }
         &__economics {
+            padding: 56px 24px;
+            grid-column-start: 1;
+            .title {
+                font-size: 30px;
+            }
             &-head {
                 .title_fz32 {
                     font-size: 30px;
@@ -301,6 +328,11 @@
             }
         }
         &__lifestyle {
+            padding: 56px 24px;
+            grid-column-start: 1;
+            .title {
+                font-size: 30px;
+            }
             .sort {
                 display: flex;
                 margin: 0;
@@ -319,7 +351,7 @@
             }
         }
         &__news {
-            margin: 0 23px 25px 23px;
+            padding: 0 23px 25px 23px;
             }
         }
         .fz16 {
