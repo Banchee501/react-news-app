@@ -139,24 +139,18 @@
 }
 
 @media (max-width: 1200px) {
-    .container {
-        width: 100%;
-    }
     .nav {
         &__cities {
             display:none;
         }
         &__panel {
             display: none;
+            &-languages-media {
+                display: flex;
+            }
         }
-        .active {
-            display: flex;
-            justify-content: flex-end;
-            align-items:baseline;
-            margin-left: auto;
-        }
+        
         &__bottom {
-            height: auto;
             overflow-y: scroll;
         }
     }
@@ -206,7 +200,7 @@
         margin: 24px 24px;
         &__bottom {
             overflow-y: scroll;
-            margin: 12px 24px 0px 24px;
+            margin: 12px 24px;
             }
         }
     .statistics {
