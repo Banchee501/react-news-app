@@ -20,7 +20,7 @@ const newsCarousel = () => {
                     />
                     <Carousel.Caption className="fz40">
                         Андрій Єрмак: «В нас інші прізвища, ніж у творців Мінських угод. Людей, які б таке допускали, в нашій команді немає»
-                    </Carousel.Caption>
+                    </Carousel.Caption> 
                 </Carousel.Item>
                 <Carousel.Item>
                     <img

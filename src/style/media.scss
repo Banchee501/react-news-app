@@ -235,6 +235,9 @@
             margin-left: 0;
             padding: 0;
             height: auto;
+            &-list {
+                padding: 0 24px;
+            }
         }
         &__block {
             background: #F6F6F6;
