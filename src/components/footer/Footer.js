@@ -1,4 +1,4 @@
-
+import { Link } from 'react-router-dom';
 
 import './footer.scss';
 import arrow from '../../resources/icons/footer/dropdownArrow.svg';
@@ -12,15 +12,15 @@ const Footer = () => {
                         <div className="footer__news-col">
                             <div className="footer__news-group">
                                 <div className="footer__news-group-title">
-                                    <a href="">Всі новини</a>
+                                    <Link to="/allnews">Всі новини</Link>
                                 </div>
                             </div>
                             <hr />
                             <div className="footer__news-group">
                                 <div className="footer__news-group-title">
-                                    <a href="" className="">
+                                    <Link to="/covid">
                                         COVID-19
-                                    </a>
+                                    </Link>
                                 </div>
                             </div>
                             <hr />
@@ -42,10 +42,10 @@ const Footer = () => {
                                 <div className="dropdown-content">
                                     <ul className="footer__news-sub">
                                         <li className="footer__news-sub-item">
-                                            <a href="">Україна</a>
+                                            <Link to="/ukraine">Україна</Link>
                                         </li>
                                         <li className="footer__news-sub-item">
-                                            <a href="">Світ</a>
+                                            <Link to="/world">Світ</Link>
                                         </li>
                                     </ul>
                                 </div>
@@ -61,19 +61,19 @@ const Footer = () => {
                                 <div className="dropdown-content">
                                     <ul className="footer__news-sub">
                                         <li className="footer__news-sub-item">
-                                            <a href="">Дієта</a>
+                                            <Link to="/diet">Дієта</Link>
                                         </li>
                                         <li className="footer__news-sub-item">
-                                            <a href="">Краса</a>
+                                            <Link to="/beauty">Краса</Link>
                                         </li>
                                         <li className="footer__news-sub-item">
-                                            <a href="">Секс</a>
+                                            <Link to="/sex">Секс</Link>
                                         </li>
                                         <li className="footer__news-sub-item">
-                                            <a href="">Психологія</a>
+                                            <Link to="/psychology">Психологія</Link>
                                         </li>
                                         <li className="footer__news-sub-item">
-                                            <a href="">Медицина</a>
+                                            <Link to="/medicine">Медицина</Link>
                                         </li>
                                     </ul>
                                 </div>
@@ -87,13 +87,13 @@ const Footer = () => {
                                 <div className="dropdown-content">
                                     <ul className="footer__news-sub">
                                         <li className="footer__news-sub-item">
-                                            <a href="">ДТП</a>
+                                            <Link to="/dtp">ДТП</Link>
                                         </li>
                                         <li className="footer__news-sub-item">
-                                            <a href="">Катастрофи</a>
+                                            <Link to="/catastrophe">Катастрофи</Link>
                                         </li>
                                         <li className="footer__news-sub-item">
-                                            <a href="">Кримінал</a>
+                                            <Link to="/crime">Кримінал</Link>
                                         </li>
                                     </ul>
                                 </div>
@@ -109,22 +109,22 @@ const Footer = () => {
                                 <div className="dropdown-content">
                                     <ul className="footer__news-sub">
                                         <li className="footer__news-sub-item">
-                                            <a href="">Історії з життя</a>
+                                            <Link to="/lifehitory">Історії з життя</Link>
                                         </li>
                                         <li className="footer__news-sub-item">
-                                            <a href="">Подорожі</a>
+                                            <Link to="/travels">Подорожі</Link>
                                         </li>
                                         <li className="footer__news-sub-item">
-                                            <a href="">Кухня</a>
+                                            <Link to="/kitchen">Кухня</Link>
                                         </li>
                                         <li className="footer__news-sub-item">
-                                            <a href="">Шоубізнес</a>
+                                            <Link to="/showbusiness">Шоубізнес</Link>
                                         </li>
                                         <li className="footer__news-sub-item">
-                                            <a href="">Мода та стиль</a>
+                                            <Link to="/fashion">Мода та стиль</Link>
                                         </li>
                                         <li className="footer__news-sub-item">
-                                            <a href="">Зірковий гороскоп</a>
+                                            <Link to="/horoscope">Зірковий гороскоп</Link>
                                         </li>
                                     </ul>
                                 </div>
@@ -138,16 +138,16 @@ const Footer = () => {
                                 <div className="dropdown-content">
                                     <ul className="footer__news-sub">
                                         <li className="footer__news-sub-item">
-                                            <a href="">Охорона здоров'я</a>
+                                            <Link to="/healthcare">Охорона здоров'я</Link>
                                         </li>
                                         <li className="footer__news-sub-item">
-                                            <a href="">Безпека</a>
+                                            <Link to="/security">Безпека</Link>
                                         </li>
                                         <li className="footer__news-sub-item">
-                                            <a href="">Екологія</a>
+                                            <Link to="/ecology">Екологія</Link>
                                         </li>
                                         <li className="footer__news-sub-item">
-                                            <a href="">Релігія</a>
+                                            <Link to="/religion">Релігія</Link>
                                         </li>
                                     </ul>
                                 </div>
@@ -163,16 +163,16 @@ const Footer = () => {
                                 <div className="dropdown-content">
                                     <ul className="footer__news-sub">
                                         <li className="footer__news-sub-item">
-                                            <a href="">Київ</a>
+                                            <Link to="/kyiv">Київ</Link>
                                         </li>
                                         <li className="footer__news-sub-item">
-                                            <a href="">Одеса</a>
+                                            <Link to="/odesa">Одеса</Link>
                                         </li>
                                         <li className="footer__news-sub-item">
-                                            <a href="">Харків</a>
+                                            <Link to="/kharkiv">Харків</Link>
                                         </li>
                                         <li className="footer__news-sub-item">
-                                            <a href="">Львів</a>
+                                            <Link to="/lviv">Львів</Link>
                                         </li>
                                     </ul>
                                 </div>
@@ -186,16 +186,16 @@ const Footer = () => {
                                 <div className="dropdown-content">
                                     <ul className="footer__news-sub">
                                         <li className="footer__news-sub-item">
-                                            <a href="">Наука</a>
+                                            <Link to="/science">Наука</Link>
                                         </li>
                                         <li className="footer__news-sub-item">
-                                            <a href="">Гаджети</a>
+                                            <Link to="/gadgets">Гаджети</Link>
                                         </li>
                                         <li className="footer__news-sub-item">
-                                            <a href="">ІТ</a>
+                                            <Link to="/it">ІТ</Link>
                                         </li>
                                         <li className="footer__news-sub-item">
-                                            <a href="">Космос</a>
+                                            <Link to="/space">Космос</Link>
                                         </li>
                                     </ul>
                                 </div>
@@ -211,13 +211,13 @@ const Footer = () => {
                                 <div className="dropdown-content">
                                     <ul className="footer__news-sub">
                                         <li className="footer__news-sub-item">
-                                            <a href="">Фінанси</a>
+                                            <Link to="/finances">Фінанси</Link>
                                         </li>
                                         <li className="footer__news-sub-item">
-                                            <a href="">Комунальні послуги</a>
+                                            <Link to="/communal">Комунальні послуги</Link>
                                         </li>
                                         <li className="footer__news-sub-item">
-                                            <a href="">Бізнес</a>
+                                            <Link to="/business">Бізнес</Link>
                                         </li>
                                     </ul>
                                 </div>
@@ -237,27 +237,27 @@ const Footer = () => {
                         <div className="footer__news-col about">
                             <div className="footer__news-group">
                                 <div className="footer__news-group-title">
-                                    <a href="">ПРО НАС</a>
+                                    <Link to="/about">ПРО НАС</Link>
                                 </div>
                             </div>
                             <div className="footer__news-group">
                                 <div className="footer__news-group-title">
-                                    <a href="">КОНТАКТИ</a>
+                                    <Link to="/contacts">КОНТАКТИ</Link>
                                 </div>
                             </div>
                             <div className="footer__news-group">
                                 <div className="footer__news-group-title">
-                                    <a href="">СТРУКТУРА ВЛАСНОСТІ</a>
+                                    <Link to="/structure">СТРУКТУРА ВЛАСНОСТІ</Link>
                                 </div>
                             </div>
                             <div className="footer__news-group">
                                 <div className="footer__news-group-title">
-                                    <a href="">КОМАНДА</a>
+                                    <Link to="/team">КОМАНДА</Link>
                                 </div>
                             </div>
                             <div className="footer__news-group">
                                 <div className="footer__news-group-title">
-                                    <a href="">МЕДІАКІТ</a>
+                                    <Link to="/media">МЕДІАКІТ</Link>
                                 </div>
                             </div>
                         </div>
@@ -269,7 +269,7 @@ const Footer = () => {
                     <div className="footer__social-wrapper">
                         <div className="footer__social-col">
                             <div className="footer__social-col-first">
-                                <a href="">
+                                <Link to="https://www.youtube.com/">
                                     <div className="footer__social-icon">
                                         <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M20.6305 15.84C20.4293 16.8666 19.5745 17.649 18.5185 17.7957C16.8589 18.04 14.0929 18.3333 10.9748 18.3333C7.90719 18.3333 5.14115 18.04 3.4311 17.7957C2.3751 17.649 1.51985 16.8666 1.3191 15.84C1.1179 14.7157 0.916687 13.0533 0.916687 11C0.916687 8.94663 1.1179 7.28425 1.3191 6.15996C1.52031 5.13329 2.3751 4.35092 3.4311 4.20425C5.09073 3.95996 7.85677 3.66663 10.9748 3.66663C14.0929 3.66663 16.8085 3.95996 18.5185 4.20425C19.5745 4.35092 20.4298 5.13329 20.6305 6.15996C20.8317 7.28425 21.0834 8.94663 21.0834 11C21.0329 13.0533 20.8317 14.7157 20.6305 15.84Z" fill="url(#paint0_linear_1_3680)" />
@@ -286,8 +286,8 @@ const Footer = () => {
                                         </svg>
                                     </div>
                                     YouTube
-                                </a>
-                                <a href="">
+                                </Link>
+                                <Link to="https://web.telegram.org/k/">
                                     <div className="footer__social-icon">
                                         <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M11 1.83337C8.56883 1.83337 6.23725 2.79914 4.51817 4.51823C2.79908 6.23731 1.83331 8.56889 1.83331 11C1.83331 13.4312 2.79908 15.7628 4.51817 17.4819C6.23725 19.2009 8.56883 20.1667 11 20.1667C13.4311 20.1667 15.7627 19.2009 17.4818 17.4819C19.2009 15.7628 20.1666 13.4312 20.1666 11C20.1666 8.56889 19.2009 6.23731 17.4818 4.51823C15.7627 2.79914 13.4311 1.83337 11 1.83337Z" fill="#29B6F6" />
@@ -297,8 +297,8 @@ const Footer = () => {
                                         </svg>
                                     </div>
                                     Telegram
-                                </a>
-                                <a href="">
+                                </Link>
+                                <Link to="https://www.instagram.com/">
                                     <div className="footer__social-icon">
                                         <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M15.5911 19.2454L6.42447 19.2541C4.4078 19.2559 2.75642 17.6077 2.75413 15.5911L2.74542 6.4244C2.74359 4.40774 4.39176 2.75636 6.40842 2.75407L15.5751 2.74536C17.5918 2.74353 19.2431 4.3917 19.2454 6.40836L19.2541 15.575C19.2564 17.5922 17.6078 19.2435 15.5911 19.2454Z" fill="url(#paint0_radial_1_3694)" />
@@ -324,10 +324,10 @@ const Footer = () => {
                                         </svg>
                                     </div>
                                     Instagram
-                                </a>
+                                </Link>
                             </div>
                             <div className="footer__social-col-second">
-                                <a href="">
+                                <Link to="https://uk-ua.facebook.com/">
                                     <div className="footer__social-icon">
                                         <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M11 1.83337C5.93726 1.83337 1.83334 5.93729 1.83334 11C1.83334 16.0628 5.93726 20.1667 11 20.1667C16.0628 20.1667 20.1667 16.0628 20.1667 11C20.1667 5.93729 16.0628 1.83337 11 1.83337Z" fill="url(#paint0_linear_1_3702)" />
@@ -341,8 +341,8 @@ const Footer = () => {
                                         </svg>
                                     </div>
                                     Facebook
-                                </a>
-                                <a href="">
+                                </Link>
+                                <Link to="https://www.tiktok.com/uk-UA/">
                                     <div className="footer__social-icon">
                                         <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path fill-rule="evenodd" clip-rule="evenodd" d="M18.3352 19.2358L3.68088 19.25C3.17717 19.2505 2.76467 18.8389 2.76421 18.3352L2.75 3.68088C2.74954 3.17717 3.16113 2.76467 3.66483 2.76421L18.3191 2.75C18.8228 2.74954 19.2353 3.16113 19.2358 3.66483L19.25 18.3191C19.2505 18.8228 18.8389 19.2353 18.3352 19.2358Z" fill="url(#paint0_linear_1_3707)" />
@@ -358,8 +358,8 @@ const Footer = () => {
                                         </svg>
                                     </div>
                                     TikTok
-                                </a>
-                                <a href="/">
+                                </Link>
+                                <Link to="https://news.google.com/home?hl=ru&gl=UA&ceid=UA:ru">
                                     <div className="footer__social-icon">
                                         <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M16.9347 13.9819C16.9347 14.2664 16.6999 14.4994 16.4128 14.4994H5.36673C5.0797 14.4994 4.84483 14.2664 4.84483 13.9819V3.15755C4.84483 2.87305 5.0797 2.64001 5.36673 2.64001H16.4132C16.7002 2.64001 16.9351 2.87305 16.9351 3.15755V13.9819H16.9347Z" fill="#0C9D58" />
@@ -393,7 +393,7 @@ const Footer = () => {
                                         </svg>
                                     </div>
                                     Google News
-                                </a>
+                                </Link>
                             </div>
                         </div>
                     </div>
@@ -403,15 +403,15 @@ const Footer = () => {
                         © 2020-2022, ТОВ «МЕДІА МЕРЕЖІ»
                     </div>
                     <div className="footer__policy-wrapper">
-                        <a href="/">
+                        <Link to="/userpolicy">
                             Політика користувача
-                        </a>
-                        <a href="/">
+                        </Link>
+                        <Link to="/privacypolicy">
                             Політика конфіденційності
-                        </a>
-                        <a href="/">
+                        </Link>
+                        <Link to="/cookiepolicy">
                             Політика Cookie-файлів
-                        </a>
+                        </Link>
                     </div>
                 </div>
             </div>

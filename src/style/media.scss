@@ -365,14 +365,18 @@
             hr {
                 display: block;
             }
-            img {
-                display: block;
-            }
             .dropdown-content {
                 display: none;
             }
             &-col {
                 margin-bottom: 0;
+            }
+            &-group {
+                &-title {
+                    img {
+                        display: block;
+                    }
+                }
             }
             &-group:hover .dropdown-content {
                 display: block;
