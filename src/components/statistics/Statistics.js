@@ -11,14 +11,15 @@ import afvIcon from "../../resources/icons/navbarIcons/afv.png";
 import './statistics.scss';
 
 const Statistics = () => {
-    const day = 0;
-    const soldier = 0;
-    const tanks = 0;
-    const artilery = 0;
-    const aircraft = 0;
-    const mlrs = 0;
-    const helicopter = 0;
-    const afv = 0;
+
+    const day = 0,
+        soldier = 0,
+        tanks = 0,
+        artilery = 0,
+        aircraft = 0,
+        mlrs = 0,
+        helicopter = 0,
+        afv = 0;
 
     return (
         <div className="container">
