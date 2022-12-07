@@ -1,15 +1,15 @@
 {
-  "statistics": [
-    {
-    "day": "131",
-    "soldier": "36200",
-    "tanks": "1589",
-    "artillery": "4578",
-    "aircraft": "220",
-    "mlrs": "246",
-    "helicopter": "190",
-    "afv": "4578"
-    }
+    "statistics": [
+        {
+        "day": "131",
+        "soldier": "36200",
+        "tanks": "1589",
+        "artillery": "4578",
+        "aircraft": "220",
+        "mlrs": "246",
+        "helicopter": "190",
+        "afv": "4578"
+        }
     ],
     "newsCarousel": [
         {
@@ -41,7 +41,7 @@
         "text": "Сейм Латвії визнав рф країною-спонсором тероризму"
         }
     ],
-        "newsAll": [
+    "newsAll": [
         {
             "type": "",
             "img": "",

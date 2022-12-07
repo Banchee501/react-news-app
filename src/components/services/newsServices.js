@@ -10,7 +10,7 @@ class NewsServices {
     }
 
     getAll = () => {
-        return this.getResources('https://run.mocky.io/v3/4ae8012c-d708-4fd9-b49b-eac1466d7110')
+        return this.getResources('https://run.mocky.io/v3/beb3ac9f-a18d-495e-baf0-4b4bc3e67a5e')
     }
 
     getStatistics = async () => {
@@ -18,15 +18,14 @@ class NewsServices {
         return this.statistics(res.statistics[0]);
     }
 
-    updateStatistic = () => {
-        this.newsServices
-            .getStatistics()
-            .then(this.onStatLoaded)
-    }
-
     getNewsAll = async () => {
         const res = await this.getAll()
-        return this.statistics(res.newsAll);
+        return res.newsAll.map(this.news);
+    }
+
+    getEditorialChoice = async () => {
+        const res = await this.getAll()
+        return res.editorialChoice.map(this.news);
     }
 
     statistics = (amount) => {
@@ -44,7 +43,11 @@ class NewsServices {
 
     news = (news) => {
         return {
-            
+            type: news.type,
+            img: news.img,
+            className: news.className,
+            date: news.date,
+            text: news.text
         }
     }
 }

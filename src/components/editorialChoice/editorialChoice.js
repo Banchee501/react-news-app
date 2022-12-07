@@ -1,37 +1,99 @@
 import { Link } from 'react-router-dom';
 import { Component } from 'react';
 import NewsServices from "../services/newsServices";
-import { Spinner } from '../spinner/Spinner';
 
 import './editorialChoice.scss';
 
 import newsImage from "../../resources/img/image.jpg";
 
+
+
 class NewsFeed extends Component {
 
     state = {
-        stat: {},
+        news: [],
+        editorialChoice: []
     }
 
     newsServices = new NewsServices();
 
     componentDidMount() {
-        console.log(this.newsServices.getNewsAll())
+        this.newsServices.getNewsAll()
+            .then(this.onNewsLoaded)
+        this.newsServices.getEditorialChoice()
+            .then(this.onEditorialChoice)
     }
 
-    onStatLoaded = (stat) => {
-        this.setState({ stat })
+    onNewsLoaded = (news) => {
+        this.setState({ news })
     }
 
+    onEditorialChoice = (editorialChoice) => {
+        this.setState({ editorialChoice })
+    }
 
-    updateStatistic = () => {
+    updateNews = () => {
         this.newsServices
-            .getStatistics()
-            .then(this.onStatLoaded)
+            .getNewsAll()
+            .then(this.onNewsLoaded)
     }
+
+    updateEditorialChoice = () => {
+        this.newsServices
+            .getEditorialChoice()
+            .then(this.onEditorialChoice)
+    }
+
+    renderNews(arr) {
+        const items = arr.map((item) => {
+            let style = {
+                className: "fz16 news__all-item"
+            };
+            if (item.className !== { className: "" }) {
+                style = { className: item.className + " fz16 news__all-item" }
+            }
+
+            return (
+                <div className={style.className}>
+                    <span>{item.date.slice(-5)}</span> {item.text}
+                    <hr />
+                </div>
+            )
+        });
+
+        return (
+            <div className="news__all-items">
+                {items}
+            </div>
+        )
+    }
+
+    renderEditorialChoice(arr) {
+        const items = arr.map((item) => {
+            return (
+                <div className="news__choice-item">
+                    <img src={newsImage} alt="news" />
+                    <div className='fz12 date'>{item.date}</div>
+                    <div className="fz16 content">
+                        {item.text}
+                    </div>
+                </div>
+            )
+        })
+
+        return (
+            <div className='news__choice-items'>
+                {items}
+            </div>
+        )
+    }
+
 
     render() {
-        const { stat: { } } = this.state
+        const { news, editorialChoice } = this.state
+        const itemNews = this.renderNews(news);
+        const itemEditorialChoice = this.renderEditorialChoice(editorialChoice);
+
         return (
             <div className="container" >
                 <div className='news'>
@@ -46,27 +108,7 @@ class NewsFeed extends Component {
                                 <li>Новини</li>
                                 <li>Статті</li>
                             </ul>
-                            <div className="news__all-items">
-                                <div className="fz16 news__all-item label"> <span>14:59 </span>"Відбудова України — завдання усього світу": промова Зеленського на конференції в Лугано
-                                </div>
-                                <hr />
-                                <div className="fz16 news__all-item label label__photo"><span>14:59 </span>До Європи за захистом. Що означає позов Ахметова до Європейського суду з прав людини</div>
-                                <hr />
-                                <div className="fz16 news__all-item label"><span>14:59 </span>Прем'єрка Швеції відвідала потрощені росіянами Бучу й Бородянку: реакція на побачене</div>
-                                <hr />
-                                <div className="fz16 news__all-item label label__quickly"><span>14:59 </span>До Європи за захистом. Що означає позов Ахметова до Європейського суду з прав людини</div>
-                                <hr />
-                                <div className="fz16 news__all-item label"><span>14:59 </span>Стало відомо, коли ЄС може узгодити сьомий пакет санкцій проти рф
-                                    14:59</div>
-                                <hr />
-                                <div className="fz16 news__all-item label"><span>14:59 </span>До Європи за захистом. Що означає позов Ахметова до Європейського суду з прав людини</div>
-                                <hr />
-                                <div className="fz16 news__all-item label"><span>14:59 </span>"Відбудова України — завдання усього світу": промова Зеленського на конференції в Лугано</div>
-                                <hr />
-                                <div className="fz16 news__all-item label"><span>14:59 </span>Дружина Зеленського чесно зізналася, чи боїться смерті</div>
-                                <hr />
-                                <div className="fz16 news__all-item label"><span>14:59 </span>"Бийся на світлій стороні": як спортсмени, меценати й волонетри рятують життя українців</div>
-                            </div>
+                            {itemNews}
                         </div>
                         <div className="gradient"></div>
                         <button className='fz16 load__more'>
@@ -86,50 +128,7 @@ class NewsFeed extends Component {
                     <div className="news__block">
                         <div className='news__choice'>
                             <div className='title title_fz32'>Вибір редакції</div>
-                            <div className='news__choice-items'>
-                                <div className="news__choice-item">
-                                    <img src={newsImage} alt="news" />
-                                    <div className='fz12 date'>05 СЕРПНЯ 11:00</div>
-                                    <div className="fz16 content">
-                                        Селезньов розповів, навіщо росіяни спустошують склади боєприпасів у Білорусі.
-                                    </div>
-                                </div>
-                                <div className="news__choice-item">
-                                    <img src={newsImage} alt="news" />
-                                    <div className='fz12 date'>05 СЕРПНЯ 11:00</div>
-                                    <div className="fz16 content">
-                                        Генерал Романенко оцінив бойовий потенціал і спроможності ворога на півдні України.
-                                    </div>
-                                </div>
-                                <div className="news__choice-item">
-                                    <img src={newsImage} alt="news" />
-                                    <div className='fz12 date'>05 СЕРПНЯ 11:00</div>
-                                    <div className="fz16 content">
-                                        Генерал Романенко оцінив бойовий потенціал і спроможності ворога на півдні України.
-                                    </div>
-                                </div>
-                                <div className="news__choice-item">
-                                    <img src={newsImage} alt="news" />
-                                    <div className='fz12 date'>05 СЕРПНЯ 11:00</div>
-                                    <div className="fz16 content">
-                                        У "Слузі" пояснили, чому в росії знову заговорили про переговори з Україною.
-                                    </div>
-                                </div>
-                                <div className="news__choice-item">
-                                    <img src={newsImage} alt="news" />
-                                    <div className='fz12 date'>05 СЕРПНЯ 11:00</div>
-                                    <div className="fz16 content">
-                                        ТРЦ Ocean Plaza після чуток про закриття оголосив про відновлення роботи.
-                                    </div>
-                                </div>
-                                <div className="news__choice-item">
-                                    <img src={newsImage} alt="news" />
-                                    <div className='fz12 date'>05 СЕРПНЯ 11:00</div>
-                                    <div className="fz16 content">
-                                        Білорусь несподівано вирішила провести військові навчання з Казахстаном: що відомо.
-                                    </div>
-                                </div>
-                            </div>
+                            {itemEditorialChoice}
                         </div>
                         <div className="news__regions">
                             <div className="news__regions-head">
