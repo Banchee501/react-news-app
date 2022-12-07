@@ -1,5 +1,4 @@
 import Marquee from "react-fast-marquee";
-// import { useHttp } from "../../hooks/http.hook";
 import NewsServices from "../services/newsServices";
 
 
@@ -15,20 +14,20 @@ import './statistics.scss';
 import { Component } from "react";
 
 class Statistics extends Component {
-    constructor(props) {
-        super(props);
-        this.updateStatistic()
-    }
-
     state = {
-        stat: {}
+        stat: {},
     }
 
     newsServices = new NewsServices();
 
+    componentDidMount() {
+        this.updateStatistic()
+    }
+
     onStatLoaded = (stat) => {
         this.setState({ stat })
     }
+
 
     updateStatistic = () => {
         this.newsServices

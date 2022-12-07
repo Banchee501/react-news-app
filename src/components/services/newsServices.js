@@ -24,6 +24,11 @@ class NewsServices {
             .then(this.onStatLoaded)
     }
 
+    getNewsAll = async () => {
+        const res = await this.getAll()
+        return this.statistics(res.newsAll);
+    }
+
     statistics = (amount) => {
         return {
             day: amount.day,
@@ -34,6 +39,12 @@ class NewsServices {
             mlrs: amount.mlrs,
             helicopter: amount.helicopter,
             afv: amount.afv,
+        }
+    }
+
+    news = (news) => {
+        return {
+            
         }
     }
 }
