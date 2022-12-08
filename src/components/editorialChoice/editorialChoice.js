@@ -6,8 +6,6 @@ import './editorialChoice.scss';
 
 import newsImage from "../../resources/img/image.jpg";
 
-
-
 class NewsFeed extends Component {
 
     state = {
