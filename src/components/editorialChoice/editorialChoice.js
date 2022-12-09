@@ -52,7 +52,7 @@ class NewsFeed extends Component {
             }
 
             return (
-                <div className={style.className}>
+                <div key={item.id} className={style.className}>
                     <span>{item.date.slice(-5)}</span> {item.text}
                     <hr />
                 </div>
@@ -69,7 +69,7 @@ class NewsFeed extends Component {
     renderEditorialChoice(arr) {
         const items = arr.map((item) => {
             return (
-                <div className="news__choice-item">
+                <div key={item.id} className="news__choice-item">
                     <img src={newsImage} alt="news" />
                     <div className='fz12 date'>{item.date}</div>
                     <div className="fz16 content">

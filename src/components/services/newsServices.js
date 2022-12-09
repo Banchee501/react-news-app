@@ -1,3 +1,5 @@
+import nextId from "react-id-generator"
+
 class NewsServices {
     getResources = async (url) => {
         let res = await fetch(url);
@@ -43,6 +45,7 @@ class NewsServices {
 
     news = (news) => {
         return {
+            id: nextId(),
             type: news.type,
             img: news.img,
             className: news.className,
