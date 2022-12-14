@@ -30,7 +30,7 @@ class NewsServices {
         return res.editorialChoice.map(this.news);
     }
 
-    getRegionNews = async () => {
+    getRegionsNews = async () => {
         const res = await this.getAll()
         return res.regions.map(this.news);
     }

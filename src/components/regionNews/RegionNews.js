@@ -11,7 +11,7 @@ class RegionsNews extends Component {
 
     componentDidMount() {
         this.newsServices.getRegionsNews()
-            .then(this.onNewsLoaded)
+            .then(this.onRegionsNewsLoaded)
     }
 
     onRegionsNewsLoaded = (regionsNews) => {
@@ -34,27 +34,11 @@ class RegionsNews extends Component {
             )
         });
 
-        if (arr.type === "Kyiv") {
-            return (
-                <div className="news__city-grid">
-                    {items}
-                </div>
-            )
-        }
-        if (arr.type === "Odesa") {
-            return (
-                <div className="news__city-grid">
-                    {items}
-                </div>
-            )
-        }
-        if (arr.type === "Kharkiv") {
-            return (
-                <div className="news__city-grid">
-                    {items}
-                </div>
-            )
-        }
+        return (
+            <div className="news__city-grid">
+                {items}
+            </div>
+        )
     }
 
     render() {
