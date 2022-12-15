@@ -24,7 +24,7 @@ const newsCarousel = () => {
                 </Carousel.Item>
                 <Carousel.Item>
                     <img
-                        id='1'
+                        id='2'
                         src={firstSlide}
                         alt="First slide"
                     />
@@ -34,7 +34,7 @@ const newsCarousel = () => {
                 </Carousel.Item>
                 <Carousel.Item>
                     <img
-                        id='1'
+                        id='3'
                         src={firstSlide}
                         alt="First slide"
                     />
@@ -44,7 +44,7 @@ const newsCarousel = () => {
                 </Carousel.Item>
                 <Carousel.Item>
                     <img
-                        id='1'
+                        id='4'
                         src={firstSlide}
                         alt="First slide"
                     />
