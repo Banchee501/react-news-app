@@ -25,8 +25,39 @@ class RegionsNews extends Component {
     }
 
     renderRegionsNews(arr) {
-        const items = arr.map((item, key) => {
+        const items = arr.map((item) => {
+            if (item.type === "Kyiv")
+            return (
+                <div key={item.id} className="fz16 news__city-data-content">
+                    <span>{item.date.slice(-5)}</span> {item.text}
+                    <hr />
+                </div>
+            )
+        });
+        const kyiv = arr.map((item, key) => {
             if (arr[key].type === "Kyiv") {
+                console.log(item)
+                return (
+                    <div key={item.id} className="fz16 news__city-data-content">
+                        <span>{item.date.slice(-5)}</span> {item.text}
+                        <hr />
+                    </div>
+                )
+            }
+        }),
+            odesa = arr.map((item, key) => {
+            if (arr[key].type === "Odesa") {
+                console.log(item)
+                return (
+                    <div key={item.id} className="fz16 news__city-data-content">
+                        <span>{item.date.slice(-5)}</span> {item.text}
+                        <hr />
+                    </div>
+                )
+            }
+        }),
+            kharkiv = arr.map((item, key) => {
+            if (arr[key].type === "Kharkiv") {
                 console.log(item)
                 return (
                     <div key={item.id} className="fz16 news__city-data-content">
@@ -39,7 +70,9 @@ class RegionsNews extends Component {
 
         return (
             <div className="news__city-grid">
-                {items}
+                {kyiv}
+                {odesa}
+                {kharkiv}
             </div>
         )
     }

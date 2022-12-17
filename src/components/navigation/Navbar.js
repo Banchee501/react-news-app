@@ -5,8 +5,7 @@ import fire from "../../resources/icons/navbarIcons/fireNav.svg";
 
 const Navbar = () => {
     return (
-        <nav>
-            <div className='container navigation'>
+            <nav className='container'>
                 <div className='nav'>
                     <button className='fz16 nav__hamburger'>
                         <div className="nav__hamburger-icon"></div>Меню</button>
@@ -57,8 +56,7 @@ const Navbar = () => {
                     <div className='circle'></div>
                     <a className="nav__bottom-list-live" href="/live">LIVE</a>
                 </div>
-            </div>
-        </nav>
+            </nav>
     )
 }
 
