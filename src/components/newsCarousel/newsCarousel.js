@@ -5,9 +5,9 @@ import { Component } from 'react';
 import './carousel.scss';
 
 import firstSlide from "../../resources/img/firstSlide.jpg";
-// import secondSlide from "../../resources/img/secondSlide.png";
-// import thirdSlide from "../../resources/img/thirdSlide.png";
-// import fourthSlide from "../../resources/img/fourthSlide.png";
+import secondSlide from "../../resources/img/secondSlide.png";
+import thirdSlide from "../../resources/img/thirdSlide.png";
+import fourthSlide from "../../resources/img/fourthSlide.png";
 
 export default class AsNavFor extends Component {
     constructor(props) {
@@ -33,20 +33,20 @@ export default class AsNavFor extends Component {
             asNavFor={this.state.nav2}
             ref={slider => (this.slider1 = slider)}>
                 <div className='carousel-slide-item'>
-                    <img src={firstSlide} alt="First slide" />
+                    <img src={firstSlide} alt="First slide"/>
                     <p className="fz40">Андрій Єрмак: «В нас інші прізвища, ніж у творців Мінських угод. Людей, які б таке допускали, в нашій команді немає»</p>
                 </div>
                 <div className='carousel-slide-item'>
-                    <img src={firstSlide} alt="First slide" />
-                    <p className="fz40">Андрій Єрмак: «В нас інші прізвища, ніж у творців Мінських угод. Людей, які б таке допускали, в нашій команді немає»</p>
+                    <img src={secondSlide} alt="Second slide" />
+                    <p className="fz40">Оприлюднено супутникові знімки аеродрому біля Новофедорівки: видно місця ураження</p>
                 </div>
                 <div className='carousel-slide-item'>
-                    <img src={firstSlide} alt="First slide" />
-                    <p className="fz40">Андрій Єрмак: «В нас інші прізвища, ніж у творців Мінських угод. Людей, які б таке допускали, в нашій команді немає»</p>
+                    <img src={thirdSlide} alt="Third slide" />
+                    <p className="fz40">Вибухи на білоруському аеродромі "Зябрівка": оприлюднені причини</p>
                 </div>
                 <div className='carousel-slide-item'>
-                    <img src={firstSlide} alt="First slide" />
-                    <p className="fz40">Андрій Єрмак: «В нас інші прізвища, ніж у творців Мінських угод. Людей, які б таке допускали, в нашій команді немає»</p>
+                    <img src={fourthSlide} alt="Fourth slide" />
+                    <p className="fz40">Сейм Латвії визнав рф країною-спонсором тероризму</p>
                 </div>
           </Slider>
           <Slider
@@ -56,22 +56,22 @@ export default class AsNavFor extends Component {
             slidesToShow={4}
             swipeToSlide={true}
             focusOnSelect={true}>
-                    <div>
+                    <>
                         <img src={firstSlide} alt="First slide" />
-                        <p className="fz40">Андрій Єрмак: «В нас інші прізвища, ніж у творців Мінських угод. Людей, які б таке допускали, в нашій команді немає»</p>
-                    </div>
-                    <div>
-                        <img src={firstSlide} alt="First slide" />
-                        <p className="fz40">Андрій Єрмак: «В нас інші прізвища, ніж у творців Мінських угод. Людей, які б таке допускали, в нашій команді немає»</p>
-                    </div>
-                    <div>
-                        <img src={firstSlide} alt="First slide" />
-                        <p className="fz40">Андрій Єрмак: «В нас інші прізвища, ніж у творців Мінських угод. Людей, які б таке допускали, в нашій команді немає»</p>
-                    </div>
-                    <div>
-                        <img src={firstSlide} alt="First slide" />
-                        <p className="fz40">Андрій Єрмак: «В нас інші прізвища, ніж у творців Мінських угод. Людей, які б таке допускали, в нашій команді немає»</p>
-                    </div>
+                        <p className="fz14">Андрій Єрмак: «В нас інші прізвища, ніж у творців Мінських угод. Людей, які б таке допускали, в нашій команді немає»</p>
+                    </>
+                    <>
+                        <img src={secondSlide} alt="Second slide" />
+                        <p className="fz14">Оприлюднено супутникові знімки аеродрому біля Новофедорівки: видно місця ураження</p>
+                    </>
+                    <>
+                        <img src={thirdSlide} alt="Third slide" />
+                        <p className="fz14">Вибухи на білоруському аеродромі "Зябрівка": оприлюднені причини</p>
+                    </>
+                    <>
+                        <img src={fourthSlide} alt="Fourth slide" />
+                        <p className="fz14">Сейм Латвії визнав рф країною-спонсором тероризму</p>
+                    </>
           </Slider>
         </div>
       );
