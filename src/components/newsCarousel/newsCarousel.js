@@ -29,49 +29,49 @@ export default class AsNavFor extends Component {
       return (
         <div className='container'>
           <Slider
+          className='carousel-slide'
             asNavFor={this.state.nav2}
             ref={slider => (this.slider1 = slider)}>
-                <div className='carousel-slide'>
-                    <img id='1' src={firstSlide} alt="First slide" />
-                    <p className="fz40 carousel-slide-caption">Андрій Єрмак: «В нас інші прізвища, ніж у творців Мінських угод. Людей, які б таке допускали, в нашій команді немає»</p>
+                <div className='carousel-slide-item'>
+                    <img src={firstSlide} alt="First slide" />
+                    <p className="fz40">Андрій Єрмак: «В нас інші прізвища, ніж у творців Мінських угод. Людей, які б таке допускали, в нашій команді немає»</p>
                 </div>
-                <div className='carousel-slide'>
-                    <img id='1' src={firstSlide} alt="First slide" />
-                    <p className="fz40 carousel-slide-caption">Андрій Єрмак: «В нас інші прізвища, ніж у творців Мінських угод. Людей, які б таке допускали, в нашій команді немає»</p>
+                <div className='carousel-slide-item'>
+                    <img src={firstSlide} alt="First slide" />
+                    <p className="fz40">Андрій Єрмак: «В нас інші прізвища, ніж у творців Мінських угод. Людей, які б таке допускали, в нашій команді немає»</p>
                 </div>
-                <div className='carousel-slide'>
-                    <img id='1' src={firstSlide} alt="First slide" />
-                    <p className="fz40 carousel-slide-caption">Андрій Єрмак: «В нас інші прізвища, ніж у творців Мінських угод. Людей, які б таке допускали, в нашій команді немає»</p>
+                <div className='carousel-slide-item'>
+                    <img src={firstSlide} alt="First slide" />
+                    <p className="fz40">Андрій Єрмак: «В нас інші прізвища, ніж у творців Мінських угод. Людей, які б таке допускали, в нашій команді немає»</p>
                 </div>
-                <div className='carousel-slide'>
-                    <img id='1' src={firstSlide} alt="First slide" />
-                    <p className="fz40 carousel-slide-caption">Андрій Єрмак: «В нас інші прізвища, ніж у творців Мінських угод. Людей, які б таке допускали, в нашій команді немає»</p>
+                <div className='carousel-slide-item'>
+                    <img src={firstSlide} alt="First slide" />
+                    <p className="fz40">Андрій Єрмак: «В нас інші прізвища, ніж у творців Мінських угод. Людей, які б таке допускали, в нашій команді немає»</p>
                 </div>
           </Slider>
           <Slider
+            className='carousel-slick-slide'
             asNavFor={this.state.nav1}
             ref={slider => (this.slider2 = slider)}
             slidesToShow={4}
             swipeToSlide={true}
             focusOnSelect={true}>
-                <div className='carousel-indicators'>
-                    <div className='carousel-indicators data-bs-target'>
-                        <img id='1' src={firstSlide} alt="First slide" />
+                    <div>
+                        <img src={firstSlide} alt="First slide" />
                         <p className="fz40">Андрій Єрмак: «В нас інші прізвища, ніж у творців Мінських угод. Людей, які б таке допускали, в нашій команді немає»</p>
                     </div>
-                    <div className='carousel-indicators data-bs-target'>
-                        <img id='1' src={firstSlide} alt="First slide" />
+                    <div>
+                        <img src={firstSlide} alt="First slide" />
                         <p className="fz40">Андрій Єрмак: «В нас інші прізвища, ніж у творців Мінських угод. Людей, які б таке допускали, в нашій команді немає»</p>
                     </div>
-                    <div className='carousel-indicators data-bs-target'>
-                        <img id='1' src={firstSlide} alt="First slide" />
+                    <div>
+                        <img src={firstSlide} alt="First slide" />
                         <p className="fz40">Андрій Єрмак: «В нас інші прізвища, ніж у творців Мінських угод. Людей, які б таке допускали, в нашій команді немає»</p>
                     </div>
-                    <div className='carousel-indicators data-bs-target'>
-                        <img id='1' src={firstSlide} alt="First slide" />
+                    <div>
+                        <img src={firstSlide} alt="First slide" />
                         <p className="fz40">Андрій Єрмак: «В нас інші прізвища, ніж у творців Мінських угод. Людей, які б таке допускали, в нашій команді немає»</p>
                     </div>
-                </div>
           </Slider>
         </div>
       );
