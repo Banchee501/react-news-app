@@ -4,24 +4,24 @@
     &-slide {
         &-item {
             position: relative;
+            img {
+                width: 100%;
+                object-fit: cover;
+                height: 654px;
+            }
+            p {
+                position: absolute;
+                left: 64px; 
+                padding-top: 0;
+                padding-bottom: 0;
+                width: 752px;
+                font-family: Severs-Bold;
+                font-weight: 700;
+                text-align: left;
+                color: white;
+                top: 238px;
+            }
         }
-        img {
-            width: 100%;
-            object-fit: cover;
-            height: 654px;
-        }
-        p {
-            position: absolute;
-            left: 64px; 
-            padding-top: 0;
-            padding-bottom: 0;
-            width: 752px;
-            font-family: Severs-Bold;
-            font-weight: 700;
-            text-align: left;
-            color: white;
-            top: 238px;
-    }
     .slick {
         &-prev {
             position: absolute;
@@ -55,6 +55,9 @@
         &-slide {
             position: absolute;
             top: 690px;
+            button {
+                display: block;
+            }
             .slick-list {
                 left: 64px;
                 .slick-track {
@@ -83,6 +86,8 @@
                                 display: inline-flex;
                                 color: white;
                                 padding: 8px;
+                                line-height: 20px;
+                                    align-items: center;
                             }
                         }
                     }

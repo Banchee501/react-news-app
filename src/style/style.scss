@@ -3,6 +3,12 @@
 @import './fonts.scss';
 @import './fontsSize.scss';
 
+.container {
+    max-width: 1440px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -45,4 +51,9 @@ span {
         padding: 4px 8px;
         color: $grey;
     }               
+}
+
+.more_news {
+    display: flex;
+    align-items: center;
 }
