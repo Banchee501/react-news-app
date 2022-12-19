@@ -14,7 +14,9 @@ export default class AsNavFor extends Component {
       super(props);
       this.state = {
         nav1: null,
-        nav2: null
+        nav2: null,
+        count: 0,
+        countTotal: 0
       };
     }
   
@@ -28,8 +30,8 @@ export default class AsNavFor extends Component {
     render() {
       return (
         <div className='container'>
-          <div className='slide'>
-            {Slider.customPaging}
+          <div className='fz16 slide'>
+            1 / 4
           </div>
           <Slider
           className='carousel-slide'

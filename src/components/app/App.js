@@ -3,7 +3,7 @@ import Statistics from '../statistics/Statistics';
 import SimpleSlider from '../newsCarousel/NewsCarousel';
 import NewsFeed from '../editorialChoice/EditorialChoice';
 import VideoNews from '../videoNews/VideoNews';
-import Politics from '../otherNews/OtherNews';
+import Other from '../otherNews/OtherNews';
 import Footer from '../footer/Footer';
 
 const App = () => {
@@ -14,7 +14,7 @@ const App = () => {
       <SimpleSlider />
       <NewsFeed />
       <VideoNews />
-      <Politics />
+      <Other />
       <Footer />
     </div>
   );

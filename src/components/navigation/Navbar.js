@@ -53,7 +53,9 @@ const Navbar = () => {
                         <li className="nav__bottom-link"><a href="/views">ПОГЛЯДИ</a></li>
                         <li className="nav__bottom-link"><a href="/world">СВІТ</a></li>
                     </ul>
-                    <div className='circle'></div>
+                    <div>
+                        <div className='circle'></div>
+                    </div>
                     <a className="nav__bottom-list-live" href="/live">LIVE</a>
                 </div>
             </nav>

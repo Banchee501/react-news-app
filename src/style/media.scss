@@ -142,9 +142,8 @@
                 display: flex;
             }
         }
-        
         &__bottom {
-            overflow-y: scroll;
+            overflow-y: hidden;
         }
     }
     .carousel {
@@ -154,7 +153,7 @@
             }
             &-item {
                 p {
-                    top: 242px;
+                    top: 60%;
                     height: 130px;
                     text-align: left;
                     width: 75%;
@@ -162,25 +161,25 @@
                 }
             }
         .slick {
+            &-track {
+                overflow-y: hidden;
+            }
             &-prev {
-                display: none;
+                display: none !important;
             }
             &-next {
-                display: none;
+                display: none !important;
             }
         }
         .slick-prev:before {
-            display: none;
+            display: none !important;
         }
         .slick-next:before {
-            display: none;
+            display: none !important;
         }
     }
         &-slick {
             &-slide {
-                width: 1264px;
-                top: 690px;
-                overflow-y: hidden;
                 .slick-list {
                     left: 64px;
                     .slick-track {
@@ -191,6 +190,9 @@
                 }
             }
         }
+    }
+    .slide {
+        display: none;
     }
     .news {
         &__city {
@@ -234,8 +236,10 @@
                 }
             }
         }
-        .slick-list {
-            left: 24px;
+        .slick {
+            &-list {
+                left: 24px;
+            }
         }
     }
     .news {
