@@ -1,3 +1,5 @@
+import { Component } from 'react';
+import NewsServices from "../../services/newsServices";
 import { Link } from 'react-router-dom';
 
 import profilePhotoFirst from '../../../resources/img/Avatar.png';

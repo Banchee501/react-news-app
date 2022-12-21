@@ -44,7 +44,7 @@ const Navbar = () => {
                 </div>
                 <div className='fz14 nav__bottom'>
                     <ul className="nav__bottom-list">
-                        <div className='active_link'><img src={fire} alt="active" /></div>
+                        <div className='exclusive'><img src={fire} alt="exclusive" /></div>
                         <li className="nav__bottom-link"><a href="/war">ВІЙНА</a></li>
                         <li className="nav__bottom-link"><a href="/news">НОВИНИ</a></li>
                         <li className="nav__bottom-link"><a href="/politic">ПОЛІТИКА</a></li>

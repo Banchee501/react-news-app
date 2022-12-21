@@ -35,6 +35,11 @@ class NewsServices {
         return res.regions.map(this.news);
     }
 
+    getVideoNews = async () => {
+        const res = await this.getAll()
+        return res.VideoNews.map(this.news);
+    }
+
     statistics = (amount) => {
         return {
             day: amount.day,

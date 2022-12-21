@@ -1,4 +1,4 @@
-@media (max-width: 1439px) {
+@media (max-width: 1441px) {
     .news {
         justify-content: center;
         grid-template-columns: repeat(auto-fit, 326px);
@@ -129,6 +129,13 @@
             }
         }
     }
+    .carousel {
+        &-slick {
+            &-slide {
+                width: 94%;
+            }
+        }
+    }
 }
 
 @media (max-width: 1200px) {
@@ -180,6 +187,7 @@
     }
         &-slick {
             &-slide {
+                width: 100%;
                 .slick-list {
                     left: 0;
                     .slick-track {
@@ -238,6 +246,7 @@
         }
         &-slick {
             &-slide {
+                width: 90%;
                 left: 0;
                 .slick-list {
                     left: 0;
