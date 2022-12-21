@@ -6,76 +6,76 @@ import profilePhotoFirst from '../../../resources/img/Avatar.png';
 import profilePhotoSecond from '../../../resources/img/Avatar-1.png';
 import profilePhotoThird from '../../../resources/img/Avatar-2.png';
 import profilePhotoFourth from '../../../resources/img/Avatar-3.png';
+import { Col } from 'react-bootstrap';
 
-const Colums = () => {
-    return (
+class Colums extends Component {
+
+    state = {
+        colums: [],
+    }
+
+    newsServices = new NewsServices();
+
+    componentDidMount() {
+        this.newsServices.getColums()
+            .then(this.onColumsLoaded)
+    }
+
+    onColumsLoaded = (news) => {
+        this.setState({ news })
+    }
+
+    updateColums = () => {
+        this.newsServices
+            .getColums()
+            .then(this.onColumsLoaded)
+    }
+
+    renderColums(arr) {
+        const items = arr.map((item) => {
+            return (
+                <>
+                <div className="news__col-item-info">
+                    <img src={profilePhotoSecond} alt="avatar" />
+                    <div className="news__col-item-profile">
+                        <div className="fz16 name">{item.name}</div>
+                        <div className="fz12 employment">{item.profession}</div>
+                    </div>
+                </div>
+                <div className="news__col-item-body">
+                    <div className="title">{item.text}</div>
+                    <div className="date">{item.date}</div>
+                </div>
+                </>
+            )
+        });
+
+        return (
+            <div className="news__col-item">
+                {items}
+            </div>
+        )
+    }
+
+    render() {
+        const { news } = this.state
+        const itemColums = this.renderColums(news);
+
+        return (
         <div className="news__col">
             <div className="news__col-head">
                 <div className='title title_fz24'>Колонки</div>
                 <Link to="/" className='fz14'>Всі колонки</Link>
             </div>
             <div className="news__col-items">
-                <div className="news__col-item">
-                    <div className="news__col-item-info">
-                        <img src={profilePhotoFirst} alt="avatar" />
-                        <div className="news__col-item-profile">
-                            <div className="fz16 name">Юлія Стахівська</div>
-                            <div className="fz12 employment">ПИСЬМЕННИЦЯ</div>
-                        </div>
-                    </div>
-                    <div className="news__col-item-body">
-                        <div className="title">Жінок в часи небезпеки приваблюють сильні чоловіки</div>
-                        <div className="date">04 СЕРПНЯ 15:15</div>
-                    </div>
-                </div>
-                <hr />
-                <div className="news__col-item">
-                    <div className="news__col-item-info">
-                        <img src={profilePhotoSecond} alt="avatar" />
-                        <div className="news__col-item-profile">
-                            <div className="fz16 name">Юрій Андрухович</div>
-                            <div className="fz12 employment">ПИСЬМЕННИК</div>
-                        </div>
-                    </div>
-                    <div className="news__col-item-body">
-                        <div className="title">Штайнмаєр - людина-формула</div>
-                        <div className="date">04 СЕРПНЯ 15:15</div>
-                    </div>
-                </div>
-                <hr />
-                <div className="news__col-item">
-                    <div className="news__col-item-info">
-                        <img src={profilePhotoThird} alt="avatar" />
-                        <div className="news__col-item-profile">
-                            <div className="fz16 name">Анна Прокопенко</div>
-                            <div className="fz12 employment">ЖУРНАЛІСТКА</div>
-                        </div>
-                    </div>
-                    <div className="news__col-item-body">
-                        <div className="title">Щоденник війни. П'ятий тиждень довгого лютого</div>
-                        <div className="date">04 СЕРПНЯ 15:15</div>
-                    </div>
-                </div>
-                <hr />
-                <div className="news__col-item">
-                    <div className="news__col-item-info">
-                        <img src={profilePhotoFourth} alt="avatar" />
-                        <div className="news__col-item-profile">
-                            <div className="fz16 name">Ірена Карпа</div>
-                            <div className="fz12 employment">ЖУРНАЛІСТКА</div>
-                        </div>
-                    </div>
-                    <div className="news__col-item-body">
-                        <div className="title">Не пощастило з географією. Небезпечний сусід</div>
-                        <div className="date">04 СЕРПНЯ 15:15</div>
-                    </div>
-                </div>
+            {itemColums}
             </div>
             <button className='fz16 load__more'>
                 Всі колонки
             </button>
         </div>
-    )
+        )
+    }
 };
 
 export default Colums;

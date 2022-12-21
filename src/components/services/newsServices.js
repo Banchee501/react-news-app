@@ -40,6 +40,12 @@ class NewsServices {
         return res.VideoNews.map(this.news);
     }
 
+    getColums = async () => {
+        const res = await this.getAll()
+        return res.colums.map(this.news);
+    }
+
+
     statistics = (amount) => {
         return {
             day: amount.day,

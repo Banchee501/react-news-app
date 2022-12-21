@@ -19,14 +19,14 @@ class VideoNews extends Component {
             .then(this.onvideoNews)
     }
 
-    onEditorialChoiceVideoNews = (videoNews) => {
+    onVideoNews = (videoNews) => {
         this.setState({ videoNews })
     }
 
     updateVideoNews = () => {
         this.newsServices
             .getVideoNews()
-            .then(this.onvideoNews)
+            .then(this.onVideoNews)
     }
 
     renderVideoNews(arr) {
