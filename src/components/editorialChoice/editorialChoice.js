@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom';
 import { Component } from 'react';
 import NewsServices from "../services/newsServices";
-import AllNews from '../allNewsColumn/AllNewsColumn';
-import RegionsNews from '../regionNews/RegionNews';
+import AllNews from './allNewsColumn/AllNewsColumn';
+import RegionsNews from './regionNews/RegionNews';
 
 import './editorialChoice.scss';
 

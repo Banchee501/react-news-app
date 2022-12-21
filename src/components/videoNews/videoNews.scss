@@ -11,9 +11,6 @@
         background-color: transparent;
         cursor: pointer;
     }
-    // img {
-        // background: linear-gradient(to top, rgba(24, 40, 64, 0.95), rgba(21, 35, 56, 0.5));
-    // }
     .title {
         display: flex;
         justify-content: space-between;
@@ -21,7 +18,6 @@
         color: white;
         .more_news {
             text-align: left;
-            align-items: end;
             svg {
                 margin-left: 16px;
             }

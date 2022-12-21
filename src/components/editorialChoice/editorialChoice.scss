@@ -5,7 +5,6 @@
     display: grid;
     grid-template-columns: minmax(auto, 368px) minmax(auto, 976px);
     column-gap: 32px;
-    justify-content: start;
     padding-top: 64px;
     padding-bottom: 32px;
     &__all {
@@ -30,7 +29,6 @@
             .sort {
                 display: flex;
                 margin: 32px 0;
-                align-items: center;
                 .active {
                     padding: 4px 8px;
                     color: $orange;
@@ -43,28 +41,28 @@
                     color: $grey;
                 }               
             }
-            .news__all{
-                &-head {
-                    display: grid;
-                    grid-template-columns: repeat(2, auto);
-                    justify-content: space-between;
-                    align-items: center;
-                    a {
-                        color: $dark_blue;
-                        font-family: Severs-DemiBold;
-                        border-bottom: 1px solid $dark_blue;
-                    }
-                }
-                &-item {
-                    height: auto;
-                    span {
-                        font-weight: 400;
-                        color: $grey;
-                    }
-                }
+        }
+        &-head {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            a {
+                color: $dark_blue;
+                font-family: Severs-DemiBold;
+                border-bottom: 1px solid $dark_blue;
+            }
+        }
+        &-item {
+            height: auto;
+            span {
+                font-weight: 400;
+                color: $grey;
             }
         }
         .load__more {
+            display: flex;
+            align-items: center;
+            justify-content: center;
             width: 272px;
             height: 38px;
             border: 1px solid #979EA9;

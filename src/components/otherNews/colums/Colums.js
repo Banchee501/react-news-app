@@ -1,9 +1,9 @@
 import { Link } from 'react-router-dom';
 
-import profilePhotoFirst from '../../resources/img/Avatar.png';
-import profilePhotoSecond from '../../resources/img/Avatar-1.png';
-import profilePhotoThird from '../../resources/img/Avatar-2.png';
-import profilePhotoFourth from '../../resources/img/Avatar-3.png';
+import profilePhotoFirst from '../../../resources/img/Avatar.png';
+import profilePhotoSecond from '../../../resources/img/Avatar-1.png';
+import profilePhotoThird from '../../../resources/img/Avatar-2.png';
+import profilePhotoFourth from '../../../resources/img/Avatar-3.png';
 
 const Colums = () => {
     return (

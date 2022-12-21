@@ -1,12 +1,6 @@
 @import '../../style/style.scss';
 
 .news {
-    background-color: #F6F6F6;
-    display: grid;
-    column-gap: 32px;
-    justify-content: start;
-    padding-top: 32px;
-    padding-bottom: 64px;
     &__col {
         display: flex;
         flex-direction: column;
@@ -228,9 +222,9 @@
             display: grid;
             grid-template-columns: repeat(2, 304px);
             column-gap: 32px;
-            .fz16 {
-                font-weight: 600;
-            }
+                .fz16 {
+                    font-weight: 600;
+                }
             }
             img {
                 width: 100%;

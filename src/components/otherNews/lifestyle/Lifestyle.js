@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 
-import imageNews from "../../resources/img/image.jpg";
-import imageLifestyle from "../../resources/img/imagenews.jpg";
+import imageNews from "../../../resources/img/image.jpg";
+import imageLifestyle from "../../../resources/img/imagenews.jpg";
 
 const Lifestyle = () => {
     return (

@@ -53,18 +53,20 @@
         &-slide {
             position: absolute;
             top: 690px;
+            width: 96%;
             button {
                 display: block;
             }
             .slick-list {
                 .slick-track {
-                    left: 64px;
-                    display: grid;
-                    grid-template-columns: repeat(4, 280px);
+                    left: 32px;
+                    display: flex;
                     column-gap: 32px;
+                    overflow-y: hidden;
                     .slick-slide {
-                        width: 300px !important;
+                        width: 304px !important;
                         div {
+                            width: 304px !important;
                             position: relative;
                             display: flex;
                             background-clip: border-box;

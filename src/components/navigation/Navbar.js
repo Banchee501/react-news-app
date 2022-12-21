@@ -53,10 +53,10 @@ const Navbar = () => {
                         <li className="nav__bottom-link"><a href="/views">ПОГЛЯДИ</a></li>
                         <li className="nav__bottom-link"><a href="/world">СВІТ</a></li>
                     </ul>
-                    <div>
+                    <div className='live'>
                         <div className='circle'></div>
+                        <a className="nav__bottom-list-live" href="/live">LIVE</a>
                     </div>
-                    <a className="nav__bottom-list-live" href="/live">LIVE</a>
                 </div>
             </nav>
     )

@@ -1,8 +1,8 @@
-import Colums from '../colums/Colums';
-import Economics from '../economics/Economics';
-import Lifestyle from '../lifestyle/Lifestyle';
-import Politics from '../politics/Politics';
-import Promo from '../promo/Promo';
+import Colums from './colums/Colums';
+import Economics from './economics/Economics';
+import Lifestyle from './lifestyle/Lifestyle';
+import Politics from './politics/Politics';
+import Promo from './promo/Promo';
 
 import './otherNews.scss';
 

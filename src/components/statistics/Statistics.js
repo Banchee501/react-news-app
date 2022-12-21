@@ -1,7 +1,6 @@
 import Marquee from "react-fast-marquee";
 import NewsServices from "../services/newsServices";
 
-
 import soldierIcon from "../../resources/icons/navbarIcons/soldier.png";
 import tanksIcon from "../../resources/icons/navbarIcons/tanks.png";
 import artileryIcon from "../../resources/icons/navbarIcons/artilery.png";

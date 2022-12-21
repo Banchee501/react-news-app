@@ -3,19 +3,23 @@
 @import './fonts.scss';
 @import './fontsSize.scss';
 
+* {
+    margin: 0;
+    padding: 0;
+}
+
 .container {
     max-width: 1440px;
     margin-left: auto;
     margin-right: auto;
 }
 
-* {
-    margin: 0;
-    padding: 0;
-}   
-
 body {
     line-height:normal;
+}
+
+ul {
+    list-style-type: none;
 }
 
 a {
@@ -39,7 +43,6 @@ span {
 .sort {
     display: none;
     margin: 32px 0;
-    align-items: center;
     .active {
         padding: 4px 8px;
         color: $orange;

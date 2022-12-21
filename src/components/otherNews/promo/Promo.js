@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 
-import promoImg from '../../resources/img/imageph.jpg';
+import promoImg from '../../../resources/img/imageph.jpg';
 
 const Promo = () => {
     return (

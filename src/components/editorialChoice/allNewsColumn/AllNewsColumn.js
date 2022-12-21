@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Component } from 'react';
-import NewsServices from "../services/newsServices";
+import NewsServices from "../../services/newsServices";
 
 class AllNews extends Component {
 

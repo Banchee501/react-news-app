@@ -181,7 +181,7 @@
         &-slick {
             &-slide {
                 .slick-list {
-                    left: 64px;
+                    left: 0;
                     .slick-track {
                         .slick-slide {
                             margin-right: 16px;
@@ -236,9 +236,16 @@
                 }
             }
         }
-        .slick {
-            &-list {
-                left: 24px;
+        &-slick {
+            &-slide {
+                left: 0;
+                .slick-list {
+                    left: 0;
+                    .slick-track {
+                        left: 0;
+                        column-gap: 24px;
+                    }
+                }
             }
         }
     }
