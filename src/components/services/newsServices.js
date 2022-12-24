@@ -37,12 +37,12 @@ class NewsServices {
 
     getVideoNews = async () => {
         const res = await this.getAll()
-        return res.VideoNews.map(this.news);
+        return res.videoNews.map(this.news);
     }
 
     getColums = async () => {
         const res = await this.getAll()
-        return res.colums.map(this.news);
+        return res.colums.map(this.colums);
     }
 
 
@@ -67,6 +67,16 @@ class NewsServices {
             className: news.className,
             date: news.date,
             text: news.text
+        }
+    }
+
+    colums = (colums) => {
+        return {
+            id: nextId(),
+            name: colums.name,
+            profession: colums.profession,
+            text: colums.text,
+            date: colums.date
         }
     }
 }

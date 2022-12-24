@@ -2,11 +2,10 @@ import { Component } from 'react';
 import NewsServices from "../../services/newsServices";
 import { Link } from 'react-router-dom';
 
-import profilePhotoFirst from '../../../resources/img/Avatar.png';
+// import profilePhotoFirst from '../../../resources/img/Avatar.png';
 import profilePhotoSecond from '../../../resources/img/Avatar-1.png';
-import profilePhotoThird from '../../../resources/img/Avatar-2.png';
-import profilePhotoFourth from '../../../resources/img/Avatar-3.png';
-import { Col } from 'react-bootstrap';
+// import profilePhotoThird from '../../../resources/img/Avatar-2.png';
+// import profilePhotoFourth from '../../../resources/img/Avatar-3.png';
 
 class Colums extends Component {
 
@@ -58,8 +57,8 @@ class Colums extends Component {
     }
 
     render() {
-        const { news } = this.state
-        const itemColums = this.renderColums(news);
+        const { colums } = this.state
+        const itemColums = this.renderColums(colums);
 
         return (
         <div className="news__col">
