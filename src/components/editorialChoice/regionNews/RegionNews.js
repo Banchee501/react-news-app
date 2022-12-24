@@ -24,17 +24,8 @@ class RegionsNews extends Component {
             .then(this.onRegionsNewsLoaded)
     }
 
-    renderRegionsNews(arr) {
-        const items = arr.map((item) => {
-            if (item.type === "Kyiv")
-            return (
-                <div key={item.id} className="fz16 news__city-data-content">
-                    <span>{item.date.slice(-5)}</span> {item.text}
-                    <hr />
-                </div>
-            )
-        });
-        const kyiv = arr.map((item, key) => {
+    renderKyivNews(arr) {
+        const items = arr.map((item, key) => {
             if (arr[key].type === "Kyiv") {
                 console.log(item)
                 return (
@@ -44,8 +35,20 @@ class RegionsNews extends Component {
                     </div>
                 )
             }
-        }),
-            odesa = arr.map((item, key) => {
+        });
+
+        return (
+            <>
+                <div className="news__city-grid">
+                    {items}
+                </div>
+            </>
+
+        )
+    }
+
+    renderOdesaNews(arr) {
+        const items = arr.map((item, key) => {
             if (arr[key].type === "Odesa") {
                 console.log(item)
                 return (
@@ -55,8 +58,20 @@ class RegionsNews extends Component {
                     </div>
                 )
             }
-        }),
-            kharkiv = arr.map((item, key) => {
+        });
+
+        return (
+            <>
+                <div className="news__city-grid">
+                    {items}
+                </div>
+            </>
+
+        )
+    }
+
+    renderKharkivNews(arr) {
+        const items = arr.map((item, key) => {
             if (arr[key].type === "Kharkiv") {
                 console.log(item)
                 return (
@@ -69,17 +84,20 @@ class RegionsNews extends Component {
         });
 
         return (
-            <div className="news__city-grid">
-                {kyiv}
-                {odesa}
-                {kharkiv}
-            </div>
+            <>
+                <div className="news__city-grid">
+                    {items}
+                </div>
+            </>
+
         )
     }
     
     render() {
         const { regionsNews } = this.state
-        const itemRegionsNews = this.renderRegionsNews(regionsNews);
+        const itemKyivNews = this.renderKyivNews(regionsNews);
+        const itemOdesaNews = this.renderOdesaNews(regionsNews);
+        const itemKharkivNews = this.renderKharkivNews(regionsNews);
 
         return (
             <>
@@ -88,7 +106,7 @@ class RegionsNews extends Component {
                             <div className="title title_fz24 news__city-name">Київ</div>
                             <div className="news__city-data">
                                 <div className="fz12 data">05 СЕРПНЯ</div>
-                                {itemRegionsNews}
+                                {itemKyivNews}
                             </div>
                             <div className="news__city-data">
                                 <div className="fz12 data">04 СЕРПНЯ</div>
@@ -107,7 +125,7 @@ class RegionsNews extends Component {
                         <div className="title title_fz24 news__city-name">Одеса</div>
                             <div className="news__city-data">
                                 <div className="fz12 data">05 СЕРПНЯ</div>
-                                {itemRegionsNews}
+                                {itemOdesaNews}
                             </div>
                         </div>
                         <button className="fz16 more_news">Більше новин
@@ -123,7 +141,7 @@ class RegionsNews extends Component {
                         <div className="title title_fz24 news__city-name">Харків</div>
                         <div className="news__city-data">
                             <div className="fz12 data">05 СЕРПНЯ</div>
-                            {itemRegionsNews}
+                            {itemKharkivNews}
                         </div>
                     </div>
                     <button className="fz16 more_news">Більше новин

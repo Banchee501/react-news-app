@@ -20,8 +20,8 @@ class Colums extends Component {
             .then(this.onColumsLoaded)
     }
 
-    onColumsLoaded = (news) => {
-        this.setState({ news })
+    onColumsLoaded = (colums) => {
+        this.setState({ colums })
     }
 
     updateColums = () => {
@@ -38,13 +38,14 @@ class Colums extends Component {
                     <img src={profilePhotoSecond} alt="avatar" />
                     <div className="news__col-item-profile">
                         <div className="fz16 name">{item.name}</div>
-                        <div className="fz12 employment">{item.profession}</div>
+                        <div className="fz12 employment">{item.profession.toUpperCase()}</div>
                     </div>
                 </div>
                 <div className="news__col-item-body">
                     <div className="title">{item.text}</div>
-                    <div className="date">{item.date}</div>
+                    <div className="date">{item.date.toUpperCase()}</div>
                 </div>
+                <hr/>
                 </>
             )
         });

@@ -35,7 +35,7 @@ class AllNews extends Component {
             }
 
             return (
-                <div key={item.id} className={style.className}>
+                <div id={item.id} className={style.className}>
                     <span>{item.date.slice(-5)}</span> {item.text}
                     <hr />
                 </div>

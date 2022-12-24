@@ -1,8 +1,79 @@
 import { Link } from 'react-router-dom';
+import { Component } from 'react';
+
+import NewsServices from "../../services/newsServices";
 
 import imageNews from "../../../resources/img/image.jpg";
 
-const Politics = () => {
+class Politics extends Component {
+
+    state = {
+        politicsNews: []
+    }
+
+    newsServices = new NewsServices();
+
+    componentDidMount() {
+        this.newsServices.getPoliticsNews()
+            .then(this.onPoliticsNews)
+    }
+
+    onPoliticsNews = (politicsNews) => {
+        this.setState({ politicsNews })
+    }
+
+    updatePoliticsNews = () => {
+        this.newsServices
+            .getPoliticsNews()
+            .then(this.onPoliticsNews)
+    }
+
+    renderPoliticsNews(arr) {
+        const items = arr.map((item) => {
+                return (
+                    <div id={item.id} className="news__politics-block">
+                        <img src={imageNews} alt="news" />
+                        <div className="date">{item.date.toUpperCase()}</div>
+                        <div className="news__politics-text">{item.text}</div>
+                    </div>
+                )
+        })
+
+        return (
+            <>
+                <div className="news__politics-block-main">
+                    {items[0]}
+                </div>
+                <div className="news__politics-block-else">
+                    {items.slice(1, 3)}
+                </div>
+            </>
+        )
+    }
+
+    renderPoliticsNewsCol(arr) {
+        const items = arr.slice(3).map((item) => {
+                return (
+                    <>
+                        <div id={item.id} className="fz16 news__politics-item label"> <span>{item.date.slice(-5)} </span>{item.text}
+                        </div>
+                        <hr />
+                    </>
+                )
+        })
+
+        return (
+            <>
+                {items}
+            </>
+        )
+    }
+
+    render() {
+        const { politicsNews } = this.state
+        const itemPoliticsNews = this.renderPoliticsNews(politicsNews);
+        const itemPoliticsNewsCol = this.renderPoliticsNewsCol(politicsNews);
+
     return (
         <div className="news__politics">
             <div className="news__politics-head">
@@ -15,42 +86,12 @@ const Politics = () => {
             </ul>
             <div className="news__politics-body">
                 <div className="news__politics-blocks">
-                    <div className="news__politics-block-main">
-                        <img src={imageNews} alt="news" />
-                        <div className="date">05 СЕРПНЯ 11:00</div>
-                        <div className="news__politics-text fz24">У "Слузі" пояснили, чому в росії знову заговорили про переговори з Україною.</div>
-                    </div>
-                    <div className="news__politics-block-else">
-                        <div className="news__politics-block">
-                            <img src={imageNews} alt="news" />
-                            <div className="date">05 СЕРПНЯ 11:00</div>
-                            <div className="fz16 news__politics-text">У "Слузі" пояснили, чому в росії знову заговорили про переговори з Україною.</div>
-                        </div>
-                        <div className="news__politics-block">
-                            <img src={imageNews} alt="news" />
-                            <div className="date">05 СЕРПНЯ 11:00</div>
-                            <div className="fz16 news__politics-text">ТРЦ Ocean Plaza після чуток про закриття оголосив про відновлення роботи</div>
-                        </div>
-                    </div>
+                    {itemPoliticsNews}
                 </div>
                 <div className="news__politics-items">
                     <div className="news__politics-items-col">
                         <div className="fz16 title">НОВИНИ РОЗДІЛУ</div>
-                        <div className="fz16 news__politics-item label"> <span>14:59 </span>До Європи за захистом. Що означає позов Ахметова до Європейського суду з прав людини
-                        </div>
-                        <hr />
-                        <div className="fz16 news__politics-item label"> <span>14:59 </span>Стало відомо, коли ЄС може узгодити сьомий пакет санкцій проти рф
-                        </div>
-                        <hr />
-                        <div className="fz16 news__politics-item label"> <span>14:59 </span>До Європи за захистом. Що означає позов Ахметова до Європейського суду з прав людини
-                        </div>
-                        <hr />
-                        <div className="fz16 news__politics-item label"> <span>14:59 </span>"Відбудова України — завдання усього світу": промова Зеленського на конференції в Лугано
-                        </div>
-                        <hr />
-                        <div className="fz16 news__politics-item label"> <span>14:59 </span>"Бийся на світлій стороні": як спортсмени, меценати й волонетри рятують життя українців
-                        </div>
-                        <hr />
+                        {itemPoliticsNewsCol}
                     </div>
                     <button className="fz16 more_news">Більше
                         <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -63,6 +104,7 @@ const Politics = () => {
             </div>
         </div>
     )
+    }
 }
-                
+
 export default Politics;

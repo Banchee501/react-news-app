@@ -34,9 +34,9 @@ class NewsFeed extends Component {
     renderEditorialChoice(arr) {
         const items = arr.map((item) => {
             return (
-                <div key={item.id} className="news__choice-item">
+                <div id={item.id} className="news__choice-item">
                     <img src={newsImage} alt="news" />
-                    <div className='fz12 date'>{item.date}</div>
+                    <div className='fz12 date'>{item.date.toUpperCase()}</div>
                     <div className="fz16 content">
                         {item.text}
                     </div>

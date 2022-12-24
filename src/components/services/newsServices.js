@@ -12,7 +12,7 @@ class NewsServices {
     }
 
     getAll = () => {
-        return this.getResources('https://run.mocky.io/v3/beb3ac9f-a18d-495e-baf0-4b4bc3e67a5e')
+        return this.getResources('https://run.mocky.io/v3/26b653f4-34d1-4263-8087-493a701077dc')
     }
 
     getStatistics = async () => {
@@ -45,6 +45,10 @@ class NewsServices {
         return res.colums.map(this.colums);
     }
 
+    getPoliticsNews = async () => {
+        const res = await this.getAll()
+        return res.politics.map(this.news);
+    }
 
     statistics = (amount) => {
         return {
