@@ -1,10 +1,81 @@
 import { Link } from 'react-router-dom';
+import { Component } from 'react';
+
+import NewsServices from "../../services/newsServices";
 
 import imageNews from "../../../resources/img/image.jpg";
-import imageLifestyle from "../../../resources/img/imagenews.jpg";
 
-const Lifestyle = () => {
+class Lifestyle extends Component {
+
+    state = {
+        lifestyleNews: []
+    }
+
+    newsServices = new NewsServices();
+
+    componentDidMount() {
+        this.newsServices.getLifestyleNews()
+            .then(this.onLifestyleNews)
+    }
+
+    onLifestyleNews = (lifestyleNews) => {
+        this.setState({ lifestyleNews })
+    }
+
+    updateLifestyleNews = () => {
+        this.newsServices
+            .getLifestyleNews()
+            .then(this.onLifestyleNews)
+    }
+
+    renderLifestyleNews(arr) {
+        const items = arr.map((item) => {
+                return (
+                    <div className="news__lifestyle-block">
+                        <img src={imageNews} alt="news" />
+                        <div className="date">{item.date.toUpperCase()}</div>
+                        <div className="news__lifestyle-text">{item.text}</div>
+                        </div>
+                )
+        })
+
+        return (
+            <>
+                <div className="news__lifestyle-block-main">
+                    {items[0]}
+                </div>
+                <div className="news__lifestyle-block-else">
+                    {items.slice(1, 3)}
+                </div>
+            </>
+        )
+    }
+
+    renderEconomicsNewsCol(arr) {
+        const items = arr.slice(3).map((item) => {
+                return (
+                    <>
+                        <div id={item.id} className="fz16 news__lifestyle-item label"> <span>{item.date.slice(-5)} </span>{item.text}
+                        </div>
+                        <hr />
+                    </>
+                )
+        })
+
+        return (
+            <>
+                {items}
+            </>
+        )
+    }
+
+    render() {
+        const { lifestyleNews } = this.state
+        const itemLifestyleNews = this.renderEconomicsNews(lifestyleNews);
+        const itemLifestyleNewsCol = this.renderEconomicsNewsCol(lifestyleNews);
+
     return (
+
         <div className="news__lifestyle">
             <div className="news__lifestyle-head">
                 <div className="title title_fz32">Лайфстайл</div>
@@ -16,42 +87,12 @@ const Lifestyle = () => {
             </ul>
             <div className="news__lifestyle-body">
                 <div className="news__lifestyle-blocks">
-                    <div className="news__lifestyle-block-main">
-                        <img src={imageLifestyle} alt="news" />
-                        <div className="date">05 СЕРПНЯ 11:00</div>
-                        <div className="fz24 news__lifestyle-text">Селезньов розповів, навіщо росіяни спустошують склади боєприпасів у Білорусі</div>
-                    </div>
-                    <div className="news__lifestyle-block-else">
-                        <div className="news__lifestyle-block">
-                            <img src={imageNews} alt="news" />
-                            <div className="date">05 СЕРПНЯ 11:00</div>
-                            <div className="fz16 news__lifestyle-text">У "Слузі" пояснили, чому в росії знову заговорили про переговори з Україною.</div>
-                        </div>
-                        <div className="news__lifestyle-block">
-                            <img src={imageNews} alt="news" />
-                            <div className="date">05 СЕРПНЯ 11:00</div>
-                            <div className="fz16 news__lifestyle-text">ТРЦ Ocean Plaza після чуток про закриття оголосив про відновлення роботи</div>
-                        </div>
-                    </div>
+                        {itemLifestyleNews}
                 </div>
                 <div className="news__lifestyle-items">
                     <div className="news__lifestyle-items-col">
                         <div className="fz16 title">НОВИНИ РОЗДІЛУ</div>
-                        <div className="fz16 news__lifestyle-item label"> <span>14:59 </span>Що подивитися ввечері: топ-5 українських фільмів
-                        </div>
-                        <hr />
-                        <div className="fz16 news__lifestyle-item label"> <span>14:59 </span>Яке свято відзначають 9 серпня: прикмети, традиції та заборони цього дня
-                        </div>
-                        <hr />
-                        <div className="fz16 news__lifestyle-item label"> <span>14:59 </span>Вакарчук виклав неймовірне відео виконання гімну України в Іспанії
-                        </div>
-                        <hr />
-                        <div className="fz16 news__lifestyle-item label"> <span>14:59 </span>Топ-7 повсякденних речей, які не мінялися протягом століть
-                        </div>
-                        <hr />
-                        <div className="fz16 news__lifestyle-item label"> <span>14:59 </span>Арестович розповів про шалений заробіток, трьох дружин і дітей. Відео
-                        </div>
-                        <hr />
+                        {itemLifestyleNewsCol}
                     </div>
                     <button className="fz16 more_news">Більше
                         <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -64,6 +105,7 @@ const Lifestyle = () => {
             </div>
         </div>
     )
-};
+    }
+}
 
 export default Lifestyle;

@@ -34,7 +34,7 @@ class Economics extends Component {
                     <div className="news__economics-block">
                         <img src={imageNews} alt="news" />
                         <div className="date">{item.date.toUpperCase()}</div>
-                        <div className="news__politics-text">{item.text}</div>
+                        <div className="news__economics-text">{item.text}</div>
                         </div>
                 )
         })
