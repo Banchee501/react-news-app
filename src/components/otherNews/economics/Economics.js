@@ -1,10 +1,81 @@
 import { Link } from 'react-router-dom';
+import { Component } from 'react';
+
+import NewsServices from "../../services/newsServices";
 
 import imageNews from "../../../resources/img/image.jpg";
 
-const Economics = () => {
+class Economics extends Component {
+
+    state = {
+        economicsNews: []
+    }
+
+    newsServices = new NewsServices();
+
+    componentDidMount() {
+        this.newsServices.getEconomicsNews()
+            .then(this.onEconomicsNews)
+    }
+
+    onEconomicsNews = (economicsNews) => {
+        this.setState({ economicsNews })
+    }
+
+    updateEconomicsNews = () => {
+        this.newsServices
+            .getEconomicsNews()
+            .then(this.onEconomicsNews)
+    }
+
+    renderEconomicsNews(arr) {
+        const items = arr.map((item) => {
+                return (
+                    <div className="news__economics-block">
+                        <img src={imageNews} alt="news" />
+                        <div className="date">{item.date.toUpperCase()}</div>
+                        <div className="news__politics-text">{item.text}</div>
+                        </div>
+                )
+        })
+
+        return (
+            <>
+                <div className="news__economics-block-main">
+                    {items[0]}
+                </div>
+                <div className="news__economics-block-else">
+                    {items.slice(1, 3)}
+                </div>
+            </>
+        )
+    }
+
+    renderEconomicsNewsCol(arr) {
+        const items = arr.slice(3).map((item) => {
+                return (
+                    <>
+                        <div id={item.id} className="fz16 news__economics-item label"> <span>{item.date.slice(-5)} </span>{item.text}
+                        </div>
+                        <hr />
+                    </>
+                )
+        })
+
+        return (
+            <>
+                {items}
+            </>
+        )
+    }
+
+    render() {
+        const { economicsNews } = this.state
+        const itemEconomicsNews = this.renderEconomicsNews(economicsNews);
+        const itemEconomicsNewsCol = this.renderEconomicsNewsCol(economicsNews);
+
     return (
-<div className="news__economics">
+        <div className="news__economics">
         <div className="news__economics-head">
             <div className="title title_fz32">Економіка</div>
             <Link to="/" className='fz14'>Всі новини розділу</Link>
@@ -15,42 +86,12 @@ const Economics = () => {
         </ul>
         <div className="news__economics-body">
             <div className="news__economics-blocks">
-                <div className="news__economics-block-main">
-                    <img src={imageNews} alt="news" />
-                    <div className="date">05 СЕРПНЯ 11:00</div>
-                    <div className="fz24 news__economics-text">У "Слузі" пояснили, чому в росії знову заговорили про переговори з Україною.</div>
-                </div>
-                <div className="news__economics-block-else">
-                    <div className="news__economics-block">
-                        <img src={imageNews} alt="news" />
-                        <div className="date">05 СЕРПНЯ 11:00</div>
-                        <div className="fz16 news__economics-text">У "Слузі" пояснили, чому в росії знову заговорили про переговори з Україною.</div>
-                    </div>
-                    <div className="news__economics-block">
-                        <img src={imageNews} alt="news" />
-                        <div className="date">05 СЕРПНЯ 11:00</div>
-                        <div className="fz16 news__economics-text">ТРЦ Ocean Plaza після чуток про закриття оголосив про відновлення роботи</div>
-                    </div>
-                </div>
+                {itemEconomicsNews}
             </div>
             <div className="news__economics-items">
                 <div className="news__economics-items-col">
                     <div className="fz16 title">НОВИНИ РОЗДІЛУ</div>
-                    <div className="fz16 news__economics-item label"> <span>14:59 </span>McDonald’s відновлює роботу ресторанів в Україні: де відкриються перші
-                    </div>
-                    <hr />
-                    <div className="fz16 news__economics-item label"> <span>14:59 </span>Рада готує новий податковий сюрприз для обмінників: Гетманцев дав роз'яснення
-                    </div>
-                    <hr />
-                    <div className="fz16 news__economics-item label"> <span>14:59 </span>Росія хоче перемкнути Запорізьку АЕС на Крим: експерт пояснив шанси і ризики
-                    </div>
-                    <hr />
-                    <div className="fz16 news__economics-item label"> <span>14:59 </span>Як Ощадбанк під час війни безперебійно підтримує аграріїв
-                    </div>
-                    <hr />
-                    <div className="fz16 news__economics-item label"> <span>14:59 </span>Переселенці зможуть отримувати виплати навіть у разі втрати паспорта: що відомо
-                    </div>
-                    <hr />
+                    {itemEconomicsNewsCol}
                 </div>
                 <button className="fz16 more_news">Більше
                     <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -63,6 +104,7 @@ const Economics = () => {
         </div>
     </div>
     )
-};
+    }
+}
 
 export default Economics;
