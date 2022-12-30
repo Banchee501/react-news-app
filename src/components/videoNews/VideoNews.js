@@ -1,4 +1,6 @@
 import { Component } from 'react';
+
+import { getDate } from '../../util';
 import NewsServices from "../services/newsServices";
 
 import './videoNews.scss';
@@ -39,7 +41,7 @@ class VideoNews extends Component {
                                 </svg>
                             </button>
                             <img src={video} alt="video" />
-                            <div className="fz12 video__news-data">{item.date.toUpperCase()}</div>
+                            <div className="fz12 video__news-data">{getDate(item.date).toUpperCase()}</div>
                             <div className="video__news-content">{item.text}</div>
                         </div>
                 )

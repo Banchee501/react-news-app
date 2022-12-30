@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { Component } from 'react';
 
+import { getDate } from '../../../util';
 import NewsServices from "../../services/newsServices";
 
 import promoImg from '../../../resources/img/imageph.jpg';
@@ -31,7 +32,7 @@ class Promo extends Component {
         const items = arr.map((item) => {
             return (
                 <div key={item.id} className="news__promo-block">
-                    <div className="date">{item.date.toUpperCase()}</div>
+                    <div className="date">{getDate(item.date).toUpperCase()}</div>
                     <div className="fz16 news__promo-text">{item.text}</div>
                 </div>
             )

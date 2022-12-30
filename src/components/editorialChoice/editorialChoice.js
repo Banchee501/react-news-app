@@ -3,6 +3,7 @@ import { Component } from 'react';
 import NewsServices from "../services/newsServices";
 import AllNews from './allNewsColumn/AllNewsColumn';
 import RegionsNews from './regionNews/RegionNews';
+import { getDate } from '../../util';
 
 import './editorialChoice.scss';
 
@@ -33,11 +34,10 @@ class NewsFeed extends Component {
 
     renderEditorialChoice(arr) {
         const items = arr.map((item) => {
-            console.log(Date.parse(item.date))
             return (
                 <div key={item.id} className="news__choice-item">
                     <img src={newsImage} alt="news" />
-                    <div className='fz12 date'>{item.date}</div>
+                    <div className='fz12 date'>{getDate(item.date).toUpperCase()}</div>
                     <div className="fz16 content">
                         {item.text}
                     </div>

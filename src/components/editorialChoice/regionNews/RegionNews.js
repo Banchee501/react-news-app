@@ -1,4 +1,6 @@
 import { Component } from 'react';
+
+import { getTime } from '../../../util';
 import NewsServices from "../../services/newsServices";
 
 class RegionsNews extends Component {
@@ -29,7 +31,7 @@ class RegionsNews extends Component {
             if (arr[key].type === "Kyiv") {
                 return (
                     <div key={item.id} className="fz16 news__city-data-content">
-                        <span>{item.date.slice(-5)}</span> {item.text}
+                        <span>{getTime(item.date)}</span> {item.text}
                         <hr />
                     </div>
                 )
@@ -51,7 +53,7 @@ class RegionsNews extends Component {
             if (arr[key].type === "Odesa") {
                 return (
                     <div key={item.id} className="fz16 news__city-data-content">
-                        <span>{item.date.slice(-5)}</span> {item.text}
+                        <span>{getTime(item.date)}</span> {item.text}
                         <hr />
                     </div>
                 )
@@ -73,7 +75,7 @@ class RegionsNews extends Component {
             if (arr[key].type === "Kharkiv") {
                 return (
                     <div key={item.id} className="fz16 news__city-data-content">
-                        <span>{item.date.slice(-5)}</span> {item.text}
+                        <span>{getTime(item.date)}</span> {item.text}
                         <hr />
                     </div>
                 )

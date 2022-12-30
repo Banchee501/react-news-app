@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { Component } from 'react';
 
+import { getTime, getDate } from '../../../util';
 import NewsServices from "../../services/newsServices";
 
 import imageNews from "../../../resources/img/image.jpg";
@@ -33,7 +34,7 @@ class Politics extends Component {
                 return (
                     <div key={item.id} className="news__politics-block">
                         <img src={imageNews} alt="news" />
-                        <div className="date">{item.date.toUpperCase()}</div>
+                        <div className="date">{getDate(item.date).toUpperCase()}</div>
                         <div className="news__politics-text">{item.text}</div>
                     </div>
                 )
@@ -55,7 +56,7 @@ class Politics extends Component {
         const items = arr.slice(3).map((item) => {
                 return (
                     <div key={item.id}>
-                        <div className="fz16 news__politics-item label"> <span>{item.date.slice(-5)} </span>{item.text}
+                        <div className="fz16 news__politics-item label"> <span>{getTime(item.date)} </span>{item.text}
                         </div>
                         <hr />
                     </div>

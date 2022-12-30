@@ -1,6 +1,8 @@
 import { Component } from 'react';
-import NewsServices from "../../services/newsServices";
 import { Link } from 'react-router-dom';
+
+import { getDate } from '../../../util';
+import NewsServices from "../../services/newsServices";
 
 // import profilePhotoFirst from '../../../resources/img/Avatar.png';
 import profilePhotoSecond from '../../../resources/img/Avatar-1.png';
@@ -43,7 +45,7 @@ class Colums extends Component {
                     </div>
                     <div className="news__col-item-body">
                         <div className="title">{item.text}</div>
-                        <div className="date">{item.date.toUpperCase()}</div>
+                        <div className="date">{getDate(item.date).toUpperCase()}</div>
                     </div>
                     <hr/>
                 </div>

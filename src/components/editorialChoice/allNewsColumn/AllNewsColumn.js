@@ -1,6 +1,8 @@
 import { Link } from 'react-router-dom';
 import { Component } from 'react';
+
 import NewsServices from "../../services/newsServices";
+import { getTime } from '../../../util';
 
 class AllNews extends Component {
 
@@ -36,7 +38,7 @@ class AllNews extends Component {
 
             return (
                 <div key={item.id} className={style.className}>
-                    <span>{item.date}</span> {item.text}
+                    <span>{getTime(item.date)}</span> {item.text}
                     <hr />
                 </div>
             )
