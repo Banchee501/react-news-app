@@ -12,7 +12,7 @@ class NewsServices {
     }
 
     getAll = () => {
-        return this.getResources('https://run.mocky.io/v3/c45295b4-ee16-4eeb-a839-365577683a6e')
+        return this.getResources('https://run.mocky.io/v3/5a0b2c1e-11aa-46ef-ab24-a62ea5ce1801')
     }
 
     getStatistics = async () => {

@@ -33,6 +33,7 @@ class NewsFeed extends Component {
 
     renderEditorialChoice(arr) {
         const items = arr.map((item) => {
+            console.log(Date.parse(item.date))
             return (
                 <div key={item.id} className="news__choice-item">
                     <img src={newsImage} alt="news" />
