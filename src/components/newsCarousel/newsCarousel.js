@@ -9,6 +9,15 @@ import secondSlide from "../../resources/img/secondSlide.png";
 import thirdSlide from "../../resources/img/thirdSlide.png";
 import fourthSlide from "../../resources/img/fourthSlide.png";
 
+const TagTypes = {
+  news: {
+    icon: '', 
+    // style: styles.newsTag,
+  }
+}
+
+const SLIDE_QW = 4;
+
 export default class AsNavFor extends Component {
     constructor(props) {
       super(props);
@@ -16,7 +25,8 @@ export default class AsNavFor extends Component {
         nav1: null,
         nav2: null,
         count: 0,
-        countTotal: 0
+        countTotal: 0,
+        currentSlide: 1,
       };
     }
   
@@ -26,16 +36,30 @@ export default class AsNavFor extends Component {
         nav2: this.slider2
       });
     }
+
+     test = () => {
+        this.setState({
+          currentSlide : this.state.currentSlide + 1 > 4 ? 1 :  this.state.currentSlide + 1,
+        })
+
+    }
   
     render() {
       return (
         <div className='container'>
-          <div className='fz16 slide'>
-            1 / 4
+          <div className='slick'>
+            <button className='slick-prev' onClick={() => this.test()}></button>
+            <div className='fz16 slide'>
+              {this.state.currentSlide} / {SLIDE_QW}
+            </div>
+            <button className='slick-next'></button>
           </div>
           <Slider
           className='carousel-slide'
           asNavFor={this.state.nav2}
+          arrows={false}
+         // {item?.tag && <div><p>{item.tag}</p></div>}
+        // {<image src={TagTypes[item.tag.type.icon]}>}
           ref={slider => (this.slider1 = slider)}>
               <div className='carousel-slide-item'>
                   <img src={firstSlide} alt="First slide"/>

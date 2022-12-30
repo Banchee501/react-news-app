@@ -15,12 +15,12 @@ const Navbar = () => {
                         <li><Link to="/kharkiv">Харків</Link></li>
                     </ul>
                     <div className='nav__panel'>
-                        <input type="text" class="placeicon" placeholder='&#xf002;    пошук новин' />
+                        <input type="text" className="placeicon" placeholder='&#xf002;    пошук новин' />
                         <div className='nav__panel-logo'>
-                            <a href="https://web.telegram.org/" target="_blank" rel="noreferrer"><i class="fa-brands fa-telegram"></i></a>
-                            <a href="https://www.facebook.com/" target="_blank" rel="noreferrer"><i class="fa-brands fa-facebook"></i></a>
-                            <a href="https://www.instagram.com/" target="_blank" rel="noreferrer"><i class="fa-brands fa-square-instagram"></i></a>
-                            <a href="https://www.youtube.com/" target="_blank" rel="noreferrer"><i class="fa-brands fa-youtube"></i></a>
+                            <a href="https://web.telegram.org/" target="_blank" rel="noreferrer"><i className="fa-brands fa-telegram"></i></a>
+                            <a href="https://www.facebook.com/" target="_blank" rel="noreferrer"><i className="fa-brands fa-facebook"></i></a>
+                            <a href="https://www.instagram.com/" target="_blank" rel="noreferrer"><i className="fa-brands fa-square-instagram"></i></a>
+                            <a href="https://www.youtube.com/" target="_blank" rel="noreferrer"><i className="fa-brands fa-youtube"></i></a>
                         </div>
                         <div className='fz14 nav__panel-languages'>
                             <a href="/ua">UA</a>

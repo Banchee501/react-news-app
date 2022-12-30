@@ -33,25 +33,25 @@ class Colums extends Component {
     renderColums(arr) {
         const items = arr.map((item) => {
             return (
-                <>
-                <div className="news__col-item-info">
-                    <img src={profilePhotoSecond} alt="avatar" />
-                    <div className="news__col-item-profile">
-                        <div className="fz16 name">{item.name}</div>
-                        <div className="fz12 employment">{item.profession.toUpperCase()}</div>
+                <div key={item.id} className="news__col-item">
+                    <div className="news__col-item-info">
+                        <img src={profilePhotoSecond} alt="avatar" />
+                        <div className="news__col-item-profile">
+                            <div className="fz16 name">{item.name}</div>
+                            <div className="fz12 employment">{item.profession.toUpperCase()}</div>
+                        </div>
                     </div>
+                    <div className="news__col-item-body">
+                        <div className="title">{item.text}</div>
+                        <div className="date">{item.date.toUpperCase()}</div>
+                    </div>
+                    <hr/>
                 </div>
-                <div className="news__col-item-body">
-                    <div className="title">{item.text}</div>
-                    <div className="date">{item.date.toUpperCase()}</div>
-                </div>
-                <hr/>
-                </>
             )
         });
 
         return (
-            <div className="news__col-item">
+            <div className="news__col-items">
                 {items}
             </div>
         )
@@ -67,9 +67,7 @@ class Colums extends Component {
                 <div className='title title_fz24'>Колонки</div>
                 <Link to="/" className='fz14'>Всі колонки</Link>
             </div>
-            <div className="news__col-items">
             {itemColums}
-            </div>
             <button className='fz16 load__more'>
                 Всі колонки
             </button>

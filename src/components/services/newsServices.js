@@ -12,7 +12,7 @@ class NewsServices {
     }
 
     getAll = () => {
-        return this.getResources('https://run.mocky.io/v3/26b653f4-34d1-4263-8087-493a701077dc')
+        return this.getResources('https://run.mocky.io/v3/c45295b4-ee16-4eeb-a839-365577683a6e')
     }
 
     getStatistics = async () => {
@@ -48,6 +48,21 @@ class NewsServices {
     getPoliticsNews = async () => {
         const res = await this.getAll()
         return res.politics.map(this.news);
+    }
+
+    getPromo = async () => {
+        const res = await this.getAll()
+        return res.promo.map(this.news);
+    }
+
+    getEconomicsNews = async () => {
+        const res = await this.getAll()
+        return res.economics.map(this.news);
+    }
+
+    getLifestyleNews = async () => {
+        const res = await this.getAll()
+        return res.lifestyle.map(this.news);
     }
 
     statistics = (amount) => {
