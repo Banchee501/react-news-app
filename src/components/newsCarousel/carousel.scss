@@ -87,30 +87,28 @@
 .slick {
     &-prev {
         position: absolute;
+        top: 478px;
         z-index: 2;
-        margin-top: 472px;
-        left: 130px;
-        top: auto;
+        left: 64px;
         width: 40px;
         height: 40px;
-        background-image: url(../../resources/icons/slider-left-arrows.svg);
+        background-image: url(../../resources/icons/slider-left-arrows.svg) !important;
     }
     &-next {
         position: absolute;
+        top: 478px;
         z-index: 2;
-        margin-top: 472px;
-        left: 130px;
-        top: auto;
+        left: 184px;
         width: 40px;
         height: 40px;
-        background-image: url(../../resources/icons/slider-right-arrows.svg);
+        background-image: url(../../resources/icons/slider-right-arrows.svg) !important;
     }
 }
 .slick-prev:before {
-    opacity: 0;
+    opacity: 0 !important;
 }
 .slick-next:before {
-    opacity: 0;
+    opacity: 0 !important;
 }
 
 .slide {

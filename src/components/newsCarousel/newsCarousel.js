@@ -9,11 +9,24 @@ import secondSlide from "../../resources/img/secondSlide.png";
 import thirdSlide from "../../resources/img/thirdSlide.png";
 import fourthSlide from "../../resources/img/fourthSlide.png";
 
-const TagTypes = {
-  news: {
-    icon: '', 
-    // style: styles.newsTag,
-  }
+function SampleNextArrow(props) {
+  const { className, onClick } = props;
+  return (
+    <div
+      className={className}
+      onClick={onClick}
+    />
+  );
+}
+
+function SamplePrevArrow(props) {
+  const { className, onClick } = props;
+  return (
+    <div
+      className={className}
+      onClick={onClick}
+    />
+  );
 }
 
 const SLIDE_QW = 4;
@@ -24,9 +37,8 @@ export default class AsNavFor extends Component {
       this.state = {
         nav1: null,
         nav2: null,
-        count: 0,
-        countTotal: 0,
         currentSlide: 1,
+        activeSlide: 1,
       };
     }
   
@@ -37,28 +49,26 @@ export default class AsNavFor extends Component {
       });
     }
 
-     test = () => {
-        this.setState({
-          currentSlide : this.state.currentSlide + 1 > 4 ? 1 :  this.state.currentSlide + 1,
-        })
-
-    }
-  
     render() {
+      const settings = {
+        nextArrow: <SampleNextArrow />,
+        prevArrow: <SamplePrevArrow />,
+        beforeChange: (current, next) => this.setState({ activeSlide: next + 1 }),
+      };
+
       return (
         <div className='container'>
           <div className='slick'>
-            <button className='slick-prev' onClick={() => this.test()}></button>
             <div className='fz16 slide'>
-              {this.state.currentSlide} / {SLIDE_QW}
+              {this.state.activeSlide} / {SLIDE_QW}
             </div>
-            <button className='slick-next'></button>
           </div>
           <Slider
+          {...settings}
           className='carousel-slide'
           asNavFor={this.state.nav2}
-          arrows={false}
-         // {item?.tag && <div><p>{item.tag}</p></div>}
+          arrows={true}
+        // {item?.tag && <div><p>{item.tag}</p></div>}
         // {<image src={TagTypes[item.tag.type.icon]}>}
           ref={slider => (this.slider1 = slider)}>
               <div className='carousel-slide-item'>
