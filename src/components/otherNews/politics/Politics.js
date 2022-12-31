@@ -1,35 +1,29 @@
 import { Link } from 'react-router-dom';
-import { Component } from 'react';
+import { useState, useEffect } from 'react';
 
 import { getTime, getDate } from '../../../util';
 import NewsServices from "../../services/newsServices";
 
 import imageNews from "../../../resources/img/image.jpg";
 
-class Politics extends Component {
+const Politics = () => {
 
-    state = {
-        politicsNews: []
+    const [politicsNews, setPoliticsNews] = useState([]);
+
+    const newsServices = new NewsServices();
+
+    useEffect(() => {
+        newsServices
+        .getPoliticsNews()
+        .then(onPoliticsNews)
+        // eslint-disable-next-line
+    }, [])
+
+    const onPoliticsNews = (politicsNews) => {
+        setPoliticsNews(politicsNews)
     }
 
-    newsServices = new NewsServices();
-
-    componentDidMount() {
-        this.newsServices.getPoliticsNews()
-            .then(this.onPoliticsNews)
-    }
-
-    onPoliticsNews = (politicsNews) => {
-        this.setState({ politicsNews })
-    }
-
-    updatePoliticsNews = () => {
-        this.newsServices
-            .getPoliticsNews()
-            .then(this.onPoliticsNews)
-    }
-
-    renderPoliticsNews(arr) {
+    function renderPoliticsNews(arr) {
         const items = arr.map((item) => {
                 return (
                     <div key={item.id} className="news__politics-block">
@@ -52,7 +46,7 @@ class Politics extends Component {
         )
     }
 
-    renderPoliticsNewsCol(arr) {
+    function renderPoliticsNewsCol(arr) {
         const items = arr.slice(3).map((item) => {
                 return (
                     <div key={item.id}>
@@ -70,10 +64,8 @@ class Politics extends Component {
         )
     }
 
-    render() {
-        const { politicsNews } = this.state
-        const itemPoliticsNews = this.renderPoliticsNews(politicsNews);
-        const itemPoliticsNewsCol = this.renderPoliticsNewsCol(politicsNews);
+    const itemPoliticsNews = renderPoliticsNews(politicsNews);
+    const itemPoliticsNewsCol = renderPoliticsNewsCol(politicsNews);
 
     return (
         <div className="news__politics">
@@ -105,7 +97,6 @@ class Politics extends Component {
             </div>
         </div>
     )
-    }
 }
 
 export default Politics;

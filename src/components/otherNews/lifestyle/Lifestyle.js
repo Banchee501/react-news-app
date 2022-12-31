@@ -1,35 +1,29 @@
 import { Link } from 'react-router-dom';
-import { Component } from 'react';
+import { useState, useEffect } from 'react';
 
 import { getTime, getDate } from '../../../util';
 import NewsServices from "../../services/newsServices";
 
 import imageNews from "../../../resources/img/image.jpg";
 
-class Lifestyle extends Component {
+const Lifestyle = () => {
 
-    state = {
-        lifestyleNews: []
+    const [lifestyleNews, setLifestyleNews] = useState([]);
+
+    const newsServices = new NewsServices();
+
+    useEffect(() => {
+        newsServices
+        .getLifestyleNews()
+        .then(onLifestyleNews)
+        // eslint-disable-next-line
+    }, [])
+
+    const onLifestyleNews = (lifestyleNews) => {
+        setLifestyleNews(lifestyleNews)
     }
 
-    newsServices = new NewsServices();
-
-    componentDidMount() {
-        this.newsServices.getLifestyleNews()
-            .then(this.onLifestyleNews)
-    }
-
-    onLifestyleNews = (lifestyleNews) => {
-        this.setState({ lifestyleNews })
-    }
-
-    updateLifestyleNews = () => {
-        this.newsServices
-            .getLifestyleNews()
-            .then(this.onLifestyleNews)
-    }
-
-    renderLifestyleNews(arr) {
+    function renderLifestyleNews(arr) {
         const items = arr.map((item) => {
                 return (
                     <div key={item.id} className="news__lifestyle-block">
@@ -52,7 +46,7 @@ class Lifestyle extends Component {
         )
     }
 
-    renderLifestyleNewsCol(arr) {
+    function renderLifestyleNewsCol(arr) {
         const items = arr.slice(3).map((item) => {
                 return (
                     <div key={item.id}>
@@ -70,13 +64,10 @@ class Lifestyle extends Component {
         )
     }
 
-    render() {
-        const { lifestyleNews } = this.state
-        const itemLifestyleNews = this.renderLifestyleNews(lifestyleNews);
-        const itemLifestyleNewsCol = this.renderLifestyleNewsCol(lifestyleNews);
+    const itemLifestyleNews = renderLifestyleNews(lifestyleNews);
+    const itemLifestyleNewsCol = renderLifestyleNewsCol(lifestyleNews);
 
     return (
-
         <div className="news__lifestyle">
             <div className="news__lifestyle-head">
                 <div className="title title_fz32">Лайфстайл</div>
@@ -106,7 +97,6 @@ class Lifestyle extends Component {
             </div>
         </div>
     )
-    }
 }
 
 export default Lifestyle;

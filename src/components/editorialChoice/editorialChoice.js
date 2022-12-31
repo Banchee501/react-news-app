@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Component } from 'react';
+import { useState, useEffect } from 'react';
 import NewsServices from "../services/newsServices";
 import AllNews from './allNewsColumn/AllNewsColumn';
 import RegionsNews from './regionNews/RegionNews';
@@ -9,30 +9,27 @@ import './editorialChoice.scss';
 
 import newsImage from "../../resources/img/image.jpg";
 
-class NewsFeed extends Component {
+const NewsFeed = () => {
 
-    state = {
-        editorialChoice: []
+const [editorialChoice, setEditorialChoice] = useState([])
+
+    const newsServices = new NewsServices();
+
+    useEffect(() => {
+        onRequest();
+        // eslint-disable-next-line
+    }, [])
+
+    const onRequest = () => {
+        newsServices.getEditorialChoice()
+            .then(onEditorialChoice)
     }
 
-    newsServices = new NewsServices();
-
-    componentDidMount() {
-        this.newsServices.getEditorialChoice()
-            .then(this.onEditorialChoice)
+    const onEditorialChoice = (editorialChoice) => {
+        setEditorialChoice(editorialChoice)
     }
 
-    onEditorialChoice = (editorialChoice) => {
-        this.setState({ editorialChoice })
-    }
-
-    updateEditorialChoice = () => {
-        this.newsServices
-            .getEditorialChoice()
-            .then(this.onEditorialChoice)
-    }
-
-    renderEditorialChoice(arr) {
+    function renderEditorialChoice(arr) {
         const items = arr.map((item) => {
             return (
                 <div key={item.id} className="news__choice-item">
@@ -52,9 +49,7 @@ class NewsFeed extends Component {
         )
     }
 
-    render() {
-        const { editorialChoice } = this.state
-        const itemEditorialChoice = this.renderEditorialChoice(editorialChoice);
+        const itemEditorialChoice = renderEditorialChoice(editorialChoice);
 
         return (
             <div className="container" >
@@ -83,7 +78,6 @@ class NewsFeed extends Component {
                 </div>
             </div>
         )
-    }
 }
 
 export default NewsFeed;

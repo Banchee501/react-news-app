@@ -63,6 +63,7 @@ export default class AsNavFor extends Component {
           ref={slider => (this.slider1 = slider)}>
               <div className='carousel-slide-item'>
                   <img src={firstSlide} alt="First slide"/>
+                  <div className='gradient'></div>
                   <p className="fz40">Андрій Єрмак: «В нас інші прізвища, ніж у творців Мінських угод. Людей, які б таке допускали, в нашій команді немає»</p>
               </div>
               <div className='carousel-slide-item'>

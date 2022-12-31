@@ -10,55 +10,54 @@ import helicopterIcon from "../../resources/icons/navbarIcons/helicopter.png";
 import afvIcon from "../../resources/icons/navbarIcons/afv.png";
 
 import './statistics.scss';
-import { Component } from "react";
 
-class Statistics extends Component {
-    state = {
-        stat: {},
+import { useState, useEffect } from "react";
+
+const Statistics = () => {
+
+    const [stat, setStat] = useState([]);
+
+    const newsServices = new NewsServices();
+    
+    useEffect(() => {
+        updateStatistic();
+        // eslint-disable-next-line
+    }, [])
+
+    const onStatLoaded = (stat) => {
+        setStat(stat)
     }
 
-    newsServices = new NewsServices();
 
-    componentDidMount() {
-        this.updateStatistic()
-    }
-
-    onStatLoaded = (stat) => {
-        this.setState({ stat })
-    }
-
-
-    updateStatistic = () => {
-        this.newsServices
+    const updateStatistic = () => {
+        newsServices
             .getStatistics()
-            .then(this.onStatLoaded)
+            .then(onStatLoaded)
     }
 
-    render() {
-        const { stat: { day, soldier, tanks, artillery, aircraft, mlrs, helicopter, afv } } = this.state
-        return (
-            <div className="container">
-                <div className='statistics'>
-                    <div className='fz14 statistics__day'>
-                        {day} день війни:</div>
-                    <div className="container__fluid">
-                        <Marquee gradient={false}>
-                            <ul className='fz14 statistics__list'>
-                                <li><img src={soldierIcon} alt="soldier" />особовий склад <span>~{soldier}</span></li>
-                                <li><img src={tanksIcon} alt="tanks" />танки <span>{tanks}</span></li>
-                                <li><img src={artileryIcon} alt="artillery" />артсистеми <span>{artillery}</span></li>
-                                <li><img src={aircraftIcon} alt="aircraft" />літаки <span>{aircraft}</span></li>
-                                <li><img src={mlrsIcon} alt="mlrs" />РСЗВ <span>{mlrs}</span></li>
-                                <li><img src={helicopterIcon} alt="helicopter" />гелікоптери <span>{helicopter}</span></li>
-                                <li><img src={afvIcon} alt="afv" />ББМ <span>{afv}</span></li>
-                            </ul>
-                        </Marquee>
-                    </div>
+    const { day, soldier, tanks, artillery, aircraft, mlrs, helicopter, afv } = stat;
+    
+    return (
+        <div className="container">
+            <div className='statistics'>
+                <div className='fz14 statistics__day'>
+                    {day} день війни:</div>
+                <div className="container__fluid">
+                    <Marquee gradient={false}>
+                        <ul className='fz14 statistics__list'>
+                            <li><img src={soldierIcon} alt="soldier" />особовий склад <span>~{soldier}</span></li>
+                            <li><img src={tanksIcon} alt="tanks" />танки <span>{tanks}</span></li>
+                            <li><img src={artileryIcon} alt="artillery" />артсистеми <span>{artillery}</span></li>
+                            <li><img src={aircraftIcon} alt="aircraft" />літаки <span>{aircraft}</span></li>
+                            <li><img src={mlrsIcon} alt="mlrs" />РСЗВ <span>{mlrs}</span></li>
+                            <li><img src={helicopterIcon} alt="helicopter" />гелікоптери <span>{helicopter}</span></li>
+                            <li><img src={afvIcon} alt="afv" />ББМ <span>{afv}</span></li>
+                        </ul>
+                    </Marquee>
                 </div>
             </div>
-        )
-
-    }
+        </div>
+    )
 }
 
 export default Statistics;

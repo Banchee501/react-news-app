@@ -1,33 +1,31 @@
 import { Link } from 'react-router-dom';
-import { Component } from 'react';
+import { useEffect, useState } from 'react';
 
 import NewsServices from "../../services/newsServices";
 import { getTime } from '../../../util';
 
-class AllNews extends Component {
+const AllNews = () => {
 
-    state = {
-        news: [],
+    const [news, setNews] = useState([]);
+
+    const newsServices = new NewsServices();
+
+    useEffect(() => {
+        onRequest();
+        // eslint-disable-next-line
+    }, [])
+
+    
+    const onRequest = () => {
+        newsServices.getNewsAll()
+        .then(onNewsLoaded)
     }
 
-    newsServices = new NewsServices();
-
-    componentDidMount() {
-        this.newsServices.getNewsAll()
-            .then(this.onNewsLoaded)
+    const onNewsLoaded = (news) => {
+        setNews( news )
     }
 
-    onNewsLoaded = (news) => {
-        this.setState({ news })
-    }
-
-    updateNews = () => {
-        this.newsServices
-            .getNewsAll()
-            .then(this.onNewsLoaded)
-    }
-
-    renderAllNews(arr) {
+    function renderAllNews(arr) {
         const items = arr.map((item) => {
             let style = {
                 className: "fz16 news__all-item"
@@ -51,10 +49,7 @@ class AllNews extends Component {
         )
     }
 
-
-    render() {
-        const { news } = this.state
-        const itemAllNews = this.renderAllNews(news);
+        const itemAllNews = renderAllNews(news);
 
         return (
             <div className='news__all'>
@@ -86,7 +81,6 @@ class AllNews extends Component {
                     Завантажити ще</button>
             </div>
         )
-    }
 }
 
 export default AllNews;

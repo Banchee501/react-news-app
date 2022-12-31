@@ -1,35 +1,29 @@
 import { Link } from 'react-router-dom';
-import { Component } from 'react';
+import { useState, useEffect } from 'react';
 
 import { getTime, getDate } from '../../../util';
 import NewsServices from "../../services/newsServices";
 
 import imageNews from "../../../resources/img/image.jpg";
 
-class Economics extends Component {
+const Economics = () => {
 
-    state = {
-        economicsNews: []
+    const [economicsNews, setEconomicsNews] = useState([])
+
+    const newsServices = new NewsServices();
+
+    useEffect(() => {
+        newsServices
+        .getEconomicsNews()
+        .then(onEconomicsNews)
+        // eslint-disable-next-line
+    }, [])
+
+    const onEconomicsNews = (economicsNews) => {
+        setEconomicsNews(economicsNews)
     }
 
-    newsServices = new NewsServices();
-
-    componentDidMount() {
-        this.newsServices.getEconomicsNews()
-            .then(this.onEconomicsNews)
-    }
-
-    onEconomicsNews = (economicsNews) => {
-        this.setState({ economicsNews })
-    }
-
-    updateEconomicsNews = () => {
-        this.newsServices
-            .getEconomicsNews()
-            .then(this.onEconomicsNews)
-    }
-
-    renderEconomicsNews(arr) {
+    function renderEconomicsNews(arr) {
         const items = arr.map((item) => {
                 return (
                     <div  key={item.id} className="news__economics-block">
@@ -52,7 +46,7 @@ class Economics extends Component {
         )
     }
 
-    renderEconomicsNewsCol(arr) {
+    function renderEconomicsNewsCol(arr) {
         const items = arr.slice(3).map((item) => {
                 return (
                     <div key={item.id}>
@@ -70,10 +64,8 @@ class Economics extends Component {
         )
     }
 
-    render() {
-        const { economicsNews } = this.state
-        const itemEconomicsNews = this.renderEconomicsNews(economicsNews);
-        const itemEconomicsNewsCol = this.renderEconomicsNewsCol(economicsNews);
+    const itemEconomicsNews = renderEconomicsNews(economicsNews);
+    const itemEconomicsNewsCol = renderEconomicsNewsCol(economicsNews);
 
     return (
         <div className="news__economics">
@@ -105,7 +97,6 @@ class Economics extends Component {
         </div>
     </div>
     )
-    }
 }
 
 export default Economics;

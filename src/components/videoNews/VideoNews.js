@@ -1,4 +1,4 @@
-import { Component } from 'react';
+import { useState, useEffect } from 'react';
 
 import { getDate } from '../../util';
 import NewsServices from "../services/newsServices";
@@ -7,31 +7,28 @@ import './videoNews.scss';
 
 import video from "../../resources/img/videomain.jpg"
 
+const VideoNews = () => {
 
-class VideoNews extends Component {
+    const [videoNews, setVideoNews] = useState([])
 
-    state = {
-        videoNews: []
+    const newsServices = new NewsServices();
+
+    useEffect(() => {
+        onRequest()
+        // eslint-disable-next-line
+    }, [])
+
+    const onRequest = () => {
+        newsServices
+        .getVideoNews()
+        .then(onVideoNews)
     }
 
-    newsServices = new NewsServices();
-
-    componentDidMount() {
-        this.newsServices.getVideoNews()
-            .then(this.onVideoNews)
+    const onVideoNews = (videoNews) => {
+        setVideoNews(videoNews)
     }
 
-    onVideoNews = (videoNews) => {
-        this.setState({ videoNews })
-    }
-
-    updateVideoNews = () => {
-        this.newsServices
-            .getVideoNews()
-            .then(this.onVideoNews)
-    }
-
-    renderVideoNews(arr) {
+    function renderVideoNews(arr) {
         const items = arr.map((item) => {
                 return (
                         <div key={item.id} className="video__news-item">
@@ -59,9 +56,7 @@ class VideoNews extends Component {
         )
     }
 
-    render() {
-        const { videoNews } = this.state
-        const itemVideoNews = this.renderVideoNews(videoNews);
+    const itemVideoNews = renderVideoNews(videoNews);
 
     return (
         <div className='container'>
@@ -81,7 +76,6 @@ class VideoNews extends Component {
             </div>
         </div>
     )
-}
 }
 
 export default VideoNews;

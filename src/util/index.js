@@ -27,7 +27,7 @@ export const getTime = (time) => {
     }
 
     const date = new Date(time).toLocaleString("uk", optionHours)
-    
+
     return date
 }
 
@@ -40,7 +40,7 @@ export const getDate = (time) => {
         minute: 'numeric',
     }
 
-    const date = new Date(time).toLocaleString("uk", optionDate)
+    const date = new Date(time).toLocaleString("uk", optionDate).replace(" о", "")
 
     return date
 }
