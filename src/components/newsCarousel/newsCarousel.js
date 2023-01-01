@@ -2,7 +2,7 @@ import React from 'react';
 import Slider from "react-slick";
 import { Component } from 'react';
 
-import NewsServices from "../services/newsServices";
+import useNewsServices from "../services/newsServices";
 
 import './carousel.scss';
 
@@ -45,20 +45,20 @@ export default class AsNavFor extends Component {
       };
     }
 
-    newsServices = new NewsServices();
+    // getCarousel = useNewsServices();
 
     componentDidMount() {
       this.setState({
         nav1: this.slider1,
         nav2: this.slider2
       });
-      this.newsServices.getCarousel()
-        .then(this.onCarousel)
+      // this.getCarousel()
+      //   .then(this.onCarousel)
     }
 
-    onCarousel = (newsCarousel) => {
-      this.setState({ newsCarousel })
-    }
+    // onCarousel = (newsCarousel) => {
+    //   this.setState({ newsCarousel })
+    // }
 
     renderCarousel(arr) {
       const items = arr.map((item) => {

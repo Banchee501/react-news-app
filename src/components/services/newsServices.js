@@ -10,60 +10,60 @@ const useNewsServices = () => {
 
     const getStatistics = async () => {
         const res = await getAll()
-        return statistics(res.statistics[0]);
+        return _statistics(res.statistics[0]);
     }
 
     const getCarousel = async () => {
         const res = await getAll()
-        return res.newsCarousel.map(news);
+        return res.newsCarousel.map(_news);
     }
 
     const getNewsAll = async () => {
         const res = await getAll()
-        return res.newsAll.map(news);
+        return res.newsAll.map(_news);
     }
 
     const getEditorialChoice = async () => {
         const res = await getAll()
-        return res.editorialChoice.map(news);
+        return res.editorialChoice.map(_news);
     }
 
     const getRegionsNews = async () => {
         const res = await getAll()
-        return res.regions.map(news);
+        return res.regions.map(_news);
     }
 
     const getVideoNews = async () => {
         const res = await getAll()
-        return res.videoNews.map(news);
+        return res.videoNews.map(_news);
     }
 
     const getColums = async () => {
         const res = await getAll()
-        return res.colums.map(colums);
+        return res.colums.map(_colums);
     }
 
     const getPoliticsNews = async () => {
         const res = await getAll()
-        return res.politics.map(news);
+        return res.politics.map(_news);
     }
 
     const getPromo = async () => {
         const res = await getAll()
-        return res.promo.map(news);
+        return res.promo.map(_news);
     }
 
     const getEconomicsNews = async () => {
         const res = await getAll()
-        return res.economics.map(news);
+        return res.economics.map(_news);
     }
 
     const getLifestyleNews = async () => {
         const res = await getAll()
-        return res.lifestyle.map(news);
+        return res.lifestyle.map(_news);
     }
 
-    const statistics = (amount) => {
+    const _statistics = (amount) => {
         return {
             day: amount.day,
             soldier: amount.soldier,
@@ -76,7 +76,7 @@ const useNewsServices = () => {
         }
     }
 
-    const news = (news) => {
+    const _news = (news) => {
         return {
             id: nextId(),
             type: news.type,
@@ -87,7 +87,7 @@ const useNewsServices = () => {
         }
     }
 
-    const colums = (colums) => {
+    const _colums = (colums) => {
         return {
             id: nextId(),
             name: colums.name,

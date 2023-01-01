@@ -18,7 +18,7 @@ const AllNews = () => {
     
     const onRequest = () => {
         getNewsAll()
-            .then(onNewsLoaded)
+        .then(onNewsLoaded)
     }
 
     const onNewsLoaded = (news) => {

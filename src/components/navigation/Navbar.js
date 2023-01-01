@@ -17,14 +17,14 @@ const Navbar = () => {
                     <div className='nav__panel'>
                         <input type="text" className="placeicon" placeholder='&#xf002;    пошук новин' />
                         <div className='nav__panel-logo'>
-                            <a href="https://web.telegram.org/" target="_blank" rel="noreferrer"><i className="fa-brands fa-telegram"></i></a>
-                            <a href="https://www.facebook.com/" target="_blank" rel="noreferrer"><i className="fa-brands fa-facebook"></i></a>
-                            <a href="https://www.instagram.com/" target="_blank" rel="noreferrer"><i className="fa-brands fa-square-instagram"></i></a>
-                            <a href="https://www.youtube.com/" target="_blank" rel="noreferrer"><i className="fa-brands fa-youtube"></i></a>
+                            <Link to="https://web.telegram.org/" target="_blank" rel="noreferrer"><i className="fa-brands fa-telegram"></i></Link>
+                            <Link to="https://www.facebook.com/" target="_blank" rel="noreferrer"><i className="fa-brands fa-facebook"></i></Link>
+                            <Link to="https://www.instagram.com/" target="_blank" rel="noreferrer"><i className="fa-brands fa-square-instagram"></i></Link>
+                            <Link to="https://www.youtube.com/" target="_blank" rel="noreferrer"><i className="fa-brands fa-youtube"></i></Link>
                         </div>
                         <div className='fz14 nav__panel-languages'>
-                            <a href="/ua">UA</a>
-                            <a href="/ru">RU</a>
+                            <Link to="/ua">UA</Link>
+                            <Link to="/ru">RU</Link>
                         </div>
                     </div>
                     <div className='nav__panel-languages-media'>
@@ -36,8 +36,8 @@ const Navbar = () => {
                                 </svg>
                             </button>
                             <div className='dropdown-content'>
-                                <a href="/ua">UA</a>
-                                <a href="/ru">RU</a>
+                                <Link to="/ua">UA</Link>
+                                <Link to="/ru">RU</Link>
                             </div>
                         </div>
                     </div>
@@ -45,13 +45,13 @@ const Navbar = () => {
                 <div className='fz14 nav__bottom'>
                     <ul className="nav__bottom-list">
                         <div className='exclusive'><img src={fire} alt="exclusive" /></div>
-                        <li className="nav__bottom-link"><a href="/war">ВІЙНА</a></li>
-                        <li className="nav__bottom-link"><a href="/news">НОВИНИ</a></li>
-                        <li className="nav__bottom-link"><a href="/politic">ПОЛІТИКА</a></li>
-                        <li className="nav__bottom-link"><a href="/economic">ЕКОНОМІКА</a></li>
-                        <li className="nav__bottom-link"><a href="/society">СУСПІЛЬСТВО</a></li>
-                        <li className="nav__bottom-link"><a href="/views">ПОГЛЯДИ</a></li>
-                        <li className="nav__bottom-link"><a href="/world">СВІТ</a></li>
+                        <li className="nav__bottom-link"><Link to="/war">ВІЙНА</Link></li>
+                        <li className="nav__bottom-link"><Link to="/news">НОВИНИ</Link></li>
+                        <li className="nav__bottom-link"><Link to="/politics">ПОЛІТИКА</Link></li>
+                        <li className="nav__bottom-link"><Link to="/economic">ЕКОНОМІКА</Link></li>
+                        <li className="nav__bottom-link"><Link to="/society">СУСПІЛЬСТВО</Link></li>
+                        <li className="nav__bottom-link"><Link to="/views">ПОГЛЯДИ</Link></li>
+                        <li className="nav__bottom-link"><Link to="/world">СВІТ</Link></li>
                     </ul>
                     <div className='live'>
                         <div className='circle'></div>

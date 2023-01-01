@@ -19,9 +19,9 @@ const RegionsNews = () => {
         setRegionsNews(regionsNews)
     }
 
-    function renderKyivNews(arr) {
+    function renderRegionsNews(arr, reg) {
         const items = arr.map((item, key) => {
-            if (arr[key].type === "Kyiv") {
+            if (arr[key].type === reg) {
                 return (
                     <div key={item.id} className="fz16 news__city-data-content">
                         <span>{getTime(item.date)}</span> {item.text}
@@ -41,53 +41,9 @@ const RegionsNews = () => {
         )
     }
 
-    function renderOdesaNews(arr) {
-        const items = arr.map((item, key) => {
-            if (arr[key].type === "Odesa") {
-                return (
-                    <div key={item.id} className="fz16 news__city-data-content">
-                        <span>{getTime(item.date)}</span> {item.text}
-                        <hr />
-                    </div>
-                )
-            }
-        });
-
-        return (
-            <>
-                <div className="news__city-grid">
-                    {items}
-                </div>
-            </>
-
-        )
-    }
-
-    function renderKharkivNews(arr) {
-        const items = arr.map((item, key) => {
-            if (arr[key].type === "Kharkiv") {
-                return (
-                    <div key={item.id} className="fz16 news__city-data-content">
-                        <span>{getTime(item.date)}</span> {item.text}
-                        <hr />
-                    </div>
-                )
-            }
-        });
-
-        return (
-            <>
-                <div className="news__city-grid">
-                    {items}
-                </div>
-            </>
-
-        )
-    }
-
-        const itemKyivNews = renderKyivNews(regionsNews);
-        const itemOdesaNews = renderOdesaNews(regionsNews);
-        const itemKharkivNews = renderKharkivNews(regionsNews);
+        const itemKyivNews = renderRegionsNews(regionsNews, "Kyiv");
+        const itemOdesaNews = renderRegionsNews(regionsNews, "Odesa");
+        const itemKharkivNews = renderRegionsNews(regionsNews, "Kharkiv");
 
         return (
             <>
@@ -147,3 +103,21 @@ const RegionsNews = () => {
 }
 
 export default RegionsNews;
+
+
+// export const parseTime = (time, vrit) => {
+//     switch(vrit) {
+//         case ('time') :
+//             return `${new Date(time).getHours}:  ` // minute
+
+//         // time month 
+//         // month[{new Date(time).getMonth()]
+//     }
+// }
+
+// time, timeMonth, month, 
+// const res = (dte, month)
+//const filtered =  arr.filter(item => {
+// return new Date(item.dte).getMonth() === month
+//})
+// return res

@@ -11,7 +11,7 @@ const App = () => {
     <div className="app">
       <Navbar />
       <Statistics />
-      {/* <SimpleSlider /> */}
+      <SimpleSlider />
       <NewsFeed />
       <VideoNews />
       <Other />

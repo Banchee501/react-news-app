@@ -1,24 +1,3 @@
-// const months = {
-//     0
-// }
-
-// export const prseTime = (time, vrit) => {
-//     switch(vrit) {
-//         case ('time') :
-//             return `${new Date(time).getHours}:  ` // minute
-
-//         // time month 
-//         // month[{new Date(time).getMonth()]
-//     }
-// }
-
-// time, timeMonth, month, 
-// const res = (dte, month)
-//const filtered =  arr.filter(item => {
-// return new Date(item.dte).getMonth() === month
-//})
-// return res
-
 export const getTime = (time) => {
 
     const optionHours = {
@@ -41,6 +20,18 @@ export const getDate = (time) => {
     }
 
     const date = new Date(time).toLocaleString("uk", optionDate).replace(" о", "")
+
+    return date
+}
+
+export const getDay = (time) => {
+
+    const optionHours = {
+        day: 'numeric',
+        month: 'long',
+    }
+
+    const date = new Date(time).toLocaleString("uk", optionHours)
 
     return date
 }
