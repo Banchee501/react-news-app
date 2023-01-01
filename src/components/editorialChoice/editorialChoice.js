@@ -1,8 +1,10 @@
 import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-import NewsServices from "../services/newsServices";
+
+import useNewsServices from "../services/newsServices";
 import AllNews from './allNewsColumn/AllNewsColumn';
 import RegionsNews from './regionNews/RegionNews';
+
 import { getDate } from '../../util';
 
 import './editorialChoice.scss';
@@ -13,7 +15,7 @@ const NewsFeed = () => {
 
 const [editorialChoice, setEditorialChoice] = useState([])
 
-    const newsServices = new NewsServices();
+    const {getEditorialChoice} = useNewsServices();
 
     useEffect(() => {
         onRequest();
@@ -21,7 +23,7 @@ const [editorialChoice, setEditorialChoice] = useState([])
     }, [])
 
     const onRequest = () => {
-        newsServices.getEditorialChoice()
+        getEditorialChoice()
             .then(onEditorialChoice)
     }
 

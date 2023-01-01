@@ -1,14 +1,14 @@
 import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 
-import NewsServices from "../../services/newsServices";
+import useNewsServices from "../../services/newsServices";
 import { getTime } from '../../../util';
 
 const AllNews = () => {
 
     const [news, setNews] = useState([]);
 
-    const newsServices = new NewsServices();
+    const {getNewsAll} = useNewsServices();
 
     useEffect(() => {
         onRequest();
@@ -17,8 +17,8 @@ const AllNews = () => {
 
     
     const onRequest = () => {
-        newsServices.getNewsAll()
-        .then(onNewsLoaded)
+        getNewsAll()
+            .then(onNewsLoaded)
     }
 
     const onNewsLoaded = (news) => {

@@ -1,71 +1,69 @@
 import nextId from "react-id-generator"
+import { useHttp } from "../../hooks/http.hook"
 
-class NewsServices {
-    getResources = async (url) => {
-        let res = await fetch(url);
+const useNewsServices = () => {
+    const {request} = useHttp();
 
-        if (!res.ok) {
-            throw new Error(`Could not fetch ${url}, status: ${res.status}`);
-        }
-
-        return await res.json();
+    const getAll = () => {
+        return request('https://run.mocky.io/v3/5a0b2c1e-11aa-46ef-ab24-a62ea5ce1801')
     }
 
-    getAll = () => {
-        return this.getResources('https://run.mocky.io/v3/5a0b2c1e-11aa-46ef-ab24-a62ea5ce1801')
+    const getStatistics = async () => {
+        const res = await getAll()
+        return statistics(res.statistics[0]);
     }
 
-    getStatistics = async () => {
-        const res = await this.getAll()
-        return this.statistics(res.statistics[0]);
+    const getCarousel = async () => {
+        const res = await getAll()
+        return res.newsCarousel.map(news);
     }
 
-    getNewsAll = async () => {
-        const res = await this.getAll()
-        return res.newsAll.map(this.news);
+    const getNewsAll = async () => {
+        const res = await getAll()
+        return res.newsAll.map(news);
     }
 
-    getEditorialChoice = async () => {
-        const res = await this.getAll()
-        return res.editorialChoice.map(this.news);
+    const getEditorialChoice = async () => {
+        const res = await getAll()
+        return res.editorialChoice.map(news);
     }
 
-    getRegionsNews = async () => {
-        const res = await this.getAll()
-        return res.regions.map(this.news);
+    const getRegionsNews = async () => {
+        const res = await getAll()
+        return res.regions.map(news);
     }
 
-    getVideoNews = async () => {
-        const res = await this.getAll()
-        return res.videoNews.map(this.news);
+    const getVideoNews = async () => {
+        const res = await getAll()
+        return res.videoNews.map(news);
     }
 
-    getColums = async () => {
-        const res = await this.getAll()
-        return res.colums.map(this.colums);
+    const getColums = async () => {
+        const res = await getAll()
+        return res.colums.map(colums);
     }
 
-    getPoliticsNews = async () => {
-        const res = await this.getAll()
-        return res.politics.map(this.news);
+    const getPoliticsNews = async () => {
+        const res = await getAll()
+        return res.politics.map(news);
     }
 
-    getPromo = async () => {
-        const res = await this.getAll()
-        return res.promo.map(this.news);
+    const getPromo = async () => {
+        const res = await getAll()
+        return res.promo.map(news);
     }
 
-    getEconomicsNews = async () => {
-        const res = await this.getAll()
-        return res.economics.map(this.news);
+    const getEconomicsNews = async () => {
+        const res = await getAll()
+        return res.economics.map(news);
     }
 
-    getLifestyleNews = async () => {
-        const res = await this.getAll()
-        return res.lifestyle.map(this.news);
+    const getLifestyleNews = async () => {
+        const res = await getAll()
+        return res.lifestyle.map(news);
     }
 
-    statistics = (amount) => {
+    const statistics = (amount) => {
         return {
             day: amount.day,
             soldier: amount.soldier,
@@ -78,7 +76,7 @@ class NewsServices {
         }
     }
 
-    news = (news) => {
+    const news = (news) => {
         return {
             id: nextId(),
             type: news.type,
@@ -89,7 +87,7 @@ class NewsServices {
         }
     }
 
-    colums = (colums) => {
+    const colums = (colums) => {
         return {
             id: nextId(),
             name: colums.name,
@@ -98,6 +96,8 @@ class NewsServices {
             date: colums.date
         }
     }
+
+    return {getStatistics, getCarousel, getNewsAll, getEditorialChoice, getRegionsNews, getVideoNews, getColums, getPoliticsNews, getPromo, getEconomicsNews, getLifestyleNews}
 }
 
-export default NewsServices;
+export default useNewsServices;
