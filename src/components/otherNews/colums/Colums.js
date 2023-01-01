@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 import { getDate } from '../../../util';
-import NewsServices from "../../services/newsServices";
+import useNewsServices from "../../services/newsServices";
 
 // import profilePhotoFirst from '../../../resources/img/Avatar.png';
 import profilePhotoSecond from '../../../resources/img/Avatar-1.png';
@@ -13,11 +13,10 @@ const Colums = () => {
 
     const [colums, setColums] = useState([])
 
-    const newsServices = new NewsServices();
+    const {getColums} = useNewsServices();
 
     useEffect (() => {
-        newsServices
-        .getColums()
+        getColums()
         .then(onColumsLoaded)
         // eslint-disable-next-line
     }, [])

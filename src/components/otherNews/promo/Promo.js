@@ -1,34 +1,28 @@
 import { Link } from 'react-router-dom';
-import { Component } from 'react';
+import { useState, useEffect } from 'react';
 
 import { getDate } from '../../../util';
-import NewsServices from "../../services/newsServices";
+import useNewsServices from "../../services/newsServices";
 
 import promoImg from '../../../resources/img/imageph.jpg';
 
-class Promo extends Component {
-    state = {
-        promo: []
+const Promo = () => {
+
+    const [promo, setPromo] = useState([])
+
+    const {getPromo} = useNewsServices();
+
+    useEffect(() => {
+        getPromo()
+        .then(onPromo)
+        // eslint-disable-next-line
+    }, [])
+
+    const onPromo = (promo) => {
+        setPromo(promo)
     }
 
-    newsServices = new NewsServices();
-
-    componentDidMount() {
-        this.newsServices.getPromo()
-            .then(this.onPromo)
-    }
-
-    onPromo = (promo) => {
-        this.setState({ promo })
-    }
-
-    updatePromo = () => {
-        this.newsServices
-            .getPromo()
-            .then(this.onPromo)
-    }
-
-    renderPromo(arr) {
+    function renderPromo(arr) {
         const items = arr.map((item) => {
             return (
                 <div key={item.id} className="news__promo-block">
@@ -71,31 +65,28 @@ class Promo extends Component {
         )
     }
 
-    render() {
-        const { promo } = this.state
-        const itemPromo = this.renderPromo(promo);
+    const itemPromo = renderPromo(promo);
 
-        return (
-        <div className="news__promo">
-            <div className="news__promo-head">
-                <div className="title title_fz32">Промо</div>
-                <Link to="/" className='fz14'>Всі матеріали</Link>
-            </div>
-            <div className="news__promo-body">
-                <div className="img">
-                    <img src={promoImg} alt="promo" />
-                </div>
-                <div className="body">
-                    <div className="date label">05 СЕРПНЯ 11:00</div>
-                    <div className="fz32 news__promo-text">Акція! Телевізори Samsung з вигодою та в оплату частинами до 12 платежів</div>
-                </div>
-            </div>
-                {itemPromo}
+    return (
+    <div className="news__promo">
+        <div className="news__promo-head">
+            <div className="title title_fz32">Промо</div>
+            <Link to="/" className='fz14'>Всі матеріали</Link>
         </div>
+        <div className="news__promo-body">
+            <div className="img">
+                <img src={promoImg} alt="promo" />
+            </div>
+            <div className="body">
+                <div className="date label">05 СЕРПНЯ 11:00</div>
+                <div className="fz32 news__promo-text">Акція! Телевізори Samsung з вигодою та в оплату частинами до 12 платежів</div>
+            </div>
+        </div>
+            {itemPromo}
+    </div>
 
 
-        )
-    }
+    )
 }
                 
 export default Promo;

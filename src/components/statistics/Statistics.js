@@ -1,5 +1,6 @@
 import Marquee from "react-fast-marquee";
-import NewsServices from "../services/newsServices";
+
+import useNewsServices from "../services/newsServices";
 
 import soldierIcon from "../../resources/icons/navbarIcons/soldier.png";
 import tanksIcon from "../../resources/icons/navbarIcons/tanks.png";
@@ -17,7 +18,7 @@ const Statistics = () => {
 
     const [stat, setStat] = useState([]);
 
-    const newsServices = new NewsServices();
+    const {getStatistics} = useNewsServices();
     
     useEffect(() => {
         updateStatistic();
@@ -30,8 +31,7 @@ const Statistics = () => {
 
 
     const updateStatistic = () => {
-        newsServices
-            .getStatistics()
+        getStatistics()
             .then(onStatLoaded)
     }
 

@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 
 import { getDate } from '../../util';
-import NewsServices from "../services/newsServices";
+import useNewsServices from "../services/newsServices";
 
 import './videoNews.scss';
 
@@ -11,7 +11,7 @@ const VideoNews = () => {
 
     const [videoNews, setVideoNews] = useState([])
 
-    const newsServices = new NewsServices();
+    const {getVideoNews} = useNewsServices();
 
     useEffect(() => {
         onRequest()
@@ -19,8 +19,7 @@ const VideoNews = () => {
     }, [])
 
     const onRequest = () => {
-        newsServices
-        .getVideoNews()
+        getVideoNews()
         .then(onVideoNews)
     }
 

@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 
 import { getTime, getDate } from '../../../util';
-import NewsServices from "../../services/newsServices";
+import useNewsServices from "../../services/newsServices";
 
 import imageNews from "../../../resources/img/image.jpg";
 
@@ -10,11 +10,10 @@ const Politics = () => {
 
     const [politicsNews, setPoliticsNews] = useState([]);
 
-    const newsServices = new NewsServices();
+    const {getPoliticsNews} = useNewsServices();
 
     useEffect(() => {
-        newsServices
-        .getPoliticsNews()
+        getPoliticsNews()
         .then(onPoliticsNews)
         // eslint-disable-next-line
     }, [])
