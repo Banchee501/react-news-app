@@ -17,10 +17,10 @@ const Navbar = () => {
                     <div className='nav__panel'>
                         <input type="text" className="placeicon" placeholder='&#xf002;    пошук новин' />
                         <div className='nav__panel-logo'>
-                            <Link to="https://web.telegram.org/" target="_blank" rel="noreferrer"><i className="fa-brands fa-telegram"></i></Link>
-                            <Link to="https://www.facebook.com/" target="_blank" rel="noreferrer"><i className="fa-brands fa-facebook"></i></Link>
-                            <Link to="https://www.instagram.com/" target="_blank" rel="noreferrer"><i className="fa-brands fa-square-instagram"></i></Link>
-                            <Link to="https://www.youtube.com/" target="_blank" rel="noreferrer"><i className="fa-brands fa-youtube"></i></Link>
+                            <a href="https://web.telegram.org/" target="_blank" rel="noreferrer"><i className="fa-brands fa-telegram"></i></a>
+                            <a href="https://www.facebook.com/" target="_blank" rel="noreferrer"><i className="fa-brands fa-facebook"></i></a>
+                            <a href="https://www.instagram.com/" target="_blank" rel="noreferrer"><i className="fa-brands fa-square-instagram"></i></a>
+                            <a href="https://www.youtube.com/" target="_blank" rel="noreferrer"><i className="fa-brands fa-youtube"></i></a>
                         </div>
                         <div className='fz14 nav__panel-languages'>
                             <Link to="/ua">UA</Link>
