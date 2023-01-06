@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-import { getTime } from '../../../util';
+import { getTime, getDay } from '../../../util';
 import useNewsServices from "../../services/newsServices";
 
 const RegionsNews = () => {
@@ -19,6 +19,27 @@ const RegionsNews = () => {
         setRegionsNews(regionsNews)
     }
 
+    function renderDate(arr) {
+        const dateArr = arr.reduce((desired, item) => {
+            if (!desired.find(verifiable => verifiable.date === item.date)) {
+                desired.push(item);
+            }
+            return desired;
+          }, []);
+        const date = dateArr.map((item) => {
+            return (
+                    <div key={item.date} className='fz12 data'>
+                        {getDay(item.date).toUpperCase()}
+                    </div>
+            )
+        })
+        return (
+            <div className="news__city-data">
+                {date}
+            </div>
+        )
+    }
+
     function renderRegionsNews(arr, reg) {
         const items = arr.map((item, key) => {
             if (arr[key].type === reg) {
@@ -28,7 +49,8 @@ const RegionsNews = () => {
                         <hr />
                     </div>
                 )
-            }
+            } 
+            return null
         });
 
         return (
@@ -41,22 +63,17 @@ const RegionsNews = () => {
         )
     }
 
-        const itemKyivNews = renderRegionsNews(regionsNews, "Kyiv");
-        const itemOdesaNews = renderRegionsNews(regionsNews, "Odesa");
-        const itemKharkivNews = renderRegionsNews(regionsNews, "Kharkiv");
+        const KyivNews = renderRegionsNews(regionsNews, "Kyiv");
+        const OdesaNews = renderRegionsNews(regionsNews, "Odesa");
+        const KharkivNews = renderRegionsNews(regionsNews, "Kharkiv");
+        const date = renderDate(regionsNews)
 
         return (
             <>
                 <div className="news__city">
                     <div className="news__city_col">
                         <div className="title title_fz24 news__city-name">Київ</div>
-                        <div className="news__city-data">
-                            <div className="fz12 data">05 СЕРПНЯ</div>
-                            {itemKyivNews}
-                        </div>
-                        <div className="news__city-data">
-                            <div className="fz12 data">04 СЕРПНЯ</div>
-                        </div>
+                            {date}
                     </div>
                     <button className="fz16 more_news">Більше новин
                         <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -71,7 +88,7 @@ const RegionsNews = () => {
                     <div className="title title_fz24 news__city-name">Одеса</div>
                         <div className="news__city-data">
                             <div className="fz12 data">05 СЕРПНЯ</div>
-                            {itemOdesaNews}
+                            {OdesaNews}
                         </div>
                     </div>
                     <button className="fz16 more_news">Більше новин
@@ -87,7 +104,7 @@ const RegionsNews = () => {
                     <div className="title title_fz24 news__city-name">Харків</div>
                     <div className="news__city-data">
                         <div className="fz12 data">05 СЕРПНЯ</div>
-                        {itemKharkivNews}
+                        {KharkivNews}
                     </div>
                 </div>
                 <button className="fz16 more_news">Більше новин

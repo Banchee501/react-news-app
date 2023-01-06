@@ -64,8 +64,7 @@ export default class AsNavFor extends Component {
       const items = arr.map((item) => {
         return (
           <div key={item.id} className='carousel-slide-item'>
-            <img src={firstSlide} alt="First slide"/>
-            <div className='gradient'></div>
+            <img  src={firstSlide} alt="First slide"/>
             <p className="fz40">{item.text}</p>
           </div>
         )
@@ -119,20 +118,23 @@ export default class AsNavFor extends Component {
           <Slider
           {...settings}>
               <div className='carousel-slide-item'>
-                  <img src={firstSlide} alt="First slide"/>
-                  <div className='gradient'></div>
+                  <div style={{ background: `linear-gradient(180deg, rgba(21, 35, 56, 0.5) 0%, rgba(17, 29, 46, 0.24) 21.74%, rgba(17, 29, 46, 0.4) 62.16%, rgba(24, 40, 64, 0.9) 100%),url(${firstSlide}) no-repeat 50%/cover`, width: '100%',
+                height: '654px' }}/>
                   <p className="fz40">Андрій Єрмак: «В нас інші прізвища, ніж у творців Мінських угод. Людей, які б таке допускали, в нашій команді немає»</p>
               </div>
               <div className='carousel-slide-item'>
-                  <img src={secondSlide} alt="Second slide" />
+              <div style={{ background: `linear-gradient(180deg, rgba(21, 35, 56, 0.5) 0%, rgba(17, 29, 46, 0.24) 21.74%, rgba(17, 29, 46, 0.4) 62.16%, rgba(24, 40, 64, 0.9) 100%),url(${secondSlide}) no-repeat 50%/cover`, width: '100%',
+                height: '654px' }}/>
                   <p className="fz40">Оприлюднено супутникові знімки аеродрому біля Новофедорівки: видно місця ураження</p>
               </div>
               <div className='carousel-slide-item'>
-                  <img src={thirdSlide} alt="Third slide" />
+              <div style={{ background: `linear-gradient(180deg, rgba(21, 35, 56, 0.5) 0%, rgba(17, 29, 46, 0.24) 21.74%, rgba(17, 29, 46, 0.4) 62.16%, rgba(24, 40, 64, 0.9) 100%),url(${thirdSlide}) no-repeat 50%/cover`, width: '100%',
+                height: '654px' }}/>
                   <p className="fz40">Вибухи на білоруському аеродромі "Зябрівка": оприлюднені причини</p>
               </div>
               <div className='carousel-slide-item'>
-                  <img src={fourthSlide} alt="Fourth slide" />
+              <div style={{ background: `linear-gradient(180deg, rgba(21, 35, 56, 0.5) 0%, rgba(17, 29, 46, 0.24) 21.74%, rgba(17, 29, 46, 0.4) 62.16%, rgba(24, 40, 64, 0.9) 100%),url(${fourthSlide}) no-repeat 50%/cover`, width: '100%',
+                height: '654px' }}/>
                   <p className="fz40">Сейм Латвії визнав рф країною-спонсором тероризму</p>
               </div>
           </Slider>

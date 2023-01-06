@@ -83,7 +83,8 @@
         }
     }
     .video {
-        background: #182840;
+        background-image: none !important;
+        background: #182840 !important;
         height: 100%;
         &__news {
             padding: 56px 24px;

@@ -59,7 +59,8 @@ const VideoNews = () => {
 
     return (
         <div className='container'>
-            <div className="video">
+            <div className="video"
+            style={{ background: `linear-gradient(to top, rgba(24, 40, 64, 0.95), rgba(21, 35, 56, 0.5)), url(${video}) no-repeat 50%/cover`}}>
                 <div className="title title_fz32">Відео
                     <button className="fz16 more_news">Більше новин
                         <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
