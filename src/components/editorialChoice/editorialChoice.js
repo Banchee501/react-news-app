@@ -18,14 +18,10 @@ const [editorialChoice, setEditorialChoice] = useState([])
     const {getEditorialChoice} = useNewsServices();
 
     useEffect(() => {
-        onRequest();
+        getEditorialChoice()
+        .then(onEditorialChoice)
         // eslint-disable-next-line
     }, [])
-
-    const onRequest = () => {
-        getEditorialChoice()
-            .then(onEditorialChoice)
-    }
 
     const onEditorialChoice = (editorialChoice) => {
         setEditorialChoice(editorialChoice)
