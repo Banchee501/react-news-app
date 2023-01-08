@@ -7,8 +7,10 @@ import useNewsServices from "../../services/newsServices";
 import imageNews from "../../../resources/img/image.jpg";
 
 const Politics = () => {
-
+    
     const [politicsNews, setPoliticsNews] = useState([]);
+    const [activeNews, setActiveNews] = useState(true);
+    const [activeArticles, setActiveArticles] = useState(false);
 
     const {getPoliticsNews} = useNewsServices();
 
@@ -24,13 +26,13 @@ const Politics = () => {
 
     function renderPoliticsNews(arr) {
         const items = arr.map((item) => {
-                return (
-                    <div key={item.id} className="news__politics-block">
-                        <img src={imageNews} alt="news" />
-                        <div className="date">{getDate(item.date).toUpperCase()}</div>
-                        <div className="news__politics-text">{item.text}</div>
-                    </div>
-                )
+            return (
+                <div key={item.id} className="news__politics-block">
+                    <img src={imageNews} alt="news" />
+                    <div className="date">{getDate(item.date).toUpperCase()}</div>
+                    <div className="news__politics-text">{item.text}</div>
+                </div>
+            )
         })
 
         return (
@@ -47,13 +49,13 @@ const Politics = () => {
 
     function renderPoliticsNewsCol(arr) {
         const items = arr.slice(3).map((item) => {
-                return (
-                    <div key={item.id}>
-                        <div className="fz16 news__politics-item label"> <span>{getTime(item.date)} </span>{item.text}
-                        </div>
-                        <hr />
+            return (
+                <div key={item.id}>
+                    <div className="fz16 news__politics-item label"> <span>{getTime(item.date)} </span>{item.text}
                     </div>
-                )
+                    <hr />
+                </div>
+            )
         })
 
         return (
@@ -62,6 +64,16 @@ const Politics = () => {
             </>
         )
     }
+
+    const toggleNewsClass = () => {
+        setActiveNews(!activeNews);
+        setActiveArticles(!activeArticles);
+    };
+
+    const toggleArticleClass = () => {
+        setActiveNews(!activeNews);
+        setActiveArticles(!activeArticles);
+    };
 
     const itemPoliticsNews = renderPoliticsNews(politicsNews);
     const itemPoliticsNewsCol = renderPoliticsNewsCol(politicsNews);
@@ -73,8 +85,10 @@ const Politics = () => {
                 <Link to="/" className='fz14'>Всі новини розділу</Link>
             </div>
             <ul className='fz16 sort'>
-                <li className='active'>Новини</li>
-                <li>Статті</li>
+                <li className={activeNews ? 'active': ''}
+                    onClick={toggleNewsClass}>Новини</li>
+                <li className={activeArticles ? 'active': ''}
+                    onClick={toggleArticleClass}>Статті</li>
             </ul>
             <div className="news__politics-body">
                 <div className="news__politics-blocks">

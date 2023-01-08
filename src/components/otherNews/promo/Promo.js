@@ -24,10 +24,14 @@ const Promo = () => {
 
     function renderPromo(arr) {
         const items = arr.map((item) => {
+            let sliced = item.text.slice(0, 60)
+            if (sliced.length < item.text.length) {
+                sliced += '...';
+            }
             return (
                 <div key={item.id} className="news__promo-block">
                     <div className="date">{getDate(item.date).toUpperCase()}</div>
-                    <div className="fz16 news__promo-text">{item.text}</div>
+                    <div className="fz16 news__promo-text">{sliced}</div>
                 </div>
             )
         })

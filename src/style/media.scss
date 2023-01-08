@@ -51,10 +51,8 @@
                 }
             }
             &-block {
-                width: 304px;
+                width: 272px;
                 height: 105px;
-                padding: 16px;
-                justify-content: flex-start;
             }
         }
         &__economics {
@@ -298,6 +296,27 @@
             }
         }
             &__col {
+                &-item {
+                    min-width: 272px;
+                    &-profile {
+                        .employment {
+                            font-family: Severs-Regular;
+                            font-weight: 400;
+                        }
+                    }
+                    &-body {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-between;
+                        height: 126px;
+                        .date {
+                            margin-top: auto;
+                        }
+                    }
+                    hr {
+                        display: none;
+                    }
+                }
                 border-radius: 0;
                 background-color: #F6F6F6;
                 display: flex;
@@ -318,7 +337,8 @@
                 padding: 16px;
                 margin-right: 24px;
                 width: 304px;
-                height: 250px;
+                height: 218px;
+                
             }
         }
         &__politics {
@@ -391,6 +411,11 @@
         }
         &__news {
             padding: 0 23px 25px 23px;
+            &-main {
+                .video__news-content {
+                    font-size: 18px;
+                }
+            }
             }
         }
         .fz16 {
@@ -433,6 +458,7 @@
                 flex-wrap: wrap;
                 &-first {
                     width: 50%;
+                    flex-direction: column;
                     a {
                         display: flex;
                         margin-bottom: 24px;
@@ -440,6 +466,7 @@
                 }
                 &-second {
                     width: 50%;
+                    flex-direction: column;
                     a {
                         display: flex;
                         margin-bottom: 24px;

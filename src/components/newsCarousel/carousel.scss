@@ -13,7 +13,7 @@
                 font-weight: 700;
                 text-align: left;
                 color: white;
-                top: 40%;
+                top: 35%;
             }
         }
     }
@@ -79,7 +79,7 @@
         left: 64px;
         width: 40px;
         height: 40px;
-        background-image: url(../../resources/icons/slider-left-arrows.svg) !important;
+        background-image: url(../../resources/icons/carousel/slider-left-arrows.svg) !important;
     }
     &-next {
         position: absolute;
@@ -88,7 +88,7 @@
         left: 184px;
         width: 40px;
         height: 40px;
-        background-image: url(../../resources/icons/slider-right-arrows.svg) !important;
+        background-image: url(../../resources/icons/carousel/slider-right-arrows.svg) !important;
     }
 }
 .slick-prev:before {

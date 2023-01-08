@@ -43,9 +43,13 @@ const RegionsNews = () => {
     function renderRegionsNews(arr, reg) {
         const items = arr.map((item, key) => {
             if (arr[key].type === reg) {
+                let sliced = item.text.slice(0, 81)
+                if (sliced.length < item.text.length) {
+                    sliced += '...';
+                }
                 return (
                     <div key={item.id} className="fz16 news__city-data-content">
-                        <span>{getTime(item.date)}</span> {item.text}
+                        <span>{getTime(item.date)}</span> {sliced}
                         <hr />
                     </div>
                 )

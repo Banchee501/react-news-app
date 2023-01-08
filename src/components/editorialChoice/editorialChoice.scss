@@ -14,7 +14,7 @@
         justify-content: space-between;
         border-radius: 12px;
         background-color: white;
-        height: 1458px;
+        height: 1455px;
         margin-left: 64px;
         padding: 16px 16px 24px 16px;
         .gradient {
@@ -76,7 +76,7 @@
     &__choice {
         &-items {
             display: grid;
-            grid-template: repeat( 2, 280px) / repeat(3, 304px);
+            grid-template: repeat(2, minmax(max-content, auto)) / repeat(3, 304px);
             row-gap: 40px;
             column-gap: 32px;
             padding: 32px 0 56px 0;
@@ -117,7 +117,7 @@
         display: grid;
         grid-template-columns: repeat(3, 303px);
         column-gap: 32px;
-        height: 652px;
+        height: 691px;
     }
     &__city {
             border-radius: 12px;

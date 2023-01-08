@@ -7,9 +7,6 @@ import useNewsServices from "../services/newsServices";
 import './carousel.scss';
 
 import firstSlide from "../../resources/img/firstSlide.jpg";
-import secondSlide from "../../resources/img/secondSlide.png";
-import thirdSlide from "../../resources/img/thirdSlide.png";
-import fourthSlide from "../../resources/img/fourthSlide.png";
 
 const AsNavFor = () => {
   const [nav1, setNav1 ] = useState(null),
@@ -69,7 +66,7 @@ const onCarousel = (newsCarousel) => {
       return (
         <>
           <img src={firstSlide} alt="First slide" />
-          <p className="fz14">{item.text}</p>
+          <p className="fz14">{item.text.slice(0, 71)+'...'}</p>
         </>
       )
     })

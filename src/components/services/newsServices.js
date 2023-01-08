@@ -5,7 +5,7 @@ const useNewsServices = () => {
     const {request} = useHttp();
 
     const getAll = () => {
-        return request('https://run.mocky.io/v3/5a0b2c1e-11aa-46ef-ab24-a62ea5ce1801')
+        return request('https://run.mocky.io/v3/2e8f4326-0d7c-4fdb-9d49-07a66e63d4b1')
     }
 
     const getStatistics = async () => {
