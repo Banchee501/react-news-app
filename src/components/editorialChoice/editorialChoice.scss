@@ -96,6 +96,9 @@
                 color: $dark_blue;
             }
         }
+        .load__more {
+            display: none;
+        }
     }
     &__regions {
         hr {
