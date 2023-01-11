@@ -73,6 +73,10 @@ const VideoNews = () => {
                 <div className="video__news">
                         {itemVideoNews}
                 </div>
+                <div className="button">
+                    <button className='fz16 load__more'>
+                    Більше</button>
+                </div>
             </div>
         </div>
     )

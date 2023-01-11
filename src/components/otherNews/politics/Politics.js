@@ -11,6 +11,8 @@ const Politics = () => {
     const [politicsNews, setPoliticsNews] = useState([]);
     const [activeNews, setActiveNews] = useState(true);
     const [activeArticles, setActiveArticles] = useState(false);
+    const [showNewsMonile, setShowNewsMonile] = useState(true);
+    const [showNewsMonile1, setShowNewsMonile1] = useState(false);
 
     const {getPoliticsNews} = useNewsServices();
 
@@ -66,13 +68,17 @@ const Politics = () => {
     }
 
     const toggleNewsClass = () => {
-        setActiveNews(!activeNews);
-        setActiveArticles(!activeArticles);
+        setActiveNews(true);
+        setActiveArticles(false);
+        setShowNewsMonile(true);
+        setShowNewsMonile1(false);
     };
 
     const toggleArticleClass = () => {
-        setActiveNews(!activeNews);
-        setActiveArticles(!activeArticles);
+        setActiveNews(false);
+        setActiveArticles(true);
+        setShowNewsMonile1(true);
+        setShowNewsMonile(false);
     };
 
     const itemPoliticsNews = renderPoliticsNews(politicsNews);
@@ -92,12 +98,13 @@ const Politics = () => {
             </ul>
             <div className="news__politics-body">
                 <div className="news__politics-blocks">
-                    {itemPoliticsNews}
+                    {/* { showNewsMonile ?    <p>Hahahahahah1111</p> : null} */}
+                    <div className={showNewsMonile ? '' : "hidden"}>{itemPoliticsNews}</div>
                 </div>
                 <div className="news__politics-items">
                     <div className="news__politics-items-col">
                         <div className="fz16 title">НОВИНИ РОЗДІЛУ</div>
-                        {itemPoliticsNewsCol}
+                        <div className={showNewsMonile1 ? '' : "hidden"}>{itemPoliticsNewsCol}</div>
                     </div>
                     <button className="fz16 more_news">Більше
                         <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">

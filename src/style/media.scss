@@ -1,4 +1,9 @@
-@media (max-width: 1441px) {
+@media (max-width: 1439px) {
+    .sort {
+        display: flex !important;
+        margin: 0 !important;
+        margin-bottom: 32px !important;
+    }
     .news {
         justify-content: center;
         grid-template-columns: repeat(auto-fit, 326px);
@@ -6,9 +11,11 @@
             .gradient  {
                 display: none;
             }
-            .load__more {
-                width: auto;
-                margin-top: 32px;
+            .button {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-bottom: 49px;
             }
         }
         &__choice {
@@ -21,7 +28,7 @@
         }
         &__politics {
             &-blocks {
-                display: none;
+                
             }
             &-items {
                 &-col {
@@ -99,14 +106,14 @@
                     }
                     &-item {
                          button {
-                        padding-left: 8px;
-                        padding-top: 143px;
+                            padding-left: 8px;
+                            padding-top: 143px;
                             svg {
-                            height: 20px;
-                            width: 20px;
-                            opacity: .6;
+                                height: 20px;
+                                width: 20px;
+                                opacity: .6;
+                            }
                         }
-                }
                         img {
                             padding-bottom: 8px;
                             width: 326px;
@@ -257,6 +264,9 @@
             }
         }
     }
+    .hidden {
+        display: none;
+    }
     .news {
         background-color: white;
         grid-template-columns: repeat(auto-fit, 375px);
@@ -308,10 +318,6 @@
         &__regions {
             &-head {
                 padding-right: 24px;
-            }
-            .sort {
-                display: flex;
-                margin: 0;
             }
         }
             &__col {
@@ -366,11 +372,6 @@
             .title {
                 font-size: 30px;
             }
-            .sort {
-                display: flex;
-                margin: 0;
-                margin-bottom: 32px;
-            }
             &-body {
                 display: block;
             }
@@ -396,22 +397,12 @@
             &-body {
                 display: block;
             }
-            .sort {
-                display: flex;
-                margin: 0;
-                margin-bottom: 32px;
-            }
         }
         &__lifestyle {
             padding: 56px 24px;
             grid-column-start: 1;
             .title {
                 font-size: 30px;
-            }
-            .sort {
-                display: flex;
-                margin: 0;
-                margin-bottom: 32px;
             }
             &-body {
                 display: block;
@@ -430,11 +421,24 @@
         }
         &__news {
             padding: 0 23px 25px 23px;
-            &-main {
-                .video__news-content {
-                    font-size: 18px;
+                &-main {
+                    .video__news-content {
+                        font-size: 18px;
+                    }
                 }
             }
+            .button {
+                .load__more{
+                    padding: 9px 38px 6px 32px;
+                    width: 327px;
+                    height: 38px;
+                    border: 1px solid #FFFFFF;
+                    border-radius: 4px;
+                }
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding-bottom: 56px;
             }
         }
         .fz16 {

@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 
 import { getTime, getDay } from '../../../util';
 import useNewsServices from "../../services/newsServices";
+import {useMemo} from 'react'
 
 const RegionsNews = () => {
 
@@ -20,17 +21,70 @@ const RegionsNews = () => {
     }
 
     function renderDate(arr) {
+        console.log(
+            'ddd', arr
+        )
         const dateArr = arr.reduce((desired, item) => {
             if (!desired.find(verifiable => verifiable.date === item.date)) {
-                desired.push(item);
+                desired.push({
+                    ...item
+                });
             }
             return desired;
           }, []);
+          console.log('hahahaha', dateArr)
         const date = dateArr.map((item) => {
             return (
-                    <div key={item.date} className='fz12 data'>
-                        {getDay(item.date).toUpperCase()}
-                    </div>
+                <div key={item.date} className='fz12 data'>
+                    {getDay(item.date).toUpperCase()}
+                    {/* <p>{item?.text}</p> */}
+                </div>
+            )
+        })
+        return (
+            <div className="news__city-data">
+                {date}
+            </div>
+        )
+    }
+
+
+    const renderNews = (arr) => {
+        const dateArr = arr.reduce((desired, item) => {
+            if (!desired.find(verifiable => verifiable.date === item.date)) {
+                desired.push({
+                    ...item
+                });
+            }
+            return desired;
+          }, []);
+
+         const b =  dateArr.map(item => {
+           // let arr1 = [];
+           let c =  arr.filter(it => {
+            if(new Date(it?.date).getDay() === new Date(item?.date)?.getDay() && new Date(it?.date)?.getMonth() === new Date(item?.date)?.getMonth()) {
+                return it;
+            }
+           })
+           return {
+            ...item,
+            news: c,
+           }
+          })
+
+          const date = b.map((item) => {
+            let x = (
+                <>
+                    {item?.news.map(it1 => {
+                        return <p> {it1.text}</p>
+                    })}
+                </>
+            )
+            return (
+                <div key={item.date} className='fz12 data'>
+                    {getDay(item.date).toUpperCase()}
+               {x}
+                </div>
             )
         })
         return (
@@ -70,7 +124,7 @@ const RegionsNews = () => {
         const KyivNews = renderRegionsNews(regionsNews, "Kyiv");
         const OdesaNews = renderRegionsNews(regionsNews, "Odesa");
         const KharkivNews = renderRegionsNews(regionsNews, "Kharkiv");
-        const date = renderDate(regionsNews)
+        const date = renderNews(regionsNews)
 
         return (
             <>
