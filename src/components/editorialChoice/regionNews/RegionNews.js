@@ -21,7 +21,7 @@ const RegionsNews = () => {
 
     const renderNews = (arr, reg) => {
         const dateArr = arr.reduce((desired, item) => {
-            if (!desired.find(verifiable => verifiable.date === item.date)) {
+            if (!desired.find(verifiable => verifiable.date === item.date) && item.type === reg) {
                 desired.push({
                     ...item
                 });
@@ -30,8 +30,8 @@ const RegionsNews = () => {
         }, []);
 
         const items = dateArr.map(item => {
-           let dates = arr.filter(date => {
-                if(new Date(date?.date).getDay() === new Date(item?.date)?.getDay() && new Date(date?.date)?.getMonth() === new Date(item?.date)?.getMonth()) {
+           let dates = arr.filter((date, key) => {
+                if(new Date(date?.date).getDay() === new Date(item?.date)?.getDay() && new Date(date?.date)?.getMonth() === new Date(item?.date)?.getMonth() && arr[key].type === reg) {
                     return date;
                 }
            })
@@ -45,12 +45,18 @@ const RegionsNews = () => {
             let news = (
                 <>
                     {item?.news.map(description => {
-                        return <>
-                            <div key={item.id} className="fz16 news__city-data-content">
-                                <span>{getTime(item.date)}</span> {description.text}
-                                <hr />
-                            </div>
-                        </>
+                        let sliced = description.text.slice(0, 81)
+                        if (sliced.length < item.text.length) {
+                                sliced += '...';
+                            }
+                        return (
+                            <>
+                                <div key={item.id} className="fz16 news__city-data-content">
+                                    <span>{getTime(item.date)}</span> {sliced}
+                                    <hr />
+                                </div>
+                            </>
+                        )
                     })}
                 </>
             )
@@ -72,36 +78,9 @@ const RegionsNews = () => {
         )
     }
 
-    function renderRegionsNews(arr, reg) {
-        const items = arr.map((item, key) => {
-            if (arr[key].type === reg) {
-                let sliced = item.text.slice(0, 81)
-                if (sliced.length < item.text.length) {
-                    sliced += '...';
-                }
-                return (
-                    <div key={item.id} className="fz16 news__city-data-content">
-                        <span>{getTime(item.date)}</span> {sliced}
-                        <hr />
-                    </div>
-                )
-            } 
-            return null
-        });
-
-        return (
-            <>
-                <div className="news__city-grid">
-                    {items}
-                </div>
-            </>
-
-        )
-    }
-
         const KyivNews = renderNews(regionsNews, "Kyiv");
-        const OdesaNews = renderRegionsNews(regionsNews, "Odesa");
-        const KharkivNews = renderRegionsNews(regionsNews, "Kharkiv");
+        const OdesaNews = renderNews(regionsNews, "Odesa");
+        const KharkivNews = renderNews(regionsNews, "Kharkiv");
 
         return (
             <>
@@ -122,7 +101,6 @@ const RegionsNews = () => {
                 <div className="news__city_col">
                     <div className="title title_fz24 news__city-name">Одеса</div>
                         <div className="news__city-data">
-                            <div className="fz12 data">05 СЕРПНЯ</div>
                             {OdesaNews}
                         </div>
                     </div>
@@ -138,7 +116,6 @@ const RegionsNews = () => {
                 <div className="news__city_col">
                     <div className="title title_fz24 news__city-name">Харків</div>
                     <div className="news__city-data">
-                        <div className="fz12 data">05 СЕРПНЯ</div>
                         {KharkivNews}
                     </div>
                 </div>
