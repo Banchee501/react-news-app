@@ -27,9 +27,6 @@
             overflow-y: hidden;
         }
         &__politics {
-            &-blocks {
-                
-            }
             &-items {
                 &-col {
                     .title {
@@ -369,6 +366,14 @@
         &__politics {
             padding: 56px 24px;
             grid-column-start: 1;
+            &-blocks {
+                grid-template-columns: repeat(auto-fit, 326px);
+            }
+            &-block {
+                &-else {
+                    grid-template: repeat(2, 260px)/repeat(2, 304px);
+                }
+            }
             .title {
                 font-size: 30px;
             }

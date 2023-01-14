@@ -11,8 +11,8 @@ const Politics = () => {
     const [politicsNews, setPoliticsNews] = useState([]);
     const [activeNews, setActiveNews] = useState(true);
     const [activeArticles, setActiveArticles] = useState(false);
-    const [showNewsMonile, setShowNewsMonile] = useState(true);
-    const [showNewsMonile1, setShowNewsMonile1] = useState(false);
+    const [showNewsMobile, setShowNewsMobile] = useState(true);
+    const [showArticlesMobile, setShowArticlesMobile] = useState(false);
 
     const {getPoliticsNews} = useNewsServices();
 
@@ -70,15 +70,15 @@ const Politics = () => {
     const toggleNewsClass = () => {
         setActiveNews(true);
         setActiveArticles(false);
-        setShowNewsMonile(true);
-        setShowNewsMonile1(false);
+        setShowNewsMobile(true);
+        setShowArticlesMobile(false);
     };
 
     const toggleArticleClass = () => {
         setActiveNews(false);
         setActiveArticles(true);
-        setShowNewsMonile1(true);
-        setShowNewsMonile(false);
+        setShowArticlesMobile(true);
+        setShowNewsMobile(false);
     };
 
     const itemPoliticsNews = renderPoliticsNews(politicsNews);
@@ -98,13 +98,12 @@ const Politics = () => {
             </ul>
             <div className="news__politics-body">
                 <div className="news__politics-blocks">
-                    {/* { showNewsMonile ?    <p>Hahahahahah1111</p> : null} */}
-                    <div className={showNewsMonile ? '' : "hidden"}>{itemPoliticsNews}</div>
+                    <div className={showNewsMobile ? '' : "hidden"}>{itemPoliticsNews}</div>
                 </div>
                 <div className="news__politics-items">
                     <div className="news__politics-items-col">
                         <div className="fz16 title">НОВИНИ РОЗДІЛУ</div>
-                        <div className={showNewsMonile1 ? '' : "hidden"}>{itemPoliticsNewsCol}</div>
+                        <div className={showArticlesMobile ? '' : "hidden"}>{itemPoliticsNewsCol}</div>
                     </div>
                     <button className="fz16 more_news">Більше
                         <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">

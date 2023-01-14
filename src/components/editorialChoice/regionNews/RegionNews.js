@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react';
 
 import { getTime, getDay } from '../../../util';
 import useNewsServices from "../../services/newsServices";
-import {useMemo} from 'react'
 
 const RegionsNews = () => {
 
@@ -20,10 +19,7 @@ const RegionsNews = () => {
         setRegionsNews(regionsNews)
     }
 
-    function renderDate(arr) {
-        console.log(
-            'ddd', arr
-        )
+    const renderNews = (arr, reg) => {
         const dateArr = arr.reduce((desired, item) => {
             if (!desired.find(verifiable => verifiable.date === item.date)) {
                 desired.push({
@@ -31,62 +27,44 @@ const RegionsNews = () => {
                 });
             }
             return desired;
-          }, []);
-          console.log('hahahaha', dateArr)
-        const date = dateArr.map((item) => {
-            return (
-                <div key={item.date} className='fz12 data'>
-                    {getDay(item.date).toUpperCase()}
-                    {/* <p>{item?.text}</p> */}
-                </div>
-            )
-        })
-        return (
-            <div className="news__city-data">
-                {date}
-            </div>
-        )
-    }
+        }, []);
 
-
-    const renderNews = (arr) => {
-        const dateArr = arr.reduce((desired, item) => {
-            if (!desired.find(verifiable => verifiable.date === item.date)) {
-                desired.push({
-                    ...item
-                });
-            }
-            return desired;
-          }, []);
-
-         const b =  dateArr.map(item => {
-           // let arr1 = [];
-           let c =  arr.filter(it => {
-            if(new Date(it?.date).getDay() === new Date(item?.date)?.getDay() && new Date(it?.date)?.getMonth() === new Date(item?.date)?.getMonth()) {
-                return it;
-            }
+        const items = dateArr.map(item => {
+           let dates = arr.filter(date => {
+                if(new Date(date?.date).getDay() === new Date(item?.date)?.getDay() && new Date(date?.date)?.getMonth() === new Date(item?.date)?.getMonth()) {
+                    return date;
+                }
            })
-           return {
-            ...item,
-            news: c,
-           }
-          })
+            return {
+                ...item,
+                news: dates,
+            }
+        })
 
-          const date = b.map((item) => {
-            let x = (
+        const date = items.map((item) => {
+            let news = (
                 <>
-                    {item?.news.map(it1 => {
-                        return <p> {it1.text}</p>
+                    {item?.news.map(description => {
+                        return <>
+                            <div key={item.id} className="fz16 news__city-data-content">
+                                <span>{getTime(item.date)}</span> {description.text}
+                                <hr />
+                            </div>
+                        </>
                     })}
                 </>
             )
+
             return (
-                <div key={item.date} className='fz12 data'>
-                    {getDay(item.date).toUpperCase()}
-               {x}
-                </div>
+                <>
+                    <div key={item.date} className='fz12 data'>
+                        {getDay(item.date).toUpperCase()}
+                    </div>
+                    {news}
+                </>
             )
         })
+
         return (
             <div className="news__city-data">
                 {date}
@@ -121,17 +99,16 @@ const RegionsNews = () => {
         )
     }
 
-        const KyivNews = renderRegionsNews(regionsNews, "Kyiv");
+        const KyivNews = renderNews(regionsNews, "Kyiv");
         const OdesaNews = renderRegionsNews(regionsNews, "Odesa");
         const KharkivNews = renderRegionsNews(regionsNews, "Kharkiv");
-        const date = renderNews(regionsNews)
 
         return (
             <>
                 <div className="news__city">
                     <div className="news__city_col">
                         <div className="title title_fz24 news__city-name">Київ</div>
-                            {date}
+                            {KyivNews}
                     </div>
                     <button className="fz16 more_news">Більше новин
                         <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
