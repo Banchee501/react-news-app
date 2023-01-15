@@ -6,7 +6,7 @@
     }
     .news {
         justify-content: center;
-        grid-template-columns: repeat(auto-fit, 326px);
+        grid-template-columns: repeat(auto-fit, 390px);
         &__all {
             .gradient  {
                 display: none;
@@ -27,6 +27,22 @@
             overflow-y: hidden;
         }
         &__politics {
+            &-body {
+                grid-template-columns: repeat(auto-fit, 326px);
+            }
+            &-blocks {
+                grid-template-columns: repeat(auto-fit, 326px);
+                grid-template-rows: 260px;
+            }
+            &-block {
+                padding-bottom: 32px;
+                .news__politics-text {
+                    font-size: 16px;
+                }
+                &-else {
+                    grid-template-columns: repeat(auto-fit, 326px);
+                }
+            }
             &-items {
                 &-col {
                     .title {
@@ -60,8 +76,21 @@
             }
         }
         &__economics {
+            &-body {
+                grid-template-columns: repeat(auto-fit, 326px);
+            }
             &-blocks {
-                display: none;
+                grid-template-columns: repeat(auto-fit, 326px);
+                grid-template-rows: 260px;
+            }
+            &-block {
+                padding-bottom: 32px;
+                .news__economics-text {
+                    font-size: 16px;
+                }
+                &-else {
+                    grid-template-columns: repeat(auto-fit, 326px);
+                }
             }
             &-items {
                 &-col {
@@ -138,6 +167,9 @@
                 width: 94%;
             }
         }
+    }
+    .hidden {
+        display: none;
     }
 }
 
@@ -261,9 +293,6 @@
             }
         }
     }
-    .hidden {
-        display: none;
-    }
     .news {
         background-color: white;
         grid-template-columns: repeat(auto-fit, 375px);
@@ -368,11 +397,6 @@
             grid-column-start: 1;
             &-blocks {
                 grid-template-columns: repeat(auto-fit, 326px);
-            }
-            &-block {
-                &-else {
-                    grid-template: repeat(2, 260px)/repeat(2, 304px);
-                }
             }
             .title {
                 font-size: 30px;

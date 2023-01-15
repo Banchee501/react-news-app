@@ -20,6 +20,7 @@ const RegionsNews = () => {
     }
 
     const renderNews = (arr, reg) => {
+        
         const dateArr = arr.reduce((desired, item) => {
             if (!desired.find(verifiable => verifiable.date === item.date) && item.type === reg) {
                 desired.push({

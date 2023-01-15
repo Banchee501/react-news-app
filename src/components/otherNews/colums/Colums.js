@@ -4,10 +4,7 @@ import { Link } from 'react-router-dom';
 import { getDate } from '../../../util';
 import useNewsServices from "../../services/newsServices";
 
-// import profilePhotoFirst from '../../../resources/img/Avatar.png';
 import profilePhotoSecond from '../../../resources/img/Avatar-1.png';
-// import profilePhotoThird from '../../../resources/img/Avatar-2.png';
-// import profilePhotoFourth from '../../../resources/img/Avatar-3.png';
 
 const Colums = () => {
 
@@ -56,11 +53,13 @@ const Colums = () => {
 
     return (
     <div className="news__col">
-        <div className="news__col-head">
-            <div className='title title_fz24'>Колонки</div>
-            <Link to="/" className='fz14'>Всі колонки</Link>
+        <div>
+            <div className="news__col-head">
+                <div className='title title_fz24'>Колонки</div>
+                <Link to="/" className='fz14'>Всі колонки</Link>
+            </div>
+            {itemColums}
         </div>
-        {itemColums}
         <button className='fz16 load__more'>
             Всі колонки
         </button>

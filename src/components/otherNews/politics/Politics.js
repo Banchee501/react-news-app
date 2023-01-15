@@ -11,8 +11,8 @@ const Politics = () => {
     const [politicsNews, setPoliticsNews] = useState([]);
     const [activeNews, setActiveNews] = useState(true);
     const [activeArticles, setActiveArticles] = useState(false);
-    const [showNewsMobile, setShowNewsMobile] = useState(true);
-    const [showArticlesMobile, setShowArticlesMobile] = useState(false);
+    const [showNewsMobile, setShowNewsMobile] = useState(false);
+    const [showArticlesMobile, setShowArticlesMobile] = useState(true);
 
     const {getPoliticsNews} = useNewsServices();
 
@@ -66,19 +66,19 @@ const Politics = () => {
             </>
         )
     }
-
+    
     const toggleNewsClass = () => {
         setActiveNews(true);
         setActiveArticles(false);
-        setShowNewsMobile(true);
-        setShowArticlesMobile(false);
+        setShowNewsMobile(false);
+        setShowArticlesMobile(true);
     };
 
     const toggleArticleClass = () => {
         setActiveNews(false);
         setActiveArticles(true);
-        setShowArticlesMobile(true);
-        setShowNewsMobile(false);
+        setShowArticlesMobile(false);
+        setShowNewsMobile(true);
     };
 
     const itemPoliticsNews = renderPoliticsNews(politicsNews);
@@ -97,13 +97,13 @@ const Politics = () => {
                     onClick={toggleArticleClass}>Статті</li>
             </ul>
             <div className="news__politics-body">
-                <div className="news__politics-blocks">
-                    <div className={showNewsMobile ? '' : "hidden"}>{itemPoliticsNews}</div>
+                <div className={showNewsMobile ? "news__politics-blocks" : "hidden"}>
+                    <>{itemPoliticsNews}</>
                 </div>
-                <div className="news__politics-items">
+                <div className={showArticlesMobile ? 'news__politics-items' : "hidden"}>
                     <div className="news__politics-items-col">
                         <div className="fz16 title">НОВИНИ РОЗДІЛУ</div>
-                        <div className={showArticlesMobile ? '' : "hidden"}>{itemPoliticsNewsCol}</div>
+                        <div>{itemPoliticsNewsCol}</div>
                     </div>
                     <button className="fz16 more_news">Більше
                         <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">

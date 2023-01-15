@@ -9,6 +9,10 @@ import imageNews from "../../../resources/img/image.jpg";
 const Economics = () => {
 
     const [economicsNews, setEconomicsNews] = useState([])
+    const [activeNews, setActiveNews] = useState(true);
+    const [activeArticles, setActiveArticles] = useState(false);
+    const [showNewsMobile, setShowNewsMobile] = useState(false);
+    const [showArticlesMobile, setShowArticlesMobile] = useState(true);
 
     const {getEconomicsNews} = useNewsServices();
 
@@ -63,6 +67,20 @@ const Economics = () => {
         )
     }
 
+    const toggleNewsClass = () => {
+        setActiveNews(true);
+        setActiveArticles(false);
+        setShowNewsMobile(false);
+        setShowArticlesMobile(true);
+    };
+
+    const toggleArticleClass = () => {
+        setActiveNews(false);
+        setActiveArticles(true);
+        setShowArticlesMobile(false);
+        setShowNewsMobile(true);
+    };
+
     const itemEconomicsNews = renderEconomicsNews(economicsNews);
     const itemEconomicsNewsCol = renderEconomicsNewsCol(economicsNews);
 
@@ -73,14 +91,16 @@ const Economics = () => {
             <Link to="/" className='fz14'>Всі новини розділу</Link>
         </div>
         <ul className='fz16 sort'>
-            <li className='active'>Новини</li>
-            <li>Статті</li>
-        </ul>
+                <li className={activeNews ? 'active': ''}
+                    onClick={toggleNewsClass}>Новини</li>
+                <li className={activeArticles ? 'active': ''}
+                    onClick={toggleArticleClass}>Статті</li>
+            </ul>
         <div className="news__economics-body">
-            <div className="news__economics-blocks">
+            <div className={showNewsMobile ? "news__economics-blocks" : "hidden"}>
                 {itemEconomicsNews}
             </div>
-            <div className="news__economics-items">
+            <div className={showArticlesMobile ? 'news__economics-items' : "hidden"}>
                 <div className="news__economics-items-col">
                     <div className="fz16 title">НОВИНИ РОЗДІЛУ</div>
                     {itemEconomicsNewsCol}
