@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 
 import useNewsServices from "../services/newsServices";
@@ -74,18 +73,7 @@ const [editorialChoice, setEditorialChoice] = useState([])
                             </div>
                         </div>
                         <div className="news__regions">
-                            <div className="news__regions-head">
-                                <div className="title title_fz32">Регіони</div>
-                                <Link to="/" className='fz14'>Всі новини розділу</Link>
-                            </div>
-                            <ul className='fz16 sort'>
-                                <li className='active'>Київ</li>
-                                <li>Одеса</li>
-                                <li>Харків</li>
-                            </ul>
-                            <div className="news__cities">
-                                <RegionsNews />
-                            </div>
+                            <RegionsNews />
                         </div>
                     </div>
                 </div>

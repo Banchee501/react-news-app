@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 
+import newsTag from "../../tagItem/TegItem";
 import useNewsServices from "../../services/newsServices";
 import { getTime } from '../../../util';
 
@@ -36,6 +37,7 @@ const AllNews = () => {
 
             return (
                 <div key={item.id} className={style.className}>
+                    {newsTag}
                     <span>{getTime(item.date)}</span> {item.text}
                     <hr />
                 </div>
