@@ -9,6 +9,10 @@ import imageNews from "../../../resources/img/image.jpg";
 const Lifestyle = () => {
 
     const [lifestyleNews, setLifestyleNews] = useState([]);
+    const [activeNews, setActiveNews] = useState(true);
+    const [activeArticles, setActiveArticles] = useState(false);
+    const [showNewsMobile, setShowNewsMobile] = useState(false);
+    const [showArticlesMobile, setShowArticlesMobile] = useState(true);
 
     const {getLifestyleNews} = useNewsServices();
 
@@ -63,6 +67,20 @@ const Lifestyle = () => {
         )
     }
 
+    const toggleNewsClass = () => {
+        setActiveNews(true);
+        setActiveArticles(false);
+        setShowNewsMobile(false);
+        setShowArticlesMobile(true);
+    };
+
+    const toggleArticleClass = () => {
+        setActiveNews(false);
+        setActiveArticles(true);
+        setShowArticlesMobile(false);
+        setShowNewsMobile(true);
+    };
+
     const itemLifestyleNews = renderLifestyleNews(lifestyleNews);
     const itemLifestyleNewsCol = renderLifestyleNewsCol(lifestyleNews);
 
@@ -73,14 +91,16 @@ const Lifestyle = () => {
                 <Link to="/" className='fz14'>Всі новини розділу</Link>
             </div>
             <ul className='fz16 sort'>
-                <li className='active'>Новини</li>
-                <li>Статті</li>
+                <li className={activeNews ? 'active': ''}
+                    onClick={toggleNewsClass}>Новини</li>
+                <li className={activeArticles ? 'active': ''}
+                    onClick={toggleArticleClass}>Статті</li>
             </ul>
             <div className="news__lifestyle-body">
-                <div className="news__lifestyle-blocks">
+            <div className={showNewsMobile ? "news__lifestyle-blocks" : "hidden"}>
                         {itemLifestyleNews}
                 </div>
-                <div className="news__lifestyle-items">
+                <div className={showArticlesMobile ? 'news__lifestyle-items' : "hidden"}>
                     <div className="news__lifestyle-items-col">
                         <div className="fz16 title">НОВИНИ РОЗДІЛУ</div>
                         {itemLifestyleNewsCol}

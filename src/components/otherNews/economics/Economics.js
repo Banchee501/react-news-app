@@ -91,11 +91,11 @@ const Economics = () => {
             <Link to="/" className='fz14'>Всі новини розділу</Link>
         </div>
         <ul className='fz16 sort'>
-                <li className={activeNews ? 'active': ''}
-                    onClick={toggleNewsClass}>Новини</li>
-                <li className={activeArticles ? 'active': ''}
-                    onClick={toggleArticleClass}>Статті</li>
-            </ul>
+            <li className={activeNews ? 'active': ''}
+                onClick={toggleNewsClass}>Новини</li>
+            <li className={activeArticles ? 'active': ''}
+                onClick={toggleArticleClass}>Статті</li>
+        </ul>
         <div className="news__economics-body">
             <div className={showNewsMobile ? "news__economics-blocks" : "hidden"}>
                 {itemEconomicsNews}
