@@ -30,11 +30,11 @@ const Lifestyle = () => {
     function renderLifestyleNews(arr) {
         const items = arr.map((item) => {
                 return (
-                    <div key={item.id} className="news__lifestyle-block">
+                    <Link to={item.id} key={item.id} className="news__lifestyle-block">
                         <img src={imageNews} alt="news" />
                         <div className="date">{getDate(item.date).toUpperCase()}</div>
                         <div className="news__lifestyle-text">{item.text}</div>
-                        </div>
+                    </Link>
                 )
         })
 
@@ -52,14 +52,14 @@ const Lifestyle = () => {
 
     function renderLifestyleNewsCol(arr) {
         const items = arr.slice(3).map((item) => {
-                return (
-                    <div key={item.id}>
-                        {newsTag(item.className)}
-                        <div className="fz16 news__lifestyle-item"> <span>{getTime(item.date)} </span>{item.text}
-                        </div>
-                        <hr />
-                    </div>
-                )
+            return (
+                <div key={item.id}>
+                    {newsTag(item.className)}
+                    <Link to={item.id} className="fz16 news__lifestyle-item"> <span>{getTime(item.date)} </span>{item.text}
+                    </Link>
+                    <hr />
+                </div>
+            )
         })
 
         return (

@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 import useNewsServices from "../services/newsServices";
 import AllNews from './allNewsColumn/AllNewsColumn';
@@ -29,13 +30,13 @@ const [editorialChoice, setEditorialChoice] = useState([])
     function renderEditorialChoice(arr) {
         const items = arr.map((item) => {
             return (
-                <div key={item.id} className="news__choice-item">
+                <Link to={item.id} key={item.id} className="news__choice-item">
                     <img src={newsImage} alt="news" />
                     <div className='fz12 date'>{getDate(item.date).toUpperCase()}</div>
                     <div className="fz16 content">
                         {item.text}
                     </div>
-                </div>
+                </Link>
             )
         })
 

@@ -25,7 +25,7 @@ const Colums = () => {
     function renderColums(arr) {
         const items = arr.map((item) => {
             return (
-                <div key={item.id} className="news__col-item">
+                <Link to={item.id} key={item.id} className="news__col-item">
                     <div className="news__col-item-info">
                         <img src={profilePhotoSecond} alt="avatar" />
                         <div className="news__col-item-profile">
@@ -38,7 +38,7 @@ const Colums = () => {
                         <div className="date">{getDate(item.date).toUpperCase()}</div>
                     </div>
                     <hr/>
-                </div>
+                </Link>
             )
         });
 

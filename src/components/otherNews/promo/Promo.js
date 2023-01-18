@@ -30,15 +30,32 @@ const Promo = () => {
                 sliced += '...';
             }
             return (
-                <div key={item.id} className="news__promo-block">
+                <Link to={item.id} key={item.id} className="news__promo-block">
                     <div className="date">{getDate(item.date).toUpperCase()}</div>
                     <div className="fz16 news__promo-text">{sliced}</div>
-                </div>
+                </Link>
+            )
+        })
+
+        const mainItem = arr.map((item) => {
+            return (
+                <Link to={item.id} key={item.id} className="news__promo-body">
+                    <div className="img">
+                        <img src={promoImg} alt="promo" />
+                    </div>
+                    <div className="body">
+                        <div className='news__promo-body-head'>
+                            <div className="date">{getDate(item.date).toUpperCase()}</div> {newsTag(item.className)}
+                        </div>
+                        <div className="fz32 news__promo-text">{item.text}</div>
+                    </div>
+                </Link>
             )
         })
 
         return (
             <>
+                {mainItem[0]}
                 <div className="news__promo-list">
                     {items.slice(1)}
                     <div className="gradient"></div>
@@ -78,19 +95,8 @@ const Promo = () => {
             <div className="title title_fz32">Промо</div>
             <Link to="/" className='fz14'>Всі матеріали</Link>
         </div>
-        <div className="news__promo-body">
-            <div className="img">
-                <img src={promoImg} alt="promo" />
-            </div>
-            <div className="body">
-                <div className="date">05 СЕРПНЯ 11:00</div>
-                <div className="fz32 news__promo-text">Акція! Телевізори Samsung з вигодою та в оплату частинами до 12 платежів</div>
-            </div>
-        </div>
             {itemPromo}
     </div>
-
-
     )
 }
                 

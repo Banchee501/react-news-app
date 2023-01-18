@@ -1,6 +1,7 @@
 import React from 'react';
 import Slider from "react-slick";
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 import useNewsServices from "../services/newsServices";
 
@@ -51,11 +52,11 @@ const onCarousel = (newsCarousel) => {
   function renderCarousel(arr) {
     const items = arr.map((item) => {
       return (
-        <div key={item.id} className='carousel-slide-item'>
+        <Link to={item.id} key={item.id} className='carousel-slide-item'>
           <div style={{ background: `linear-gradient(180deg, rgba(21, 35, 56, 0.5) 0%, rgba(17, 29, 46, 0.24) 21.74%, rgba(17, 29, 46, 0.4) 62.16%, rgba(24, 40, 64, 0.9) 100%),url(${firstSlide}) no-repeat 50%/cover`, width: '100%',
           height: '654px' }}/>
           <p className="fz40">{item.text}</p>
-        </div>
+        </Link>
       )
     })
     return items

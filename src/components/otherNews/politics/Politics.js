@@ -30,11 +30,11 @@ const Politics = () => {
     function renderPoliticsNews(arr) {
         const items = arr.map((item) => {
             return (
-                <div key={item.id} className="news__politics-block">
+                <Link to={item.id} key={item.id} className="news__politics-block">
                     <img src={imageNews} alt="news" />
                     <div className="date">{getDate(item.date).toUpperCase()}</div>
                     <div className="news__politics-text">{item.text}</div>
-                </div>
+                </Link>
             )
         })
 
@@ -55,8 +55,8 @@ const Politics = () => {
             return (
                 <div key={item.id}>
                     {newsTag(item.className)}
-                    <div className="fz16 news__politics-item"> <span>{getTime(item.date)} </span>{item.text}
-                    </div>
+                    <Link to={item.id} className="fz16 news__politics-item"> <span>{getTime(item.date)} </span>{item.text}
+                    </Link>
                     <hr />
                 </div>
             )

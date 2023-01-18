@@ -27,7 +27,6 @@ const RegionsNews = () => {
     }
 
     const renderNews = (arr, reg) => {
-        
         const dateArr = arr.reduce((desired, item) => {
             if (!desired.find(verifiable => verifiable.date === item.date) && item.type === reg) {
                 desired.push({
@@ -60,7 +59,7 @@ const RegionsNews = () => {
                         return (
                             <>
                                 <div key={item.id} className="fz16 news__city-data-content">
-                                    <span>{getTime(item.date)}</span> {sliced}
+                                    <span>{getTime(item.date)}</span> <Link to={item.id}> {sliced} </Link>
                                     <hr />
                                 </div>
                             </>

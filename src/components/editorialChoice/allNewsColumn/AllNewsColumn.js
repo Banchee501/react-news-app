@@ -41,7 +41,7 @@ const AllNews = () => {
             return (
                 <div key={item.id} className={style.className}>
                     {newsTag(item.className)}
-                    <span>{getTime(item.date)}</span> {item.text}
+                    <span>{getTime(item.date)}</span> <Link to={item.id}>{item.text}</Link>
                     <hr />
                 </div>
             )
