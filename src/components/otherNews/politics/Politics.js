@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 
+import newsTag from '../../../util/TegItem';
 import { getTime, getDate } from '../../../util';
 import useNewsServices from "../../services/newsServices";
 
@@ -53,7 +54,8 @@ const Politics = () => {
         const items = arr.slice(3).map((item) => {
             return (
                 <div key={item.id}>
-                    <div className="fz16 news__politics-item label"> <span>{getTime(item.date)} </span>{item.text}
+                    {newsTag(item.className)}
+                    <div className="fz16 news__politics-item"> <span>{getTime(item.date)} </span>{item.text}
                     </div>
                     <hr />
                 </div>

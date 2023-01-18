@@ -60,3 +60,18 @@ span {
     display: flex;
     align-items: center;
 }
+
+.tag {
+    display: flex;
+    margin-bottom: 16px;
+    color: $grey;
+    font-family: Severs-Medium;
+    font-size: 14px;
+    svg {
+        margin-right: 12px;
+    }
+}
+
+.label {
+    color: $orange;
+}

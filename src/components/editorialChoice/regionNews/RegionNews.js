@@ -1,15 +1,18 @@
 import { Link } from 'react-router-dom';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 import { getTime, getDay } from '../../../util';
 import useNewsServices from "../../services/newsServices";
 
 const RegionsNews = () => {
-
     const [regionsNews, setRegionsNews] = useState([])
     const [activeKyiv, setActiveKyiv] = useState(true);
     const [activeKharkiv, setActiveKharkiv] = useState(false);
     const [activeOdesa, setActiveOdesa] = useState(false);
+
+    const scollToRefKyiv = useRef(),
+        scollToRefKharkiv = useRef(),
+        scollToRefOdesa = useRef();
 
     const {getRegionsNews} = useNewsServices();
 
@@ -83,8 +86,20 @@ const RegionsNews = () => {
         )
     }
 
-    const toggleActiveClass = () => {
-        
+    const toggleKyiv = () => {
+        setActiveKyiv(true);
+        setActiveKharkiv(false);
+        setActiveOdesa(false);
+    }
+    const toggleKharkiv = () => {
+        setActiveKyiv(false);
+        setActiveKharkiv(true);
+        setActiveOdesa(false);
+    }
+    const toggleOdesa = () => {
+        setActiveKyiv(false);
+        setActiveKharkiv(false);
+        setActiveOdesa(true);
     }
 
     const KyivNews = renderNews(regionsNews, "Kyiv");
@@ -99,16 +114,16 @@ const RegionsNews = () => {
             </div>
             <ul className='fz16 sort'>
                 <li className={activeKyiv ? 'active': ''}
-                onClick={toggleActiveClass}>Київ</li>
+                onClick={() => {scollToRefKyiv.current.scrollIntoView(); toggleKyiv()}}>Київ</li>
                 <li className={activeOdesa ? 'active': ''}
-                onClick={toggleActiveClass}>Одеса</li>
+                onClick={() => {scollToRefOdesa.current.scrollIntoView(); toggleOdesa()}}>Одеса</li>
                 <li className={activeKharkiv ? 'active': ''}
-                onClick={toggleActiveClass}>Харків</li>
+                onClick={() => {scollToRefKharkiv.current.scrollIntoView(); toggleKharkiv()}}>Харків</li>
             </ul>
             <div className="news__cities">
                 <div className="news__city">
                     <div className="news__city_col">
-                        <div className="title title_fz24 news__city-name">Київ</div>
+                        <div ref={scollToRefKyiv} className="title title_fz24 news__city-name">Київ</div>
                             {KyivNews}
                     </div>
                     <button className="fz16 more_news">Більше новин
@@ -121,7 +136,7 @@ const RegionsNews = () => {
                 </div>
                 <div className="news__city">
                     <div className="news__city_col">
-                        <div className="title title_fz24 news__city-name">Одеса</div>
+                        <div ref={scollToRefOdesa} className="title title_fz24 news__city-name">Одеса</div>
                             <div className="news__city-data">
                                 {OdesaNews}
                             </div>
@@ -136,7 +151,7 @@ const RegionsNews = () => {
                     </div>
                 <div className="news__city">
                     <div className="news__city_col">
-                        <div className="title title_fz24 news__city-name">Харків</div>
+                        <div ref={scollToRefKharkiv} className="title title_fz24 news__city-name">Харків</div>
                         <div className="news__city-data">
                             {KharkivNews}
                         </div>

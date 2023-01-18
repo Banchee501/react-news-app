@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 
+import newsTag from '../../../util/TegItem';
 import { getDate } from '../../../util';
 import useNewsServices from "../../services/newsServices";
 
@@ -82,7 +83,7 @@ const Promo = () => {
                 <img src={promoImg} alt="promo" />
             </div>
             <div className="body">
-                <div className="date label">05 СЕРПНЯ 11:00</div>
+                <div className="date">05 СЕРПНЯ 11:00</div>
                 <div className="fz32 news__promo-text">Акція! Телевізори Samsung з вигодою та в оплату частинами до 12 платежів</div>
             </div>
         </div>
